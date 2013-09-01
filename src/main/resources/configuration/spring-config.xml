@@ -1,0 +1,173 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	">
+        
+        <bean id="database" class="com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationDB">
+		<constructor-arg name="hostName" value="localhost"/>
+		<constructor-arg name="port" value="9300"/>
+	</bean>
+	
+        <bean id="about" class="com.alexcaranha.jquerybyhumming.screen.about.About_Model">
+		<property name="systemTitle" value="jQueryByHummingSystem"/>
+		<property name="systemDescription" value="Sistema de pesquisa de músicas através de Solfejos."/>	
+		<property name="authorTitle" value="Alex Libório Caranha"/>
+		<property name="authorDescription" value="Mestrando em Engenharia Elétrica - Processamento de Sinais pela COPPE/UFRJ. Engenheiro da Computação formado pela Universidade Federal do Amazonas (UFAM). Tem experiência em Desenvolvimento de Softwares com foco em Reconhecimento de Impressão Digital, ERP, Etiquetas Industriais, Programação Paralela e Sistemas Java para TV Digital."/>	
+		<property name="leaderTitle" value="Luiz Wagner Pereira Biscainho"/>
+		<property name="leaderDescription" value="Possui graduação em Engenharia Elétrica - ênfase Eletrônica (1985), mestrado em Engenharia Elétrica (1990) e doutorado em Engenharia Elétrica (2000) pela Universidade Federal do Rio de Janeiro, da qual é hoje professor associado. Tem experiência na área de Engenharia Elétrica, com ênfase em Processamento de Sinais, atuando principalmente nos seguintes temas: processamento digital de áudio e sistemas adaptativos."/>
+	</bean>
+        
+        <bean id="pitchTracking" class="com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationPitchTracking">
+		<constructor-arg name="selected" value="yin"/>
+		<constructor-arg name="options">
+			<map>
+				<entry key="acf">
+					<bean id="pt_acf" class="com.alexcaranha.jquerybyhumming.model.system.pitchTracking.PT_ACF">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pitchMin" value="65.0"/>
+						<constructor-arg name="pitchMax" value="1000.0"/>        
+						<constructor-arg name="samplesToSmooth" value="5"/>
+						<constructor-arg name="samplesToInterpolation" value="3"/>        
+						<constructor-arg name="amplitudeThreshold" value="100.0"/>
+						<constructor-arg name="durationThreshold" value="0.15"/>
+					</bean>
+				</entry>
+				<entry key="ceps">
+					<bean id="pt_ceps" class="com.alexcaranha.jquerybyhumming.model.system.pitchTracking.PT_CEPS">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pitchMin" value="65.0"/>
+						<constructor-arg name="pitchMax" value="1000.0"/>        
+						<constructor-arg name="samplesToSmooth" value="5"/>
+						<constructor-arg name="samplesToInterpolation" value="3"/>        
+						<constructor-arg name="amplitudeThreshold" value="100.0"/>
+						<constructor-arg name="durationThreshold" value="0.15"/>
+					</bean>
+				</entry>
+				<entry key="hps">
+					<bean id="pt_hps" class="com.alexcaranha.jquerybyhumming.model.system.pitchTracking.PT_HPS">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pitchMin" value="65.0"/>
+						<constructor-arg name="pitchMax" value="1000.0"/>        
+						<constructor-arg name="samplesToSmooth" value="5"/>
+						<constructor-arg name="samplesToInterpolation" value="3"/>        
+						<constructor-arg name="amplitudeThreshold" value="100.0"/>
+						<constructor-arg name="durationThreshold" value="0.15"/>
+						<constructor-arg name="qtdHarmonics" value="3"/>
+					</bean>
+				</entry>
+				<entry key="yin">
+					<bean id="pt_yin" class="com.alexcaranha.jquerybyhumming.model.system.pitchTracking.PT_YIN">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pitchMin" value="65.0"/>
+						<constructor-arg name="pitchMax" value="1000.0"/>        
+						<constructor-arg name="samplesToSmooth" value="5"/>
+						<constructor-arg name="samplesToInterpolation" value="3"/>        
+						<constructor-arg name="amplitudeThreshold" value="100.0"/>
+						<constructor-arg name="durationThreshold" value="0.15"/>
+						<constructor-arg name="threshold" value="0.2"/>
+					</bean>
+				</entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean id="onsetDetection" class="com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationOnsetDetection">
+		<constructor-arg name="selected" value="derivadaRelativaEnvoltoria"/>
+		<constructor-arg name="options">
+			<map>
+				<entry key="spectralFlux">
+					<bean id="od_spectralFlux" class="com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD_SpectralFlux">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pointsToMovingAverage" value="3"/>
+						<constructor-arg name="durationThreshold" value="0.150"/>
+					</bean>
+				</entry>
+				<entry key="derivadaEnvoltoria">
+					<bean id="od_derivadaEnvoltoria" class="com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD_DerivadaEnvoltoria">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pointsToMovingAverage" value="3"/>
+						<constructor-arg name="durationThreshold" value="0.150"/>
+						<constructor-arg name="samplesToSmooth" value="5"/>
+					</bean>
+				</entry>
+				<entry key="derivadaRelativaEnvoltoria">
+					<bean id="od_derivadaRelativaEnvoltoria" class="com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD_DerivadaRelativaEnvoltoria">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pointsToMovingAverage" value="3"/>
+						<constructor-arg name="durationThreshold" value="0.150"/>
+						<constructor-arg name="samplesToSmooth" value="5"/>
+					</bean>
+				</entry>
+				<entry key="phaseDeviation">
+					<bean id="od_phaseDeviation" class="com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD_PhaseDeviation">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pointsToMovingAverage" value="3"/>
+						<constructor-arg name="durationThreshold" value="0.150"/>
+					</bean>
+				</entry>
+				<entry key="complexDomain">
+					<bean id="od_complexDomain" class="com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD_ComplexDomain">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pointsToMovingAverage" value="3"/>
+						<constructor-arg name="durationThreshold" value="0.150"/>
+					</bean>
+				</entry>
+				<entry key="complexDomainSimplified">
+					<bean id="od_complexDomainSimplified" class="com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD_ComplexDomainSimplified">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pointsToMovingAverage" value="3"/>
+						<constructor-arg name="durationThreshold" value="0.150"/>
+					</bean>
+				</entry>
+				<entry key="rectifiedComplexDomain">
+					<bean id="od_rectifiedComplexDomain" class="com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD_RectifiedComplexDomain">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pointsToMovingAverage" value="3"/>
+						<constructor-arg name="durationThreshold" value="0.150"/>
+					</bean>
+				</entry>
+				<entry key="weigthedPhaseDeviation">
+					<bean id="od_weigthedPhaseDeviation" class="com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD_WeightedPhaseDeviation">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pointsToMovingAverage" value="3"/>
+						<constructor-arg name="durationThreshold" value="0.150"/>
+					</bean>
+				</entry>
+				<entry key="highFrequencyContent">
+					<bean id="od_highFrequencyContent" class="com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD_HFC">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pointsToMovingAverage" value="3"/>
+						<constructor-arg name="durationThreshold" value="0.150"/>
+					</bean>
+				</entry>
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>
