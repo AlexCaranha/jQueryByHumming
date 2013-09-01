@@ -47,6 +47,8 @@ public class Database_Search_View extends javax.swing.JPanel implements ActionLi
         jTextFieldTitle = new javax.swing.JTextField();
         jButtonSearch = new javax.swing.JButton();
 
+        setMinimumSize(null);
+
         jPanelData.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelData.setLayout(new java.awt.BorderLayout());
 
@@ -66,7 +68,7 @@ public class Database_Search_View extends javax.swing.JPanel implements ActionLi
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                        .addComponent(jTextFieldTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonSearch)))
                 .addContainerGap())
@@ -80,7 +82,7 @@ public class Database_Search_View extends javax.swing.JPanel implements ActionLi
                     .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonSearch))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelData, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                .addComponent(jPanelData, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

@@ -27,7 +27,6 @@ public class App {
     private static final Map<String, Object> objects = new HashMap<String, Object>();
     
     private static final ElasticSearchDB db = new ElasticSearchDB();
-    //private static final Thread dbThread = new Thread(db);
     private static final ApplicationContext context = new ClassPathXmlApplicationContext("configuration/spring-config.xml");
 
     public static Configuration getConfiguration(String key) {

@@ -94,7 +94,7 @@ public class OD_RectifiedComplexDomain extends OD {
 
     @Override
     public String getTitle() {
-        return "Rectified Complex Domain";
+        return "RECTIFIED COMPLEX DOMAIN";
     }
 
     @Override

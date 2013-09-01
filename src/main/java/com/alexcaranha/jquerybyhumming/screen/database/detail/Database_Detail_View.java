@@ -100,7 +100,7 @@ public final class Database_Detail_View extends javax.swing.JPanel implements Ob
         jTextAreaObs = new javax.swing.JTextArea();
         jButtonPlayStop = new javax.swing.JButton();
 
-        setMinimumSize(new java.awt.Dimension(390, 285));
+        setMinimumSize(null);
 
         jLabelPathMidiFile.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelPathMidiFile.setText("Path MIDI File:");
@@ -140,10 +140,8 @@ public final class Database_Detail_View extends javax.swing.JPanel implements Ob
         jLabelAuthor.setText("Author:");
 
         jTextAreaObs.setEditable(false);
-        jTextAreaObs.setBackground(java.awt.Color.white);
         jTextAreaObs.setColumns(20);
         jTextAreaObs.setRows(5);
-        jTextAreaObs.setText("abc");
         jTextAreaObs.setAutoscrolls(false);
         jTextAreaObs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(jTextAreaObs);

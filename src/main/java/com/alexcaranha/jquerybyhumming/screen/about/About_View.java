@@ -62,8 +62,6 @@ public final class About_View extends javax.swing.JPanel {
         jLabelTitle = new javax.swing.JLabel();
 
         setMaximumSize(null);
-        setMinimumSize(null);
-        setPreferredSize(null);
 
         panelScreens.setBackground(new java.awt.Color(227, 234, 242));
         panelScreens.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -80,7 +78,9 @@ public final class About_View extends javax.swing.JPanel {
         jLabelAuthor.setText("Author");
         jLabelAuthor.setToolTipText("");
 
+        jTextAreaSystem.setEditable(false);
         jTextAreaSystem.setColumns(20);
+        jTextAreaSystem.setLineWrap(true);
         jTextAreaSystem.setRows(5);
         jTextAreaSystem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(jTextAreaSystem);
@@ -130,7 +130,7 @@ public final class About_View extends javax.swing.JPanel {
                         .addComponent(jLabelImageLeader, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelScreensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelLeader, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                            .addComponent(jLabelLeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane3))))
                 .addContainerGap())
         );

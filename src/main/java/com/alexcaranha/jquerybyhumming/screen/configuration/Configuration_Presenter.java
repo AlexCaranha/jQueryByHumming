@@ -6,6 +6,7 @@ import com.alexcaranha.jquerybyhumming.mvp.IModel;
 import com.alexcaranha.jquerybyhumming.mvp.IPresenter;
 import com.alexcaranha.jquerybyhumming.screen.configuration.table.ConfigurationPanel;
 import com.thoughtworks.xstream.XStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -111,8 +112,12 @@ public class Configuration_Presenter implements IPresenter {
     }
 
     public void save() throws FileNotFoundException, IOException {
-        String path = Util.getDirExecution("CONFIGURATION.XML").toLowerCase();
-        FileOutputStream fos = new FileOutputStream(path);
+        String path = Util.getDirExecution("configuration.xml");
+        File file = new File(path);
+        
+        if (!file.exists()) file.createNewFile();
+        
+        FileOutputStream fos = new FileOutputStream(file);
         
         XStream xstream = new XStream();
         xstream.toXML(this.configurations, fos);
@@ -120,19 +125,22 @@ public class Configuration_Presenter implements IPresenter {
     }
 
     public void load() throws FileNotFoundException {
-        String path = Util.getDirExecution("CONFIGURATION.XML").toLowerCase();
+        //----------------------------------------------------------------------
+        this.configurations.clear();
+        for(String name : configs) {
+            this.configurations.add(App.getConfiguration(name));
+        }
+        //----------------------------------------------------------------------
+        String path = Util.getDirExecution("configuration.xml");
         
         if (Util.fileExist(path)) {
             XStream xstream = new XStream();
             this.configurations = (List<Configuration>) xstream.fromXML(new FileInputStream(path));
         } else {            
-            App.loadConfigurations();
-            configurations.clear();
-            for(String name : configs) {
-                configurations.add(App.getConfiguration(name));
-            }
+            App.loadConfigurations();            
         }
-        
+        //----------------------------------------------------------------------
         view.update();
+        //----------------------------------------------------------------------
     }
 }

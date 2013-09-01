@@ -85,7 +85,7 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
         setMaximumSize(null);
         setMinimumSize(new java.awt.Dimension(800, 550));
         setName("jFMain"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(750, 550));
+        setPreferredSize(new java.awt.Dimension(850, 550));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -98,14 +98,11 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
 
         jPanelScreens.setBackground(new java.awt.Color(227, 234, 242));
         jPanelScreens.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanelScreens.setMaximumSize(null);
-        jPanelScreens.setMinimumSize(null);
         jPanelScreens.setLayout(new java.awt.BorderLayout());
 
         jPanelButtons.setBackground(new java.awt.Color(227, 234, 242));
         jPanelButtons.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelButtons.setMaximumSize(null);
-        jPanelButtons.setMinimumSize(null);
 
         jButtonSearchSong.setText("Search a Song");
         jButtonSearchSong.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -161,7 +158,7 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
                 .addComponent(jButtonAbout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         jlDBStatus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -179,7 +176,7 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlDBStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+                    .addComponent(jlDBStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanelButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
