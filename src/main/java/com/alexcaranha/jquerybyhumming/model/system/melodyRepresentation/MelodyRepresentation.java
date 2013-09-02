@@ -17,6 +17,7 @@ import com.leff.midi.event.NoteOn;
 import com.leff.midi.event.meta.Tempo;
 import java.awt.Color;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,6 +36,8 @@ import org.jfree.data.xy.XYDataItem;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.ui.RectangleAnchor;
 import org.jfree.ui.TextAnchor;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -100,17 +103,14 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
     public List<Marker> convertToOnsetMarks(Color color) {
         List<Marker>    markers = new ArrayList<Marker>();
         ValueMarker     marker;
-
-        double start;
-
-        //System.out.println(this.toString());
+        double          start;
 
         for (MelodyRepresentationNote midiNote : midiNotes.values()) {
             start = midiNote.getOnset();
 
             marker = new ValueMarker(start);
             marker.setPaint(color);
-            marker.setLabel(Convert.toString(midiNote.getPitch(true)));
+            marker.setLabel(Convert.toString(midiNote.getPitchInMidi()));
             marker.setLabelAnchor(RectangleAnchor.BOTTOM_RIGHT);
             marker.setLabelTextAnchor(TextAnchor.BOTTOM_LEFT);
             markers.add(marker);
@@ -154,7 +154,9 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
                 signal.add(start - 0.01, 0.0);
             }
             
-            double pitch = midiNote.getPitch(inMidiFormat);
+            double pitch = (inMidiFormat) 
+                                ? midiNote.getPitchInMidi() 
+                                : midiNote.getPitchInHertz();
 
             signal.add(start, pitch);
             signal.add(end, pitch);
@@ -162,12 +164,16 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
             lastMidiNote = midiNote;
         }
 
-        if (lastMidiNote != null)
-        if (lastMidiNote.getPitch(inMidiFormat) != 0) {
-            signal.add(lastMidiNote.getOffset(), 0.0);
-            signal.add(lastMidiNote.getOffset() + 1.0, 0.0);
+        if (lastMidiNote != null){
+            double pitchLastNote = (inMidiFormat) 
+                                        ? lastMidiNote.getPitchInMidi() 
+                                        : lastMidiNote.getPitchInHertz();
+            
+            if (pitchLastNote != 0) {
+                signal.add(lastMidiNote.getOffset(), 0.0);
+                signal.add(lastMidiNote.getOffset() + 1.0, 0.0);
+            }
         }
-
         return signal;
     }
     /*
@@ -237,7 +243,7 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
     }
 
     private List<MelodyRepresentationNote> getNotesFromMidiFile(MidiFile midiFile) {
-        double                  time, factor = 0;
+        double time, factor = 0;
         Map<Integer, MelodyRepresentationNote>  newNotes = new HashMap<Integer, MelodyRepresentationNote>();
         List<MelodyRepresentationNote>          notes = new ArrayList<MelodyRepresentationNote>();
         MelodyRepresentationNote                note;
@@ -311,7 +317,7 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
             if (Util.valueIsOnItervalExclusive(note.getOnset(), noteReference.getOnset(), noteReference.getOffset()) ||
                 Util.valueIsOnItervalExclusive(note.getOffset(), noteReference.getOnset(), noteReference.getOffset())) {
 
-                if (note.getPitch(true) > noteWithHighestKey.getPitch(true)) {
+                if (note.getPitchInMidi() > noteWithHighestKey.getPitchInMidi()) {
                     noteWithHighestKey = note;
                 }
             }
@@ -319,24 +325,26 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
         return noteWithHighestKey;
     }
 
-    private void generateTableLaTeX(String pathFileLaTeX) {
+    private void generateTableLaTeX(String title, String pathFileLaTeX) {
         //----------------------------------------------------------------------
         StringBuilder template = new StringBuilder();
 
         template.append("\\begin{table}[H]");
+        template.append("\n\t\\scalefont{0.75}");        
         template.append("\n\t\\centering");
-        template.append("\n\t\\caption{Texto.}");
+        template.append("\n\t\\caption{Texto.}");        
+        template.append("\n\t\\label{tab:chap06_ProcessamentoEx1}");
         template.append("\n\t\\begin{tabular}{|c|c|c|}");
         template.append("\n\t\t\\hline");
-        template.append("\n\t\t\\multicolumn{3}{|c|}{\\textbf{Representação de Melodia: Parabéns a você}} \\\\");
+        template.append("\n\t\t\\multicolumn{3}{|c|}{\\textbf{{title}}} \\\\");
         template.append("\n\t\t\\hline\\hline");
         template.append("\n\t\t\\textbf{\\textit{Onset}} & \\textbf{\\textit{Offset}} & \\textbf{\\textit{Pitch}} \\\\");
-
+        
         for (MelodyRepresentationNote note : this.midiNotes.values()) {
             template.append(
                 String.format("\n\t\t\\hline\\hline" +
-                              "\n\t\t%.4f & {%.4f} & {%.4f} \\\\",
-                              note.getOnset(), note.getOffset(), note.getPitch(true))
+                              "\n\t\t{%.4f} & {%.4f} & {%.4f} \\\\",
+                              note.getOnset(), note.getOffset(), note.getPitchInMidi())
                 );
         }
         
@@ -344,33 +352,21 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
         template.append("\n\t\\end{tabular}");
         template.append("\n\t\\label{tab:chap06_label}");
         template.append("\n\\end{table}");
+        
+        String phrase = template.toString();
+        phrase = phrase.replace("{title}", title);
         //----------------------------------------------------------------------
         try {
             File arquivo = new File(pathFileLaTeX);
 
             FileOutputStream fos = new FileOutputStream(arquivo);
-            fos.write(template.toString().getBytes());
+            fos.write(phrase.getBytes());
             fos.close();
         } catch (Exception e) {
             System.err.println(e);
         }
         //----------------------------------------------------------------------
     }
-
-    //public static void execute(String[] args) throws IOException, InvalidMidiDataException, MidiUnavailableException {
-
-    /*
-    public static void main(String[] args) throws IOException, ClassNotFoundException, WavFileException, InvalidMidiDataException, MidiUnavailableException {
-        File fileAux = App.getContext().getResource("classpath:samples/midi/signal3.mid").getFile();
-
-        String pathMidi = fileAux.getAbsolutePath();
-        MelodyRepresentation file = new MelodyRepresentation(pathMidi);
-
-        System.out.println(file);
-        String path = Util.getDirExecution("tmpMelodyRepresentation.txt");
-        file.generateTableLaTeX(path);
-    }
-    */
 
     @Override
     public String getTitle() {
@@ -430,5 +426,17 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
         }
                 
         return listAmplitudes.size() > 0 ? Util.median(Doubles.toArray(listAmplitudes)) : 0.0;
+    }
+    
+    public static void main(String[] args) throws IOException, ClassNotFoundException, WavFileException, InvalidMidiDataException, MidiUnavailableException {
+        ApplicationContext context = new ClassPathXmlApplicationContext("configuration/spring-config.xml");
+        File fileAux = context.getResource("classpath:samples/midi/signal3.mid").getFile();
+
+        String pathMidi = fileAux.getAbsolutePath();
+        MelodyRepresentation file = new MelodyRepresentation(new FileInputStream(pathMidi));
+
+        System.out.println(file);
+        String path = Util.getDirExecution("tmpMelodyRepresentation.txt");
+        file.generateTableLaTeX("Parabéns a você", path);
     }
 }

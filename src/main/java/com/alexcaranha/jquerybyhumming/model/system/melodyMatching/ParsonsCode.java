@@ -32,7 +32,7 @@ public class ParsonsCode implements IExecutable{
         double keyNote;
         
         for(MelodyRepresentationNote note : list) {
-            keyNote = note.getPitch(true);
+            keyNote = note.getPitchInMidi();
             if (keyNote == 0.0) continue;
             
             previousNote = currentNote;            

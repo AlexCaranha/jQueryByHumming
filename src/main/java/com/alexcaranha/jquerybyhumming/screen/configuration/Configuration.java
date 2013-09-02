@@ -1,7 +1,12 @@
 package com.alexcaranha.jquerybyhumming.screen.configuration;
 
+import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.screen.configuration.table.ConfigurationTableItem;
+import com.thoughtworks.xstream.XStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,8 +27,6 @@ public abstract class Configuration {
         this.options = options;
         this.selected = options.get(selected);
         this.isGroup = true;
-        
-        //load();
     }
 
     public Configuration() {
@@ -31,8 +34,6 @@ public abstract class Configuration {
         this.options = null;
         this.selected = null;
         this.isGroup = false;
-        
-        //load();
     }
     
     public Configuration getSelected() {
@@ -64,7 +65,7 @@ public abstract class Configuration {
         xstream.toXML(this, fos);
         fos.close();
     }
-
+    * 
     private void load() {
         String path = Util.getDirExecution(this.getAlias() + "-CONFIG.JSON").toLowerCase();
         if (Util.fileExist(path)) {
@@ -78,7 +79,24 @@ public abstract class Configuration {
             this.variables = configuration.variables;
         }
     }
-    */ 
+    */
+    
+    public void loadLocalConfiguration() throws FileNotFoundException {
+        String path = Util.getDirExecution("configuration.xml");
+        if (!Util.fileExist(path)) return;
+        
+        XStream xstream = new XStream();
+        List<Configuration> configurations = (List<Configuration>) xstream.fromXML(new FileInputStream(path));
+        
+        for(Configuration config : configurations) {
+            if (config.getAlias().equalsIgnoreCase(this.getAlias())) {
+                this.variables = config.variables;
+                this.options = config.getOptions();
+                this.selected = config.selected;
+                break;
+            }
+        }
+    }
 
     @Override
     public String toString() {

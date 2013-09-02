@@ -12,9 +12,9 @@ public class MelodyRepresentationNote {
     private double offset;   // in seconds.
 
     public MelodyRepresentationNote(double pitch, double onset) {
-        this.pitch    = pitch;
-        this.onset    = onset;
-        this.offset   = -1;
+        this.pitch  = pitch;
+        this.onset  = onset;
+        this.offset = -1;
     }
 
     public MelodyRepresentationNote(double pitch, double onset, double duration) {
@@ -25,11 +25,15 @@ public class MelodyRepresentationNote {
 
     @Override
     public String toString() {
-        return String.format("onset: %.6f, offset: %.6f, note: %.2f", this.onset, this.offset, this.pitch);
+        return String.format("onset: %.6f, offset: %.6f, pitch: %.2f", this.onset, this.offset, this.pitch);
     }
 
-    public double getPitch(boolean midiFormat) {
-        return midiFormat ? this.pitch : 440.0 * Math.pow(2.0, (this.pitch - 69) / 12);
+    public double getPitchInMidi() {
+        return this.pitch;
+    }
+    
+    public double getPitchInHertz() {
+        return 440.0 * Math.pow(2.0, (this.pitch - 69) / 12);
     }
 
     public double getOnset() {

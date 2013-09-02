@@ -3,9 +3,6 @@ package com.alexcaranha.jquerybyhumming;
 import com.alexcaranha.jquerybyhumming.database.ElasticSearchDB;
 import com.alexcaranha.jquerybyhumming.model.wave.WavFileException;
 import com.alexcaranha.jquerybyhumming.screen.configuration.Configuration;
-import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationDB;
-import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationOnsetDetection;
-import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationPitchTracking;
 import com.alexcaranha.jquerybyhumming.screen.main.Main_Presenter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -39,9 +36,13 @@ public class App {
     
     public static void loadConfigurations() {
         configurations.clear();
-        configurations.put("database", (ConfigurationDB) App.getContext().getBean("database"));
-        configurations.put("pitchTracking", (ConfigurationPitchTracking) App.getContext().getBean("pitchTracking"));
-        configurations.put("onsetDetection", (ConfigurationOnsetDetection) App.getContext().getBean("onsetDetection"));
+        configurations.put("database", (Configuration) App.getContext().getBean("database"));
+        configurations.put("pitchTracking", (Configuration) App.getContext().getBean("pitchTracking"));
+        configurations.put("onsetDetection", (Configuration) App.getContext().getBean("onsetDetection"));
+    }
+    
+    public static Configuration reloadConfiguration(String key) {
+        return configurations.put(key, (Configuration) App.getContext().getBean(key));
     }
     
     public static void loadObject(String key, Object object) {
@@ -90,7 +91,6 @@ public class App {
         JFrame viewMain = (JFrame) presenterMain.getView();
         
         viewMain.setResizable(true);
-        //viewMain.setExtendedState(JFrame.MAXIMIZED_BOTH);
         viewMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         viewMain.setVisible(true);
         

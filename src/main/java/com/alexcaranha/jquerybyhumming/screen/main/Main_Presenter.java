@@ -1,7 +1,6 @@
 package com.alexcaranha.jquerybyhumming.screen.main;
 
 import com.alexcaranha.jquerybyhumming.App;
-import com.alexcaranha.jquerybyhumming.database.ElasticSearchDB.STATUS;
 import com.alexcaranha.jquerybyhumming.model.wave.WavFileException;
 import com.alexcaranha.jquerybyhumming.screen.database.Database_Presenter;
 import java.io.IOException;

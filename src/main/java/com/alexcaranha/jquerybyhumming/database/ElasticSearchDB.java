@@ -4,6 +4,7 @@ import com.alexcaranha.jquerybyhumming.App;
 import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationDB;
 import com.alexcaranha.jquerybyhumming.screen.database.detail.Database_Detail_Model;
 import com.alexcaranha.jquerybyhumming.screen.database.detail.Database_Detail_Presenter;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -17,13 +18,12 @@ import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.common.unit.TimeValue;
-import org.elasticsearch.search.SearchHit;
 
 /**
  *
  * @author alexcaranha
  */
-public class ElasticSearchDB /*implements Runnable*/ {
+public class ElasticSearchDB {
     public enum STATUS { ONLINE, OFFLINE, CLOSING };
     
     private TransportClient client;
@@ -32,10 +32,6 @@ public class ElasticSearchDB /*implements Runnable*/ {
     public ElasticSearchDB() {
         this.client = null;
         this.status = STATUS.OFFLINE;
-        /*
-        this.thread = new Thread(this);
-        this.thread.start();
-        */ 
     }
     
     public void clean() {
@@ -57,8 +53,9 @@ public class ElasticSearchDB /*implements Runnable*/ {
         return this.status;
     }
 
-    public void connect() {
+    public void connect() throws FileNotFoundException {
         ConfigurationDB database = (ConfigurationDB)App.getConfiguration("database");
+        database.loadLocalConfiguration();
         
         if (client != null) this.client.close();
         this.client = new TransportClient().addTransportAddress(new InetSocketTransportAddress(database.getHostName(), database.getPort()));

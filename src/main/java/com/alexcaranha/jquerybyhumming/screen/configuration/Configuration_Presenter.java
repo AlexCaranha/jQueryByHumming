@@ -27,7 +27,7 @@ public class Configuration_Presenter implements IPresenter {
 
     private Configuration_View  view;
     
-    private final String[] configs = {"pitchTracking", "onsetDetection"};
+    private final String[] configs = {"database", "pitchTracking", "onsetDetection"};
 
     public Configuration_Presenter() throws IOException {
         //----------------------------------------------------------------------
@@ -61,7 +61,7 @@ public class Configuration_Presenter implements IPresenter {
     }
 
     public ConfigurationPanel getCurrentConfigurationPanel() {
-        Configuration   configuration = this.configurations.get(indexCurrentPresenter);
+        Configuration configuration = this.configurations.get(indexCurrentPresenter);
         
         if (!configuration.isGroup) {
             return new ConfigurationPanel(configuration);
@@ -126,9 +126,9 @@ public class Configuration_Presenter implements IPresenter {
 
     public void load() throws FileNotFoundException {
         //----------------------------------------------------------------------
-        this.configurations.clear();
+        configurations.clear();
         for(String name : configs) {
-            this.configurations.add(App.getConfiguration(name));
+            configurations.add(App.reloadConfiguration(name));
         }
         //----------------------------------------------------------------------
         String path = Util.getDirExecution("configuration.xml");
@@ -137,7 +137,7 @@ public class Configuration_Presenter implements IPresenter {
             XStream xstream = new XStream();
             this.configurations = (List<Configuration>) xstream.fromXML(new FileInputStream(path));
         } else {            
-            App.loadConfigurations();            
+            App.loadConfigurations();
         }
         //----------------------------------------------------------------------
         view.update();
