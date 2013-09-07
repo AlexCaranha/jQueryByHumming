@@ -35,7 +35,7 @@ public class Configuration_View extends javax.swing.JPanel implements ActionList
         this.jButtonBackward.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/backward.png").getInputStream()), 25));
         this.jButtonForward.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/forward.png").getInputStream()), 25));
         
-        this.jButtonSave.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/saveAll.png").getInputStream()), 25));
+        this.jButtonSaveApply.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/saveAll.png").getInputStream()), 25));
         this.jButtonLoad.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/load.png").getInputStream()), 25));
 
         this.jButtonBackward.addActionListener(this);
@@ -102,7 +102,7 @@ public class Configuration_View extends javax.swing.JPanel implements ActionList
         jPanelConfiguration = new javax.swing.JPanel();
         jComboBoxOptions = new javax.swing.JComboBox();
         jLabelOptions = new javax.swing.JLabel();
-        jButtonSave = new javax.swing.JButton();
+        jButtonSaveApply = new javax.swing.JButton();
         jButtonLoad = new javax.swing.JButton();
         jLabelTitle = new javax.swing.JLabel();
 
@@ -141,11 +141,11 @@ public class Configuration_View extends javax.swing.JPanel implements ActionList
         jLabelOptions.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelOptions.setText("Options");
 
-        jButtonSave.setText("Save");
-        jButtonSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonSave.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSaveApply.setText("Save / Apply");
+        jButtonSaveApply.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonSaveApply.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSaveActionPerformed(evt);
+                jButtonSaveApplyActionPerformed(evt);
             }
         });
 
@@ -177,7 +177,7 @@ public class Configuration_View extends javax.swing.JPanel implements ActionList
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonForward, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panelScreensLayout.createSequentialGroup()
-                        .addComponent(jButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonSaveApply, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -199,7 +199,7 @@ public class Configuration_View extends javax.swing.JPanel implements ActionList
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelScreensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonSaveApply, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -243,7 +243,7 @@ public class Configuration_View extends javax.swing.JPanel implements ActionList
         }
     }//GEN-LAST:event_jComboBoxOptionsActionPerformed
 
-    private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
+    private void jButtonSaveApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveApplyActionPerformed
         try {
             this.presenter.save();
             App.getDB().disconnect();
@@ -253,7 +253,7 @@ public class Configuration_View extends javax.swing.JPanel implements ActionList
         } catch (IOException ex) {
             Logger.getLogger(Configuration_View.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButtonSaveActionPerformed
+    }//GEN-LAST:event_jButtonSaveApplyActionPerformed
 
     private void jButtonLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoadActionPerformed
         try {
@@ -269,7 +269,7 @@ public class Configuration_View extends javax.swing.JPanel implements ActionList
     private javax.swing.JButton jButtonBackward;
     private javax.swing.JButton jButtonForward;
     private javax.swing.JButton jButtonLoad;
-    private javax.swing.JButton jButtonSave;
+    private javax.swing.JButton jButtonSaveApply;
     private javax.swing.JComboBox jComboBoxOptions;
     private javax.swing.JLabel jLabelConfiguration;
     private javax.swing.JLabel jLabelOptions;

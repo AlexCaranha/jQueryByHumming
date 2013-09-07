@@ -16,7 +16,7 @@ public class ConfigurationPitchTracking extends Configuration {
     public String getTitle() {
         return "PITCH TRACKING";
     }
-
+    
     @Override
     public String getAlias() {
         return "PITCH-TRACKING";

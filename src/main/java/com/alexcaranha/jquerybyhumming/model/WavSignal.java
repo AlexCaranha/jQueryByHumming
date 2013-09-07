@@ -116,7 +116,7 @@ public class WavSignal extends Signal {
         double[] amplitudes = resampledWave.getNormalizedAmplitudes();
 
         WaveFileManager wfm = new WaveFileManager(resampledWave);
-        wfm.saveWaveAsFile(Constants.PATH_TMP_WAVE_FILE);
+        wfm.saveWaveAsFile(Constants.PATH_TMP_WAVE_FILE_SEARCH);
 
         SignalXY signalXY = new SignalXY(Util.divide(Util.createArithmeticProgressionSequence((double) 0.0, (double) 1.0, (double) (amplitudes.length - 1)), (double) sampleRate),
                                          amplitudes);

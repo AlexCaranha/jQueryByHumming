@@ -17,22 +17,23 @@ public class Console {
             if (command.trim().toLowerCase().equalsIgnoreCase("db:clean")) {
                 App.startApplication();
                 
-                while(App.getDB().getStatus() != STATUS.ONLINE) {
+                for(int i = 1; i <= 10 && App.getDB().getStatus() != STATUS.ONLINE; i += 1) {
                     System.out.println("database status: OFFLINE");
                     Thread.sleep(1000);
                 }
+                if (App.getDB().getStatus() != STATUS.ONLINE) continue;
                 
-                App.getDB().clean();
-                
+                App.getDB().clean();                
                 App.endApplication();
             }
             if (command.trim().toLowerCase().equalsIgnoreCase("db:reset")) {
                 App.startApplication();
                 
-                while(App.getDB().getStatus() != STATUS.ONLINE) {
+                for(int i = 1; i <= 10 && App.getDB().getStatus() != STATUS.ONLINE; i += 1) {
                     System.out.println("database status: OFFLINE");
                     Thread.sleep(1000);
                 }
+                if (App.getDB().getStatus() != STATUS.ONLINE) continue;
                 
                 App.getDB().clean();
                 Database db = new Database();

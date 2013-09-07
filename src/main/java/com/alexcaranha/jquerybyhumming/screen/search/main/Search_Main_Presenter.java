@@ -69,7 +69,7 @@ public class Search_Main_Presenter implements IPresenter {
     }
     
     public void updatePlayer() throws IOException, UnsupportedAudioFileException {
-        this.player = new WavSignalPlayer(Constants.PATH_TMP_WAVE_FILE, Search_Main_View.class.getSimpleName());
+        this.player = new WavSignalPlayer(Constants.PATH_TMP_WAVE_FILE_SEARCH, Search_Main_View.class.getSimpleName());
                                      this.player.addObserver(this.view.getJPanelGraphSignal());
                                      this.player.addObserver(this.view);
                                      this.view.setEnabledPlayStopButton(true);

@@ -2,6 +2,7 @@ package com.alexcaranha.jquerybyhumming.screen.database.detail;
 
 import com.alexcaranha.jquerybyhumming.model.Convert;
 import com.alexcaranha.jquerybyhumming.model.system.melodyRepresentation.MelodyRepresentation;
+import com.alexcaranha.jquerybyhumming.model.wave.WavFileException;
 import com.alexcaranha.jquerybyhumming.mvp.IModel;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,7 +32,7 @@ public final class Database_Detail_Model implements IModel {
        this.variables.put("id", id);
    }
    
-   public Database_Detail_Model(InputStream inputStream, String title, String author) throws IOException, InvalidMidiDataException, MidiUnavailableException {
+   public Database_Detail_Model(InputStream inputStream, String title, String author) throws IOException, InvalidMidiDataException, MidiUnavailableException, WavFileException {
        this.variables = new HashMap<String, Object>();
        
        this.setMidiFile(inputStream);
@@ -104,7 +105,7 @@ public final class Database_Detail_Model implements IModel {
        return (MelodyRepresentation) Convert.deserialize(midiFileSimplified);
    }
 
-   public void setMidiFile(InputStream inputStream) throws IOException, InvalidMidiDataException, MidiUnavailableException {
+   public void setMidiFile(InputStream inputStream) throws IOException, InvalidMidiDataException, MidiUnavailableException, WavFileException {
        MelodyRepresentation midiSimplified = new MelodyRepresentation(inputStream);
        this.variables.put("melodyRepresentation", Convert.serialize(midiSimplified));
    }

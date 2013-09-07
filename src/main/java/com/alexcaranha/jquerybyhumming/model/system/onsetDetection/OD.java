@@ -72,7 +72,7 @@ public abstract class OD extends Configuration implements IExecutable {
     public void preProcessing(WavSignal wavSignal) throws Exception {
         //----------------------------------------------------------------------
         // <editor-fold defaultstate="collapsed" desc="Step 1: Resample input signal.">
-        SignalXY result = WavSignal.resampleWavSignalFromPath(Constants.PATH_TMP_WAVE_FILE, Convert.toInteger(this.variables.get("sampleRate").getValue()));        
+        SignalXY result = WavSignal.resampleWavSignalFromPath(Constants.PATH_TMP_WAVE_FILE_SEARCH, Convert.toInteger(this.variables.get("sampleRate").getValue()));        
         // </editor-fold>
         //----------------------------------------------------------------------
         // <editor-fold defaultstate="collapsed" desc="Step 2: Filtragem em oitavas.">

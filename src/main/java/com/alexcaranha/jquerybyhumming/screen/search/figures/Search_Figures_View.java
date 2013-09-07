@@ -2,6 +2,7 @@ package com.alexcaranha.jquerybyhumming.screen.search.figures;
 
 import com.alexcaranha.jquerybyhumming.App;
 import com.alexcaranha.jquerybyhumming.components.XYGraphSignal;
+import com.alexcaranha.jquerybyhumming.model.Constants;
 import com.alexcaranha.jquerybyhumming.model.Convert;
 import com.alexcaranha.jquerybyhumming.model.KeyValue;
 import com.alexcaranha.jquerybyhumming.model.SignalXY;
@@ -161,9 +162,9 @@ public class Search_Figures_View extends javax.swing.JPanel implements ISearchVi
     private void jButtonPlayStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlayStopActionPerformed
         try {
             if (this.jButtonPlayStop.getText().equalsIgnoreCase("Play")) {
-                this.presenter.play();
+                this.presenter.play(Constants.PATH_TMP_WAVE_SYNTHESIS_FILE);
             } else {
-                this.presenter.stop();                
+                this.presenter.stop();
             }
         } catch (IOException ex) {
             Logger.getLogger(Search_Figures_View.class.getName()).log(Level.SEVERE, null, ex);
@@ -184,6 +185,7 @@ public class Search_Figures_View extends javax.swing.JPanel implements ISearchVi
     // End of variables declaration//GEN-END:variables
 
     public void update() throws IOException {
+        //----------------------------------------------------------------------
         Processing processing = (Processing) presenter.getMainSearchPresenter().getModel()
                                                       .getPresenterByOption(Search_Model.OPTION.MAIN).getModel()
                                                       .getVariables()
@@ -251,6 +253,7 @@ public class Search_Figures_View extends javax.swing.JPanel implements ISearchVi
         //----------------------------------------------------------------------
         this.repaint();
         this.revalidate();
+        //----------------------------------------------------------------------
     }
 
     public void update(Observable subject, Object argument) {

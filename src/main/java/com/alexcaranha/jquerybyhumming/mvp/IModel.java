@@ -4,7 +4,7 @@ import java.util.Map;
 
 /**
  *
- * @author Lual
+ * @author alexcaranha
  */
 public interface IModel {
     Map<String, Object> getVariables();

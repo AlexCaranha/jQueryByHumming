@@ -6,7 +6,6 @@ import com.alexcaranha.jquerybyhumming.model.KeyValue;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.WavSignal;
 import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.DTW;
-import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.InvariantTransposition;
 import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MelodyMatching;
 
 import com.alexcaranha.jquerybyhumming.model.system.melodyRepresentation.MelodyRepresentation;
@@ -18,6 +17,7 @@ import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationOnsetD
 import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationPitchTracking;
 import com.alexcaranha.jquerybyhumming.screen.database.detail.Database_Detail_Model;
 import com.alexcaranha.jquerybyhumming.screen.database.detail.Database_Detail_Presenter;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -39,7 +39,6 @@ public class Processing {
     private MelodyMatching mm;
     
     private List<Database_Detail_Model> listSongs;
-    private List<InvariantTransposition> listNotes;
     private Map<Double, Database_Detail_Model> result;
     
     private Map timeProcessing;
@@ -52,7 +51,7 @@ public class Processing {
         this.result = new TreeMap<Double, Database_Detail_Model>();
         this.listSongs = new ArrayList<Database_Detail_Model>();
         Database_Detail_Presenter.readAllItemsFromDataBase(this.listSongs, false);        
-        
+        /*
         this.listNotes = new ArrayList<InvariantTransposition>();
         for(int index = 0; index < this.listSongs.size(); index += 1) {
             InvariantTransposition invariantTransposition = new InvariantTransposition();
@@ -61,7 +60,7 @@ public class Processing {
             Database_Detail_Model item = this.listSongs.get(index);
             invariantTransposition.execute(Util.createMap(new KeyValue("melodyRepresentation", item.getMidiFileSimplified())));
         }
-        
+        */
         this.signal = signal;
         
         ConfigurationPitchTracking cpt = (ConfigurationPitchTracking) App.getConfiguration("pitchTracking");
@@ -106,17 +105,13 @@ public class Processing {
                 if (item instanceof PT) {
                     PT pitchTracking = (PT) item;
                     pitchTracking.execute(
-                            Util.createMap(
-                                new KeyValue<String, Object>("wavSignal", signal)
-                            )
+                            Util.createMap(new KeyValue<String, Object>("wavSignal", signal))
                     );
                 } else
                 if (item instanceof OD) {
                     OD onsetDetection = (OD) item;
                     onsetDetection.execute(
-                            Util.createMap(
-                                new KeyValue<String, Object>("wavSignal", signal)
-                            )
+                            Util.createMap(new KeyValue<String, Object>("wavSignal", signal))
                     );
                 } else
                 if (item instanceof MelodyRepresentation) {
@@ -129,19 +124,20 @@ public class Processing {
                     );
                 } else
                 if (item instanceof MelodyMatching) {
-                    InvariantTransposition sequence = new InvariantTransposition();
-                    sequence.execute(Util.createMap(new KeyValue("melodyRepresentation", this.mr)));
+                    // InvariantTransposition sequence = new InvariantTransposition();
+                    // sequence.execute(Util.createMap(new KeyValue("melodyRepresentation", this.mr)));
                     
                     MelodyMatching melodyMatching = (MelodyMatching) item;
                     
                     result.clear();
                     for(int index = 0; index < this.listSongs.size(); index += 1) {
                         Database_Detail_Model song = this.listSongs.get(index);
-                        InvariantTransposition notes = this.listNotes.get(index);
+                        
+                        //InvariantTransposition notes = this.listNotes.get(index);
                         melodyMatching.execute(
                                 Util.createMap(
-                                    new KeyValue("target", notes.getResult()),
-                                    new KeyValue("sequence", sequence.getResult())
+                                    new KeyValue("target", this.mr),
+                                    new KeyValue("sequence", song.getMidiFileSimplified())
                                 )
                         );
                         

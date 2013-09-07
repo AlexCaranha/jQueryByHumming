@@ -85,8 +85,8 @@ public class Search_Figures_Presenter extends Observable implements IPresenter {
         this.searchPresenter.setCurrentOption_Result();
     }
 
-    public void play() throws IOException, UnsupportedAudioFileException {
-        player = new WavSignalPlayer(Constants.PATH_TMP_WAVE_FILE, Search_Figures_View.class.getSimpleName());
+    public void play(String pathFile) throws IOException, UnsupportedAudioFileException {
+        player = new WavSignalPlayer(pathFile, Search_Figures_View.class.getSimpleName());
         for(XYGraphSignal panel : this.panels) {
             player.addObserver(panel);
         }

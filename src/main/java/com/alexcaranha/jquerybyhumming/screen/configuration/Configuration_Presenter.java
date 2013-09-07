@@ -27,7 +27,7 @@ public class Configuration_Presenter implements IPresenter {
 
     private Configuration_View  view;
     
-    private final String[] configs = {"database", "pitchTracking", "onsetDetection"};
+    private final String[] configs = {"database", "pitchTracking", "onsetDetection", "melodyMatching"};
 
     public Configuration_Presenter() throws IOException {
         //----------------------------------------------------------------------

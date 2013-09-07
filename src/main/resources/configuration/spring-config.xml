@@ -170,4 +170,21 @@
 			</map>
 		</constructor-arg>
 	</bean>
+        
+        <bean id="melodyMacthing" class="com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationMelodyMatching" scope="prototype">
+		<constructor-arg name="selected" value="derivadaRelativaEnvoltoria"/>
+		<constructor-arg name="options">
+			<map>
+				<entry key="dtw">
+					<bean id="od_spectralFlux" class="com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD_SpectralFlux" scope="prototype">
+						<constructor-arg name="sampleRate" value="8000"/>
+						<constructor-arg name="frameLength" value="200"/>
+						<constructor-arg name="overlap" value="39.4"/>
+						<constructor-arg name="pointsToMovingAverage" value="3"/>
+						<constructor-arg name="durationThreshold" value="0.150"/>
+					</bean>
+				</entry>
+			</map>
+		</constructor-arg>
+	</bean>
 </beans>

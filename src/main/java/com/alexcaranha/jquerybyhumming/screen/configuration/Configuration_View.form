@@ -80,7 +80,7 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButtonSave" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jButtonSaveApply" min="-2" pref="105" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jButtonLoad" min="-2" pref="105" max="-2" attributes="0"/>
                       </Group>
@@ -108,7 +108,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButtonLoad" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jButtonSave" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="jButtonSaveApply" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -120,7 +120,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt;="/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor em Forma de M&#xe3;o"/>
+              <Color id="Hand Cursor"/>
             </Property>
             <Property name="name" type="java.lang.String" value="jButtonBackward" noResource="true"/>
           </Properties>
@@ -129,7 +129,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="=&gt;"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor em Forma de M&#xe3;o"/>
+              <Color id="Hand Cursor"/>
             </Property>
             <Property name="name" type="java.lang.String" value="jButtonForward" noResource="true"/>
           </Properties>
@@ -157,7 +157,7 @@
               </Border>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Default"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
 
@@ -169,7 +169,7 @@
               <StringArray count="0"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor em Forma de M&#xe3;o"/>
+              <Color id="Hand Cursor"/>
             </Property>
             <Property name="name" type="java.lang.String" value="jComboBoxOptions" noResource="true"/>
           </Properties>
@@ -183,22 +183,22 @@
             <Property name="text" type="java.lang.String" value="Options"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButtonSave">
+        <Component class="javax.swing.JButton" name="jButtonSaveApply">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Save"/>
+            <Property name="text" type="java.lang.String" value="Save / Apply"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor em Forma de M&#xe3;o"/>
+              <Color id="Hand Cursor"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSaveActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSaveApplyActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonLoad">
           <Properties>
             <Property name="text" type="java.lang.String" value="Load"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor em Forma de M&#xe3;o"/>
+              <Color id="Hand Cursor"/>
             </Property>
           </Properties>
           <Events>

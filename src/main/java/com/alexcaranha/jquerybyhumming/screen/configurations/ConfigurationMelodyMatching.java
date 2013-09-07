@@ -8,8 +8,9 @@ import com.alexcaranha.jquerybyhumming.screen.configuration.table.ConfigurationT
  *
  * @author alexcaranha
  */
-public class ConfigurationDB extends Configuration {
-    public ConfigurationDB(String hostName, int port) {
+public class ConfigurationMelodyMatching extends Configuration {
+    
+    public ConfigurationMelodyMatching(String hostName, int port) {
         super();
         this.variables.put("hostName", new ConfigurationTableItem<String>("hostName", null, hostName, "HostName."));
         this.variables.put("port", new ConfigurationTableItem<Integer>("port", null, port, "Port."));
@@ -25,12 +26,12 @@ public class ConfigurationDB extends Configuration {
 
     @Override
     public String getTitle() {
-        return "DATABASE";
+        return "MELODY MATCHING";
     }
 
     @Override
     public String getAlias() {
-        return "DATABASE";
+        return "MM";
     }
 
     @Override

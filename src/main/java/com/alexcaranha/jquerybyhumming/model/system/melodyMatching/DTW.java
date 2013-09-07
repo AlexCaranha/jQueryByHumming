@@ -1,6 +1,7 @@
 package com.alexcaranha.jquerybyhumming.model.system.melodyMatching;
 
 import com.alexcaranha.jquerybyhumming.model.Util;
+import com.alexcaranha.jquerybyhumming.model.system.melodyRepresentation.MelodyRepresentation;
 import java.util.List;
 import java.util.Map;
 
@@ -40,7 +41,13 @@ public class DTW extends MelodyMatching {
         System.out.print("\n");
     }
 
-    public void execute(Map<String, Object> params) throws Exception {
+    public void execute(Map<String, Object> params) throws Exception {        
+        MelodyRepresentation target = (MelodyRepresentation) params.get("target");
+        MelodyRepresentation sequence = (MelodyRepresentation) params.get("sequence");
+        
+        target.
+        
+        /*
         List<Integer> target = (List<Integer>)params.get("target");
         List<Integer> sequence = (List<Integer>)params.get("sequence");
         
@@ -78,6 +85,7 @@ public class DTW extends MelodyMatching {
         this.cost = (double) lastValue / steps;
         
         if (this.DEBUG) System.out.println(String.format("steps: %d, cost: %.4f", steps, cost));
+        */ 
     }
     
     private int calculateSteps(int[][] path, 

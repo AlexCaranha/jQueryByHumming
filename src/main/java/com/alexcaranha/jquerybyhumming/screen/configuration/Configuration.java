@@ -54,32 +54,6 @@ public abstract class Configuration {
     public Map<String, Configuration> getOptions() {
         return this.options;
     }
-
-    /*
-    public void save() throws FileNotFoundException, IOException {
-        String path = Util.getDirExecution(this.getAlias() + "-CONFIG.JSON").toLowerCase();
-        FileOutputStream fos = new FileOutputStream(new File(path));
-
-        XStream xstream = new XStream(new JsonHierarchicalStreamDriver());
-        xstream.alias(this.getAlias().toLowerCase(), this.getClass());
-        xstream.toXML(this, fos);
-        fos.close();
-    }
-    * 
-    private void load() {
-        String path = Util.getDirExecution(this.getAlias() + "-CONFIG.JSON").toLowerCase();
-        if (Util.fileExist(path)) {
-            XStream xstream = new XStream(new JsonHierarchicalStreamDriver());
-            xstream.alias(this.getAlias().toLowerCase(), this.getClass());
-            Configuration configuration = (Configuration) xstream.fromXML(path);
-
-            this.isGroup = configuration.isGroup;
-            this.options = configuration.options;
-            this.selected = configuration.selected;
-            this.variables = configuration.variables;
-        }
-    }
-    */
     
     public void loadLocalConfiguration() throws FileNotFoundException {
         String path = Util.getDirExecution("configuration.xml");

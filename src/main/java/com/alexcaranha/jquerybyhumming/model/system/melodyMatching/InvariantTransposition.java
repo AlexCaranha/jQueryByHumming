@@ -11,7 +11,7 @@ import java.util.Map;
  *
  * @author alexcaranha
  */
-public class InvariantTransposition implements IExecutable{
+public class InvariantTransposition2 implements IExecutable{
     private List<Integer> result;
     
     public InvariantTransposition() {

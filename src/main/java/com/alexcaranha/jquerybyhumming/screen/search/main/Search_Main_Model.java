@@ -20,12 +20,13 @@ public class Search_Main_Model implements IModel {
         this.variables = new HashMap<String, Object>();
 
         WavSignal signal = new WavSignal();
-
+        /*
         String path = Constants.PATH_TMP_WAVE_FILE_SEARCH;
         if (Util.fileExist(path)) {
             FileInputStream fileInputStream = new FileInputStream(path);
             signal.loadFromWavFile(Util.createMap(new KeyValue<String, Object>("inputStream", fileInputStream)));
         }
+        */
         this.variables.put("wavSignal", signal);
         this.variables.put("processing", null);
     }

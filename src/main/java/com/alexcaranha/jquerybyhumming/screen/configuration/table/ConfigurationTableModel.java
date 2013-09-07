@@ -2,8 +2,6 @@ package com.alexcaranha.jquerybyhumming.screen.configuration.table;
 
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.screen.configuration.Configuration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.table.AbstractTableModel;
 import org.elasticsearch.common.collect.Iterables;
 
@@ -47,14 +45,14 @@ public class ConfigurationTableModel extends AbstractTableModel {
     public void setValueAt(Object value, int row, int col) {
         if (col == 1) {
             ConfigurationTableItem item = Iterables.get(configuration.getVariables().values(), row);
-            boolean bolSuccess = false;
+            //boolean bolSuccess = false;
 
             if (classesCompatibles(item.getValue().getClass(), Double.class)){
                 if (Util.isDouble(String.valueOf(value))){
                     Double valueItem = Double.valueOf(String.valueOf(value));
                     item.setValue(valueItem);
 
-                    bolSuccess = true;
+                    //bolSuccess = true;
                     this.fireTableCellUpdated(row, col);
                 }
             }else
@@ -63,13 +61,13 @@ public class ConfigurationTableModel extends AbstractTableModel {
                     Integer valueItem = Integer.valueOf(String.valueOf(value));
                     item.setValue(valueItem);
 
-                    bolSuccess = true;
+                    //bolSuccess = true;
                     this.fireTableCellUpdated(row, col);
                 }
             }else {
                 item.setValue(String.valueOf(value));
 
-                bolSuccess = true;
+                //bolSuccess = true;
                 this.fireTableCellUpdated(row, col);
             }
 

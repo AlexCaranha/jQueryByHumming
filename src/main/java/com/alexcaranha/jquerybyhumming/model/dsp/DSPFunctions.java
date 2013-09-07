@@ -19,7 +19,7 @@ public class DSPFunctions {
         }
     }
 
-    public static double hertzToMidi(double value) {
+    public static double hertzToMidiWithRound(double value) {
         if (value == 0.0) return 0.0;
 
         return 69 + Math.round(12 * Math.log(value / 440) / Math.log(2));

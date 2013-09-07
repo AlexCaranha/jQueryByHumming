@@ -76,7 +76,7 @@ public class Database_Detail_Presenter extends Observable implements IPresenterC
 
         Map<String, Object> fields = new HashMap<String, Object>();
         MelodyRepresentation melodyRepresentation = model.getMidiFileSimplified();
-        melodyRepresentation.createWaveFile(Constants.PATH_TMP_WAVE_FILE);
+        melodyRepresentation.createWaveFile(Constants.PATH_TMP_WAVE_SYNTHESIS_FILE);
 
         fields.put("title", model.getTitle());
         fields.put("author", model.getAuthor());
@@ -85,7 +85,7 @@ public class Database_Detail_Presenter extends Observable implements IPresenterC
         view.update(fields);
         this.addObserver(this.view.getJPanelGraphSignal());
 
-        player = new WavSignalPlayer(Constants.PATH_TMP_WAVE_FILE, Database_Detail_View.class.getSimpleName());
+        player = new WavSignalPlayer(Constants.PATH_TMP_WAVE_SYNTHESIS_FILE, Database_Detail_View.class.getSimpleName());
         player.addObserver(view.getJPanelGraphSignal());
         player.addObserver(view);
 

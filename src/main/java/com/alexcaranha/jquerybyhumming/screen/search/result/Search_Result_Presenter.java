@@ -1,6 +1,5 @@
 package com.alexcaranha.jquerybyhumming.screen.search.result;
 
-import com.alexcaranha.jquerybyhumming.mvp.IModel;
 import com.alexcaranha.jquerybyhumming.mvp.IPresenter;
 import com.alexcaranha.jquerybyhumming.screen.search.Search_Presenter;
 import java.io.IOException;

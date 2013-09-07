@@ -1,5 +1,6 @@
 package com.alexcaranha.jquerybyhumming.model.system.melodyRepresentation;
 
+import com.alexcaranha.jquerybyhumming.model.Constants;
 import com.alexcaranha.jquerybyhumming.model.Convert;
 import com.alexcaranha.jquerybyhumming.model.KeyValue;
 import com.alexcaranha.jquerybyhumming.model.SignalXY;
@@ -36,8 +37,6 @@ import org.jfree.data.xy.XYDataItem;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.ui.RectangleAnchor;
 import org.jfree.ui.TextAnchor;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -58,7 +57,7 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
         this.midiNotes = new HashMap<Double, MelodyRepresentationNote>();
     }
     
-    public MelodyRepresentation(InputStream inputStream) throws IOException, InvalidMidiDataException, MidiUnavailableException {
+    public MelodyRepresentation(InputStream inputStream) throws IOException, InvalidMidiDataException, MidiUnavailableException, WavFileException {
         this.tempoBPM    = 0.0;
         this.tempoMPQ    = 0.0;
         this.duration    = 0.0;
@@ -110,7 +109,7 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
 
             marker = new ValueMarker(start);
             marker.setPaint(color);
-            marker.setLabel(Convert.toString(midiNote.getPitchInMidi()));
+            marker.setLabel(String.format("%.2f", midiNote.getPitchInMidi()));
             marker.setLabelAnchor(RectangleAnchor.BOTTOM_RIGHT);
             marker.setLabelTextAnchor(TextAnchor.BOTTOM_LEFT);
             markers.add(marker);
@@ -235,7 +234,7 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
         return result;
     }
 
-    private Map<Double, MelodyRepresentationNote> readFromMidiFile(InputStream inputStream) throws IOException, InvalidMidiDataException, MidiUnavailableException {
+    private Map<Double, MelodyRepresentationNote> readFromMidiFile(InputStream inputStream) throws IOException, InvalidMidiDataException, MidiUnavailableException, WavFileException {
         MidiFile midiFile = new MidiFile(inputStream);
 
         resolution = midiFile.getResolution();
@@ -296,7 +295,7 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
     }
 
     // Inspired on skyline algorithm from 'MusicDB: A Query by Humming System'.
-    private Map<Double, MelodyRepresentationNote> processing(List<MelodyRepresentationNote> notes) {
+    private Map<Double, MelodyRepresentationNote> processing(List<MelodyRepresentationNote> notes) throws IOException, WavFileException {
         Map<Double, MelodyRepresentationNote> localNotes = new HashMap<Double, MelodyRepresentationNote>();
         MelodyRepresentationNote noteWithHighestKey;
 
@@ -306,7 +305,7 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
                 localNotes.put(noteWithHighestKey.getOnset(), noteWithHighestKey);
             }
         }
-
+        
         return new TreeMap<Double, MelodyRepresentationNote>(localNotes);
     }
     
@@ -404,7 +403,7 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
             
             //double   tempo     = Convert.toDouble(keyValueActual.getValue());            
             double   amplitudeHz = amplitudeInPitchTracking(iStart, iEnd, pitchTracking);
-            double   midiNote = DSPFunctions.hertzToMidi(amplitudeHz);
+            double   midiNote = DSPFunctions.hertzToMidiWithoutRound(amplitudeHz);
             
             double   inicio  = pitchTracking.getX(iStart);
             double   fim     = pitchTracking.getX(iEnd);
@@ -414,6 +413,7 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
         }
         
         this.midiNotes = new TreeMap<Double, MelodyRepresentationNote>(this.midiNotes);
+        this.createWaveFile(Constants.PATH_TMP_WAVE_SYNTHESIS_FILE);                                                                                                                                    
     }
     
     private double amplitudeInPitchTracking(int iStart, int iEnd, SignalXY pitchTracking) {
@@ -428,6 +428,7 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
         return listAmplitudes.size() > 0 ? Util.median(Doubles.toArray(listAmplitudes)) : 0.0;
     }
     
+    /*
     public static void main(String[] args) throws IOException, ClassNotFoundException, WavFileException, InvalidMidiDataException, MidiUnavailableException {
         ApplicationContext context = new ClassPathXmlApplicationContext("configuration/spring-config.xml");
         File fileAux = context.getResource("classpath:samples/midi/signal3.mid").getFile();
@@ -439,4 +440,5 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
         String path = Util.getDirExecution("tmpMelodyRepresentation.txt");
         file.generateTableLaTeX("Parabéns a você", path);
     }
+    */
 }
