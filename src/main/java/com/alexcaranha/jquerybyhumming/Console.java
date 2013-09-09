@@ -2,6 +2,7 @@ package com.alexcaranha.jquerybyhumming;
 
 import com.alexcaranha.jquerybyhumming.database.ElasticSearchDB.STATUS;
 import com.alexcaranha.jquerybyhumming.model.system.Database;
+import com.alexcaranha.jquerybyhumming.model.wave.WavFileException;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import javax.sound.midi.InvalidMidiDataException;
@@ -12,7 +13,7 @@ import javax.sound.midi.MidiUnavailableException;
  * @author alexcaranha
  */
 public class Console {
-    public static void processingCommands(String[] args) throws IOException, InvalidMidiDataException, MidiUnavailableException, InterruptedException, ExecutionException {
+    public static void processingCommands(String[] args) throws IOException, InvalidMidiDataException, MidiUnavailableException, InterruptedException, ExecutionException, WavFileException {
         for(String command : args) {
             if (command.trim().toLowerCase().equalsIgnoreCase("db:clean")) {
                 App.startApplication();

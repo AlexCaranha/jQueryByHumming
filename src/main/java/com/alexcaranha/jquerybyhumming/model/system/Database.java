@@ -1,6 +1,7 @@
 package com.alexcaranha.jquerybyhumming.model.system;
 
 import com.alexcaranha.jquerybyhumming.App;
+import com.alexcaranha.jquerybyhumming.model.wave.WavFileException;
 import com.alexcaranha.jquerybyhumming.screen.database.detail.Database_Detail_Model;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import org.elasticsearch.action.index.IndexResponse;
 public class Database {
     List<Database_Detail_Model> modelo = new ArrayList<Database_Detail_Model>();
     
-    public Database() throws IOException, InvalidMidiDataException, MidiUnavailableException {
+    public Database() throws IOException, InvalidMidiDataException, MidiUnavailableException, WavFileException {
         modelo.add(new Database_Detail_Model(App.getContext().getResource("classpath:database/midi/002.mid").getInputStream(), "Águas de março", "Antonio Carlos Jobim"));
         modelo.add(new Database_Detail_Model(App.getContext().getResource("classpath:database/midi/003.mid").getInputStream(), "Carinhoso", "Pixinguinha"));
         modelo.add(new Database_Detail_Model(App.getContext().getResource("classpath:database/midi/004.mid").getInputStream(), "Asa branca", "Luiz Gonzaga e Humberto Teixeira"));

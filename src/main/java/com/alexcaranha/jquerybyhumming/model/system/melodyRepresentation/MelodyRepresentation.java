@@ -69,6 +69,16 @@ public class MelodyRepresentation extends Configuration implements IExecutable, 
     public Map<Double, MelodyRepresentationNote> getMidiNotes() {
         return this.midiNotes;
     }
+    
+    public List<MelodyRepresentationNote> getMelody() {
+        List<MelodyRepresentationNote> melody = new ArrayList<MelodyRepresentationNote>();
+        
+        for (MelodyRepresentationNote midiNote : midiNotes.values()) {
+            melody.add(midiNote);
+        }
+        
+        return melody;
+    }
             
     public void createWaveFile(String path) throws IOException, WavFileException {
         SignalXY signalXY = convertToSignalXY(true);

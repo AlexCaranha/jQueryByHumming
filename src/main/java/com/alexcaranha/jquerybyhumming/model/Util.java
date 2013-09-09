@@ -317,6 +317,30 @@ public class Util {
         createWavFile(DSPFunctions.synthesis(signalXY, fs), fs, pathFile);
     }
     
+    public static double minDouble(List<Double> values) {
+        int size = values.size();
+        double valueMin = values.get(0);
+        
+        for (int i = 1; i < size; i++) {
+            if (values.get(i) < valueMin) {
+                valueMin = values.get(i);
+            }
+        }
+        return valueMin;
+    }
+    
+    public static double minDouble(Double ... values) {
+        int size = values.length;
+        double valueMin = values.length;
+        
+        for (int i = 1; i < size; i++) {
+            if (values[i] < valueMin) {
+                valueMin = values[i];
+            }
+        }
+        return valueMin;
+    }
+    
     public static int minInteger(List<Integer> values) {
         int size = values.size();
         int valueMin = values.get(0);
@@ -701,5 +725,14 @@ public class Util {
     public static boolean existFile(String path) {
         File file = new File(path);
         return file.exists();
+    }
+    
+    public static Object getItemByToString(Object[] array, String selected) {
+        for(Object item : array) {
+            if (item.toString().equalsIgnoreCase(selected)) {
+                return item;
+            }
+        }
+        return null;
     }
 }

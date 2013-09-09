@@ -39,6 +39,7 @@ public class App {
         configurations.put("database", (Configuration) App.getContext().getBean("database"));
         configurations.put("pitchTracking", (Configuration) App.getContext().getBean("pitchTracking"));
         configurations.put("onsetDetection", (Configuration) App.getContext().getBean("onsetDetection"));
+        configurations.put("melodyMatching", (Configuration) App.getContext().getBean("melodyMatching"));
     }
     
     public static Configuration reloadConfiguration(String key) {

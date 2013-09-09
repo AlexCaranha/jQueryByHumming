@@ -7,7 +7,7 @@ import com.alexcaranha.jquerybyhumming.screen.configuration.Configuration;
  *
  * @author alexcaranha
  */
-public abstract class MelodyMatching extends Configuration implements IExecutable {
+public abstract class MM extends Configuration implements IExecutable {
     public abstract double getCost();
 
     @Override

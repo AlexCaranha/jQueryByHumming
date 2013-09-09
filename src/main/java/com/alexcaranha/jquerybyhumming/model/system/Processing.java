@@ -5,14 +5,15 @@ import com.alexcaranha.jquerybyhumming.Convert;
 import com.alexcaranha.jquerybyhumming.model.KeyValue;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.WavSignal;
-import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.DTW;
-import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MelodyMatching;
+import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MM_DTW;
+import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MM;
 
 import com.alexcaranha.jquerybyhumming.model.system.melodyRepresentation.MelodyRepresentation;
 import com.alexcaranha.jquerybyhumming.model.system.onsetDetection.OD;
 import com.alexcaranha.jquerybyhumming.model.system.pitchTracking.PT;
 
 import com.alexcaranha.jquerybyhumming.screen.configuration.Configuration;
+import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationMelodyMatching;
 import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationOnsetDetection;
 import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationPitchTracking;
 import com.alexcaranha.jquerybyhumming.screen.database.detail.Database_Detail_Model;
@@ -36,7 +37,7 @@ public class Processing {
     private PT pt;
     private OD od;
     private MelodyRepresentation mr;
-    private MelodyMatching mm;
+    private MM mm;
     
     private List<Database_Detail_Model> listSongs;
     private Map<Double, Database_Detail_Model> result;
@@ -50,17 +51,7 @@ public class Processing {
     public Processing(WavSignal signal) throws Exception {
         this.result = new TreeMap<Double, Database_Detail_Model>();
         this.listSongs = new ArrayList<Database_Detail_Model>();
-        Database_Detail_Presenter.readAllItemsFromDataBase(this.listSongs, false);        
-        /*
-        this.listNotes = new ArrayList<InvariantTransposition>();
-        for(int index = 0; index < this.listSongs.size(); index += 1) {
-            InvariantTransposition invariantTransposition = new InvariantTransposition();
-            this.listNotes.add(invariantTransposition);
-            
-            Database_Detail_Model item = this.listSongs.get(index);
-            invariantTransposition.execute(Util.createMap(new KeyValue("melodyRepresentation", item.getMidiFileSimplified())));
-        }
-        */
+        Database_Detail_Presenter.readAllItemsFromDataBase(this.listSongs, false); 
         this.signal = signal;
         
         ConfigurationPitchTracking cpt = (ConfigurationPitchTracking) App.getConfiguration("pitchTracking");
@@ -71,7 +62,8 @@ public class Processing {
         
         this.mr = new MelodyRepresentation();
         
-        this.mm = new DTW();
+        ConfigurationMelodyMatching cmm = (ConfigurationMelodyMatching) App.getConfiguration("melodyMatching");
+        this.mm = (MM) cmm.getSelected();
         
         timeProcessing = new HashMap();
     }
@@ -123,11 +115,11 @@ public class Processing {
                         )
                     );
                 } else
-                if (item instanceof MelodyMatching) {
+                if (item instanceof MM) {
                     // InvariantTransposition sequence = new InvariantTransposition();
                     // sequence.execute(Util.createMap(new KeyValue("melodyRepresentation", this.mr)));
                     
-                    MelodyMatching melodyMatching = (MelodyMatching) item;
+                    MM melodyMatching = (MM) item;
                     
                     result.clear();
                     for(int index = 0; index < this.listSongs.size(); index += 1) {
@@ -136,8 +128,8 @@ public class Processing {
                         //InvariantTransposition notes = this.listNotes.get(index);
                         melodyMatching.execute(
                                 Util.createMap(
-                                    new KeyValue("target", this.mr),
-                                    new KeyValue("sequence", song.getMidiFileSimplified())
+                                    new KeyValue("target", song.getMidiFileSimplified().getMelody()),
+                                    new KeyValue("sequence", this.mr.getMelody())
                                 )
                         );
                         
