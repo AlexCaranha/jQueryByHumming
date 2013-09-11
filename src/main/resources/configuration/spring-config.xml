@@ -175,12 +175,15 @@
 		<constructor-arg name="selected" value="dtw"/>
 		<constructor-arg name="options">
 			<map>
-				<entry key="dtw">
-					<bean id="mm_dtw" class="com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MM_DTW" scope="prototype">
-                                                <constructor-arg name="pitchEncodingSelected" value="Absolute Pitch"/>
-						<constructor-arg name="timeEncodingSelected" value="Inter-Onset-Interval"/>
+                                <entry key="levenshtein">
+                                        <bean id="mm_lev" class="com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MM_Levenshtein" scope="prototype">                                                
                                         </bean>
-				</entry>
+                                </entry>
+                                <entry key="dtw">
+                                        <bean id="mm_dtw" class="com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MM_DTW" scope="prototype">                                                
+                                                <constructor-arg name="pitchEncoding" value="Absolute Pitch"/>
+                                        </bean>
+                                </entry>
 			</map>
 		</constructor-arg>
 	</bean>

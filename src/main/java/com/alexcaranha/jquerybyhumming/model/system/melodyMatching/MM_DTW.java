@@ -1,15 +1,9 @@
 package com.alexcaranha.jquerybyhumming.model.system.melodyMatching;
 
+import com.alexcaranha.jquerybyhumming.model.Convert;
 import com.alexcaranha.jquerybyhumming.model.Distances;
-import com.alexcaranha.jquerybyhumming.model.Point;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.Encoding;
-import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.pitch.AbsolutePitch;
-import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.pitch.ParsonsCode;
-import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.pitch.RelativePitch;
-import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.time.InterOnsetInterval;
-import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.time.InterOnsetIntervalRatio;
-import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.time.LogInterOnsetIntervalRatio;
 import com.alexcaranha.jquerybyhumming.model.system.melodyRepresentation.MelodyRepresentationNote;
 import com.alexcaranha.jquerybyhumming.screen.configuration.table.ConfigurationTableItem;
 import java.util.List;
@@ -20,15 +14,24 @@ import java.util.Map;
  * @author alexcaranha
  */
 public class MM_DTW extends MM {
-    private boolean DEBUG = true;
+    private boolean DEBUG = false;
     private double cost;
     
-    public MM_DTW(String pitchEncodingSelected) {
+    @Override
+    public String getTitle() {
+        return "DYNAMIC TIME WARPING";
+    }
+
+    @Override
+    public String getAlias() {
+        return "DTW";
+    }
+    
+    public MM_DTW(String pitchEncoding, int N) {
+        super(N);
         
-        ConfigurationTableItem variable;
-        
-        Encoding[] pitchEncoding = Util.createArray(new AbsolutePitch(), new RelativePitch(), new ParsonsCode());
-        variable = new ConfigurationTableItem<Encoding>("pitchEncoding", pitchEncoding, (Encoding)Util.getItemByToString(pitchEncoding, pitchEncodingSelected), "Indicates the pitch encoding method.");
+        ConfigurationTableItem variable;        
+        variable = new ConfigurationTableItem<Encoding>("pitchEncoding", pitchEncodingArray, (Encoding)Util.getItemByToString(pitchEncodingArray, pitchEncoding), "Indicates the pitch encoding method.");
         this.variables.put("pitchEncoding", variable);
         
         this.cost = 0.0;
@@ -42,15 +45,15 @@ public class MM_DTW extends MM {
         List<MelodyRepresentationNote> target = (List<MelodyRepresentationNote>) params.get("target");
         List<MelodyRepresentationNote> sequence = (List<MelodyRepresentationNote>) params.get("sequence");
         
-        Encoding pitchEncoding = (Encoding)this.variables.get("pitchEncodingSelected").getValue();
+        Encoding pitchEncoding = getPitchEncoding();
         
-        List<Double> melodyTarget = pitchEncoding.execute(target);        
-        List<Double> melodySequence = pitchEncoding.execute(sequence);
+        List<Object> melodyTarget = pitchEncoding.execute(target);        
+        List<Object> melodySequence = pitchEncoding.execute(sequence);
         
         double[][] distances = new double[target.size()][sequence.size()];
         for(int linha = 0; linha < target.size(); linha += 1) {
             for(int coluna = 0; coluna < sequence.size(); coluna += 1) {
-                distances[linha][coluna] = Distances.euclidian(melodySequence.get(coluna), melodyTarget.get(linha));
+                distances[linha][coluna] = Distances.euclidian(Convert.toDouble(melodySequence.get(coluna)), Convert.toDouble(melodyTarget.get(linha)));
             }
         }
         
@@ -111,7 +114,7 @@ public class MM_DTW extends MM {
     
     private void printMatrix(String name, double[][] matrix, 
                              int L, int C, 
-                             List<Double> target, List<Double> sequence) {
+                             List<Object> target, List<Object> sequence) {
         
         System.out.print("\nMatrix: " + name);
                 

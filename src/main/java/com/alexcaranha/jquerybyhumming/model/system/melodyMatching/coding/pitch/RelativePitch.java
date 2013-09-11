@@ -16,8 +16,8 @@ public class RelativePitch extends Encoding {
         return "Relative Pitch";
     }
     
-    public List<Double> execute(List<MelodyRepresentationNote> melody) {
-        List<Double> result = new ArrayList<Double>();
+    public List<Object> execute(List<MelodyRepresentationNote> melody) {
+        List<Object> result = new ArrayList<Object>();
         double currentNote, previousNote;
         
         for(int index = 0; index < melody.size(); index += 1) {

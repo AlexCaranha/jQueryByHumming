@@ -1,11 +1,7 @@
 package com.alexcaranha.jquerybyhumming.screen.search.main;
 
-import com.alexcaranha.jquerybyhumming.model.Constants;
-import com.alexcaranha.jquerybyhumming.model.KeyValue;
-import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.WavSignal;
 import com.alexcaranha.jquerybyhumming.mvp.IModel;
-import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -16,8 +16,8 @@ public class AbsolutePitch extends Encoding {
         return "Absolute Pitch";
     }
     
-    public List<Double> execute(List<MelodyRepresentationNote> melody) {
-        List<Double> result = new ArrayList<Double>();
+    public List<Object> execute(List<MelodyRepresentationNote> melody) {
+        List<Object> result = new ArrayList<Object>();
         for(MelodyRepresentationNote note : melody) {
             result.add(note.getPitchInMidi());
         }

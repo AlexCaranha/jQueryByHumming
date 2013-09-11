@@ -1,11 +1,20 @@
 package com.alexcaranha.jquerybyhumming;
 
 import com.alexcaranha.jquerybyhumming.database.ElasticSearchDB;
+import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.wave.WavFileException;
 import com.alexcaranha.jquerybyhumming.screen.configuration.Configuration;
+import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationDB;
+import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationMelodyMatching;
+import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationOnsetDetection;
+import com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationPitchTracking;
 import com.alexcaranha.jquerybyhumming.screen.main.Main_Presenter;
+import com.thoughtworks.xstream.XStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import javax.sound.midi.InvalidMidiDataException;
@@ -34,18 +43,36 @@ public class App {
         return objects.get(key);
     }
     
-    public static void loadConfigurations() {
+    public static void loadConfigurations() throws FileNotFoundException {
         configurations.clear();
         configurations.put("database", (Configuration) App.getContext().getBean("database"));
         configurations.put("pitchTracking", (Configuration) App.getContext().getBean("pitchTracking"));
         configurations.put("onsetDetection", (Configuration) App.getContext().getBean("onsetDetection"));
-        configurations.put("melodyMatching", (Configuration) App.getContext().getBean("melodyMatching"));
+        configurations.put("melodyMatching", (Configuration) App.getContext().getBean("melodyMatching"));        
+        //----------------------------------------------------------------------
+        String path = Util.getDirExecution("configuration.xml");
+        if (Util.fileExist(path)) {
+            XStream xstream = new XStream();
+            List<Configuration> configurationsFile = (List<Configuration>) xstream.fromXML(new FileInputStream(path));
+            for(Configuration config : configurationsFile) {
+                if (config instanceof ConfigurationDB) {
+                    configurations.put("database", config);
+                } else if (config instanceof ConfigurationPitchTracking) {
+                    configurations.put("pitchTracking", config);
+                } else if (config instanceof ConfigurationOnsetDetection) {
+                    configurations.put("onsetDetection", config);
+                } else if (config instanceof ConfigurationMelodyMatching) {
+                    configurations.put("melodyMatching", config);
+                }
+            }
+        }
+        //----------------------------------------------------------------------
     }
-    
+    /*
     public static Configuration reloadConfiguration(String key) {
         return configurations.put(key, (Configuration) App.getContext().getBean(key));
     }
-    
+    */
     public static void loadObject(String key, Object object) {
         objects.put(key, object);
     }

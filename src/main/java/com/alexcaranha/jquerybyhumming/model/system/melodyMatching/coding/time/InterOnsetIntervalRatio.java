@@ -16,8 +16,8 @@ public class InterOnsetIntervalRatio extends Encoding{
         return "Inter-Onset-Interval Ratio";
     }
     
-    public List<Double> execute(List<MelodyRepresentationNote> melody) {
-        List<Double> result = new ArrayList<Double>();
+    public List<Object> execute(List<MelodyRepresentationNote> melody) {
+        List<Object> result = new ArrayList<Object>();
         MelodyRepresentationNote currentNote, previousNote;
         double value;
         

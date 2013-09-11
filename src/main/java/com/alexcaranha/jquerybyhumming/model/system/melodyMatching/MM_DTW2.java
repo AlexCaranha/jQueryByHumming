@@ -1,7 +1,6 @@
 package com.alexcaranha.jquerybyhumming.model.system.melodyMatching;
 
-import com.alexcaranha.jquerybyhumming.model.Distances;
-import com.alexcaranha.jquerybyhumming.model.Point;
+import com.alexcaranha.jquerybyhumming.Convert;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.Encoding;
 import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.pitch.AbsolutePitch;
@@ -19,9 +18,20 @@ import java.util.Map;
  *
  * @author alexcaranha
  */
-public class MM_DTW2 extends MM {
+public class MM_DTW2 /*extends MM*/ {
+    /*
     private boolean DEBUG = true;
     private double cost;
+    
+    @Override
+    public String getTitle() {
+        return "DYNAMIC TIME WARPING 2";
+    }
+
+    @Override
+    public String getAlias() {
+        return "DTW2";
+    }
     
     public MM_DTW2(String pitchEncodingSelected,
                   String timeEncodingSelected) {
@@ -85,23 +95,25 @@ public class MM_DTW2 extends MM {
         Encoding pitchEncoding = (Encoding)this.variables.get("pitchEncodingSelected").getValue();
         Encoding timeEncoding = (Encoding)this.variables.get("timeEncodingSelected").getValue();
         
-        List<Double> pitchMelodyTarget = pitchEncoding.execute(target);
-        List<Double> timeMelodyTarget = pitchEncoding.execute(target);
+        List<Object> pitchMelodyTarget = pitchEncoding.execute(target);
+        List<Object> timeMelodyTarget = pitchEncoding.execute(target);
         
-        List<Double> pitchMelodySequence = pitchEncoding.execute(sequence);
-        List<Double> timeMelodySequence = pitchEncoding.execute(sequence);
+        List<Object> pitchMelodySequence = pitchEncoding.execute(sequence);
+        List<Object> timeMelodySequence = pitchEncoding.execute(sequence);
         
-        double k1 = (Double)this.variables.get("k1").getValue();
+        double k = (Double)this.variables.get("k").getValue();
         double Cdel = (Double)this.variables.get("Cdel").getValue();
         double Cins = (Double)this.variables.get("Cins").getValue();
+        double Crep = (Double)this.variables.get("Crep").getValue();
+        double value;
         
         double[][] distances = new double[target.size()][sequence.size()];
         for(int linha = 0; linha < target.size(); linha += 1) {
             for(int coluna = 0; coluna < sequence.size(); coluna += 1) {
-                distances[linha][coluna] = calculateWeight(pitchMelodyTarget.get(coluna), timeMelodyTarget.get(coluna), 
-                                                           pitchMelodySequence.get(linha), timeMelodySequence.get(coluna), 
+                distances[linha][coluna] = calculateWeight(Convert.toDouble(pitchMelodyTarget.get(coluna)), Convert.toDouble(timeMelodyTarget.get(coluna)), 
+                                                           Convert.toDouble(pitchMelodySequence.get(linha)), Convert.toDouble(timeMelodySequence.get(coluna)), 
                                                            pitchEncoding, timeEncoding,
-                                                           k1);
+                                                           k);
             }
         }
         
@@ -114,13 +126,13 @@ public class MM_DTW2 extends MM {
                 boolean e2 = linha > 0;
                 boolean e3 = e1 && e2;
                 
-                double value = distances[linha][coluna];
-                value += (e1 || e2 || e3) 
-                            ? Util.minDouble(
-                                    (e1) ? distances[linha][coluna-1] : Double.MAX_VALUE, 
-                                    (e2) ? distances[linha-1][coluna] : Double.MAX_VALUE, 
-                                    (e3) ? distances[linha-1][coluna-1] : Double.MAX_VALUE)
-                            : 0;
+                double distInsertion = (e1) ? distances[linha][coluna-1] + k * Cins : Double.MAX_VALUE;    // coluna > 0
+                double distDeletion = (e2) ? distances[linha-1][coluna] + k * Cdel: Double.MAX_VALUE;      // linha > 0
+                double distReplacement = (e3) ? distances[linha-1][coluna-1] : Double.MAX_VALUE;            // coluna > 0 && linha > 0
+                
+                value = distances[linha][coluna] + ((e1 || e2 || e3) 
+                                                    ? Util.minDouble(distInsertion, distDeletion, distReplacement)
+                                                    : 0);
                 path[linha][coluna] = value;
             }
         }
@@ -145,19 +157,20 @@ public class MM_DTW2 extends MM {
         boolean e2 = coluna-1 >= 0;
         boolean e3 = e1 && e2;
         
-        double v1 = e1 ? path[linha-1][coluna] : Integer.MAX_VALUE;
-        double v2 = e2 ? path[linha][coluna-1] : Integer.MAX_VALUE;
-        double v3 = e3 ? path[linha-1][coluna-1] : Integer.MAX_VALUE;
+        double vInsertion = e2 ? path[linha][coluna-1] : Integer.MAX_VALUE;         // Insertion
+        double vDeletion = e1 ? path[linha-1][coluna] : Integer.MAX_VALUE;          // Deletion
+        double vReplacement = e3 ? path[linha-1][coluna-1] : Integer.MAX_VALUE;     // Replacement
         
-        double min = Util.minDouble(v1, v2, v3);
+        double vMin = Util.minDouble(vInsertion, vDeletion, vReplacement);
         
-        if (v3 == min) {
-            return calculateSteps(path, linha-1, coluna-1, steps+1);
+        if (vMin == vReplacement) {
+            return calculateSteps(path, linha-1, coluna-1, steps+1);                // Replacement
         } else
-        if (v2 == min) {
-            return calculateSteps(path, linha, coluna-1, steps+1);
+        if (vMin == vInsertion) {
+            return calculateSteps(path, linha, coluna-1, steps+1);                  // Insertion
         }
-        return calculateSteps(path, linha-1, coluna, steps+1);
+        
+        return calculateSteps(path, linha-1, coluna, steps+1);                      // Deletion
     }
     
     private void printMatrix(String name, double[][] matrix, 

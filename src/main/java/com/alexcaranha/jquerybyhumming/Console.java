@@ -42,6 +42,20 @@ public class Console {
                 
                 App.endApplication();
             }
+            if (command.trim().toLowerCase().equalsIgnoreCase("mm:evaluation")) {
+                App.startApplication();
+                
+                for(int i = 1; i <= 10 && App.getDB().getStatus() != STATUS.ONLINE; i += 1) {
+                    System.out.println("database status: OFFLINE");
+                    Thread.sleep(1000);
+                }
+                if (App.getDB().getStatus() != STATUS.ONLINE) continue;
+                //--------------------------------------------------------------
+                //"D:\Alex\Mestrado\Database"
+                
+                //--------------------------------------------------------------
+                App.endApplication();
+            }
         }
     }
 }

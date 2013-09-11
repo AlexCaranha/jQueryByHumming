@@ -10,27 +10,46 @@ import java.util.List;
  * @author alexcaranha
  */
 public class ParsonsCode extends Encoding {
+    private boolean DEBUG = true;
     
     @Override
     public String toString() {
         return "Parson's Code";
     }
     
-    public List<Double> execute(List<MelodyRepresentationNote> melody) {
-        List<Double> result = new ArrayList<Double>();
-        double currentNote, previousNote;
+    public List<Object> execute(List<MelodyRepresentationNote> melody) {
+        List<Object> result = new ArrayList<Object>();
         
-        for(int index = 1; index < melody.size(); index += 1) {
-            MelodyRepresentationNote note = melody.get(index);
-            currentNote = note.getPitchInMidi();
-            if (currentNote == 0.0) continue;
+        MelodyRepresentationNote currentNote, previousNote;
+        double currentNoteValue, previousNoteValue;
+        
+        currentNote = null;
+        for(int index = 0; index < melody.size(); index += 1) {
+            if (melody.get(index).getPitchInMidi() == 0.0) continue;
             
-            previousNote = melody.get(index).getPitchInMidi();
-            result.add(currentNote == previousNote 
-                            ? 0.0 
-                            : currentNote > previousNote 
-                                ? +1.0 
-                                : -1.0);
+            previousNote = currentNote;
+            currentNote = melody.get(index);
+            
+            if (previousNote == null) {
+                result.add("*");
+                continue;
+            }
+            
+            previousNoteValue = previousNote.getPitchInMidi();
+            currentNoteValue = currentNote.getPitchInMidi();
+            
+            double dist1 = Math.abs(currentNoteValue - previousNoteValue);
+            double dist2 = (currentNoteValue - previousNoteValue);
+            
+            result.add(dist1 < 1 ? "R" : (dist2 >= 1) ? "U" : "D");
+        }
+        
+        if (DEBUG) {
+            System.out.print("Sequência:");
+            for (Object item : result) {
+                System.out.print(String.format(" %s", item.toString()));
+            }
+            System.out.println(".");
         }
         
         return result;

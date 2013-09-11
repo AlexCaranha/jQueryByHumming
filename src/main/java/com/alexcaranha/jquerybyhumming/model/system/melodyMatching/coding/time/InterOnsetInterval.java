@@ -16,8 +16,8 @@ public class InterOnsetInterval extends Encoding{
         return "Inter-Onset-Interval";
     }
     
-    public List<Double> execute(List<MelodyRepresentationNote> melody) {
-        List<Double> result = new ArrayList<Double>();
+    public List<Object> execute(List<MelodyRepresentationNote> melody) {
+        List<Object> result = new ArrayList<Object>();
         for(int index = 0; index < melody.size(); index += 1) {
             MelodyRepresentationNote note = melody.get(index);
             if (note.getPitchInMidi() == 0.0) continue;

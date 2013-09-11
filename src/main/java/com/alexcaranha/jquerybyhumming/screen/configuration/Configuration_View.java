@@ -245,9 +245,10 @@ public class Configuration_View extends javax.swing.JPanel implements ActionList
 
     private void jButtonSaveApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveApplyActionPerformed
         try {
-            this.presenter.save();
+            this.presenter.save();            
             App.getDB().disconnect();
             App.getDB().connect();
+            App.loadConfigurations();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Configuration_View.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

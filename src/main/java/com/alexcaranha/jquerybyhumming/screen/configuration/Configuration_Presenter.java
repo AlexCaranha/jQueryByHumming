@@ -123,12 +123,12 @@ public class Configuration_Presenter implements IPresenter {
         xstream.toXML(this.configurations, fos);
         fos.close();
     }
-
+    
     public void load() throws FileNotFoundException {
         //----------------------------------------------------------------------
         configurations.clear();
         for(String name : configs) {
-            configurations.add(App.reloadConfiguration(name));
+            configurations.add(App.getConfiguration(name));
         }
         //----------------------------------------------------------------------
         String path = Util.getDirExecution("configuration.xml");

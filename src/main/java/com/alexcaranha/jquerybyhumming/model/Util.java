@@ -112,7 +112,13 @@ public class Util {
     public static <T> T[] createArray(T... array) {
         return Arrays.copyOf(array, array.length);
     }
-
+    
+    public static <T> List<T> createList(T... array) {
+        List<T> lista = new ArrayList<T>();
+        lista.addAll(Arrays.asList(array));        
+        return lista;
+    }
+    
     public static boolean isDouble(String str) {
         try {
             Double.parseDouble(str);
@@ -331,7 +337,7 @@ public class Util {
     
     public static double minDouble(Double ... values) {
         int size = values.length;
-        double valueMin = values.length;
+        double valueMin = values[0];
         
         for (int i = 1; i < size; i++) {
             if (values[i] < valueMin) {
