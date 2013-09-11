@@ -177,11 +177,13 @@
 			<map>
                                 <entry key="levenshtein">
                                         <bean id="mm_lev" class="com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MM_Levenshtein" scope="prototype">                                                
+                                            <constructor-arg name="N" value="20"/>
                                         </bean>
                                 </entry>
                                 <entry key="dtw">
                                         <bean id="mm_dtw" class="com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MM_DTW" scope="prototype">                                                
                                                 <constructor-arg name="pitchEncoding" value="Absolute Pitch"/>
+                                                <constructor-arg name="N" value="20"/>
                                         </bean>
                                 </entry>
 			</map>

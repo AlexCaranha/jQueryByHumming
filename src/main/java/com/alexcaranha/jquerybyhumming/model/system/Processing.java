@@ -43,6 +43,16 @@ public class Processing {
     public Map getTimeProcessing() {
         return timeProcessing;
     }
+    
+    public List<String> getListSongsResultant() {
+        List<String> list = new ArrayList<String>();
+        
+        for(Point<Double, Database_Detail_Model> item : result) {
+            list.add(item.getY().getTitle());
+        }
+        
+        return list;
+    }
 
     public Processing(WavSignal signal) throws Exception {
         this.result = new ArrayList<Point<Double, Database_Detail_Model>>();
@@ -75,6 +85,10 @@ public class Processing {
     
     public MelodyRepresentation getMelodyRepresentation() {
         return this.mr;
+    };
+    
+    public MM getMelodyMatching() {
+        return this.mm;
     };
     
     public void execute() throws Exception {
@@ -128,7 +142,7 @@ public class Processing {
                         
                         double cost = melodyMatching.getCost();
                         result.add(new Point<Double, Database_Detail_Model>(cost, song));
-                        System.out.println(String.format("Song number: %d, Cost: %.4f, title: %s", index, cost, song.getTitle()));
+                        //System.out.println(String.format("Song number: %d, Cost: %.4f, title: %s", index, cost, song.getTitle()));
                     }
                     //----------------------------------------------------------
                     // Ordenação.
@@ -145,14 +159,14 @@ public class Processing {
                         }                        
                     }
                     //----------------------------------------------------------
-                    System.out.println("-------------");
+                    /*System.out.println("---33----------");
                     System.out.println("Saída: ");
                     for(Point<Double, Database_Detail_Model> point : result) {
                         double cost = point.getX();
                         Database_Detail_Model song = point.getY();
-                        System.out.println(String.format("Custo: %.4f, title: %s", cost, song.getTitle()));
+                        //System.out.println(String.format("Custo: %.4f, title: %s", cost, song.getTitle()));
                     }
-                    System.out.println("-------------");
+                    //System.out.println("-------------");*/
                     //----------------------------------------------------------
                 }
             }

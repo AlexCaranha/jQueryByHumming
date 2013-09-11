@@ -10,7 +10,7 @@ import java.util.List;
  * @author alexcaranha
  */
 public class ParsonsCode extends Encoding {
-    private boolean DEBUG = true;
+    private boolean DEBUG = false;
     
     @Override
     public String toString() {
