@@ -44,11 +44,21 @@ public class Processing {
         return timeProcessing;
     }
     
-    public List<String> getListSongsResultant() {
+    public List<String> getListTitleSongsResultant() {
         List<String> list = new ArrayList<String>();
         
         for(Point<Double, Database_Detail_Model> item : result) {
             list.add(item.getY().getTitle());
+        }
+        
+        return list;
+    }
+    
+    public List<Database_Detail_Model> getListSongsResultant() {
+        List<Database_Detail_Model> list = new ArrayList<Database_Detail_Model>();
+        
+        for(Point<Double, Database_Detail_Model> item : result) {
+            list.add(item.getY());
         }
         
         return list;

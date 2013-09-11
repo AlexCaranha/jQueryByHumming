@@ -28,8 +28,6 @@ public class MM_DTW extends MM {
     }
     
     public MM_DTW(String pitchEncoding, int N) {
-        super(N);
-        
         ConfigurationTableItem variable;        
         variable = new ConfigurationTableItem<Encoding>("pitchEncoding", pitchEncodingArray, (Encoding)Util.getItemByToString(pitchEncodingArray, pitchEncoding), "Indicates the pitch encoding method.");
         this.variables.put("pitchEncoding", variable);
@@ -50,9 +48,9 @@ public class MM_DTW extends MM {
         List<Object> melodyTarget = pitchEncoding.execute(target);        
         List<Object> melodySequence = pitchEncoding.execute(sequence);
         
-        double[][] distances = new double[target.size()][sequence.size()];
-        for(int linha = 0; linha < target.size(); linha += 1) {
-            for(int coluna = 0; coluna < sequence.size(); coluna += 1) {
+        double[][] distances = new double[melodyTarget.size()][melodySequence.size()];
+        for(int linha = 0; linha < melodyTarget.size(); linha += 1) {
+            for(int coluna = 0; coluna < melodySequence.size(); coluna += 1) {
                 distances[linha][coluna] = Distances.euclidian(Convert.toDouble(melodySequence.get(coluna)), Convert.toDouble(melodyTarget.get(linha)));
             }
         }
@@ -60,8 +58,8 @@ public class MM_DTW extends MM {
         if (this.DEBUG) printMatrix("distances", distances, target.size(), sequence.size(), melodyTarget, melodySequence);
         
         double[][] path = distances.clone();
-        for(int linha = 0; linha < target.size(); linha += 1) {
-            for(int coluna = 0; coluna < sequence.size(); coluna += 1) {            
+        for(int linha = 0; linha < melodyTarget.size(); linha += 1) {
+            for(int coluna = 0; coluna < melodySequence.size(); coluna += 1) {            
                 boolean e1 = coluna > 0;
                 boolean e2 = linha > 0;
                 boolean e3 = e1 && e2;
@@ -76,10 +74,10 @@ public class MM_DTW extends MM {
                 path[linha][coluna] = value;
             }
         }
-        if (this.DEBUG) printMatrix("path", path, target.size(), sequence.size(), melodyTarget, melodySequence);
+        if (this.DEBUG) printMatrix("path", path, melodyTarget.size(), melodySequence.size(), melodyTarget, melodySequence);
         
-        int steps = calculateSteps(path, target.size()-1, sequence.size()-1, 1);
-        double lastValue = path[target.size()-1][sequence.size()-1];
+        int steps = calculateSteps(path, melodyTarget.size()-1, melodySequence.size()-1, 1);
+        double lastValue = path[melodyTarget.size()-1][melodySequence.size()-1];
         this.cost = steps == 0 ? 0.0 : lastValue / steps;
         
         if (this.DEBUG) System.out.println(String.format("steps: %d, cost: %.4f", steps, cost));

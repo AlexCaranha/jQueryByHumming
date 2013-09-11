@@ -3,6 +3,7 @@ package com.alexcaranha.jquerybyhumming.screen.search.result;
 import com.alexcaranha.jquerybyhumming.App;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.screen.search.ISearchView;
+import java.awt.BorderLayout;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -92,6 +93,10 @@ public class Search_Result_View extends javax.swing.JPanel implements ISearchVie
     // End of variables declaration//GEN-END:variables
 
     public void update() {
+        this.jPanelFigure.removeAll();
+        this.jPanelFigure.add(presenter.getListSongsPanel(), BorderLayout.CENTER);
         
+        this.repaint();
+        this.revalidate();
     }
 }

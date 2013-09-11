@@ -1,16 +1,9 @@
 package com.alexcaranha.jquerybyhumming;
 
 import com.alexcaranha.jquerybyhumming.database.ElasticSearchDB.STATUS;
-import com.alexcaranha.jquerybyhumming.model.KeyValue;
-import com.alexcaranha.jquerybyhumming.model.Util;
-import com.alexcaranha.jquerybyhumming.model.WavSignal;
 import com.alexcaranha.jquerybyhumming.model.system.Database;
-import com.alexcaranha.jquerybyhumming.model.system.Processing;
 import com.alexcaranha.jquerybyhumming.model.wave.WavFileException;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;

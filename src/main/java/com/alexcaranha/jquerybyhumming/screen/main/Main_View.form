@@ -17,7 +17,7 @@
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <AccessibilityProperties>
-    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jQBHS - Java Query By Humming"/>
+    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jQBH - Java Query By Humming"/>
     <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
   </AccessibilityProperties>
   <SyntheticProperties>
@@ -46,7 +46,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jlDBStatus" pref="776" max="32767" attributes="0"/>
+                  <Component id="jlDBStatus" pref="830" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="jPanelButtons" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -131,7 +131,7 @@
                   <Component id="jButtonAbout" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButtonExit" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace pref="148" max="32767" attributes="0"/>
+                  <EmptySpace pref="151" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

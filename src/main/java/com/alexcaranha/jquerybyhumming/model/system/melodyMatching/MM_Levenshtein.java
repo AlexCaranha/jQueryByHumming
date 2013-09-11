@@ -31,7 +31,6 @@ public class MM_Levenshtein extends MM {
         variable = new ConfigurationTableItem<Encoding>("pitchEncoding", pitchEncodingArray, (Encoding)Util.getItemByToString(pitchEncodingArray, pitchEncodingSelected), "Indicates the pitch encoding method.");
         this.variables.put("pitchEncoding", variable);
         */
-        super(N);
         this.cost = 0.0;
     }
     

@@ -17,10 +17,12 @@ public abstract class MM extends Configuration implements IExecutable {
     protected Encoding[] pitchEncodingArray = Util.createArray(new AbsolutePitch(), new RelativePitch(), new ParsonsCode());
     public abstract double getCost();
     
-    public MM(int N) {
-        ConfigurationTableItem variable;        
+    public MM() {
+        /*
+        ConfigurationTableItem variable;
         variable = new ConfigurationTableItem<Integer>("N", null, 20, "Indicates the size of the resulting list.");
         this.variables.put("Size of list resulting", variable);
+        */ 
     }
     
     protected Encoding getPitchEncoding() {

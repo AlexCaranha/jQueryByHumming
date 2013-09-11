@@ -18,20 +18,26 @@ public class RelativePitch extends Encoding {
     
     public List<Object> execute(List<MelodyRepresentationNote> melody) {
         List<Object> result = new ArrayList<Object>();
-        double currentNote, previousNote;
         
+        MelodyRepresentationNote currentNote, previousNote;
+        double currentNoteValue, previousNoteValue;
+        
+        currentNote = null;
         for(int index = 0; index < melody.size(); index += 1) {
-            MelodyRepresentationNote note = melody.get(index);
-            currentNote = note.getPitchInMidi();
-            if (currentNote == 0.0) continue;
+            if (melody.get(index).getPitchInMidi() == 0.0) continue;
             
-            if (index == 0) {
+            previousNote = currentNote;
+            currentNote = melody.get(index);
+            
+            if (previousNote == null) {
                 result.add(0.0);
                 continue;
-            } else {
-                previousNote = melody.get(index).getPitchInMidi();
-                result.add(currentNote - previousNote);
             }
+            
+            previousNoteValue = previousNote.getPitchInMidi();
+            currentNoteValue = currentNote.getPitchInMidi();
+            
+            result.add(currentNoteValue - previousNoteValue);
         }
         
         return result;

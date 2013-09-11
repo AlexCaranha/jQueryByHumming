@@ -84,9 +84,12 @@ public class EvaluationSystem {
         int     qtd = 0;
         double  sum = 0.0;
         double  MRR;
+        int     qtdRanque1, qtdRanque5, qtdRanque10, qtdRanque20;
         
         FileWriter outFile = new FileWriter(Util.getDirExecution("evaluation.txt"));
         PrintWriter out = new PrintWriter(outFile);
+        
+        qtdRanque1 = qtdRanque5 = qtdRanque10 = qtdRanque20 = 0;
         
         File raiz = new File(directory);
         for(File fileNivel1: raiz.listFiles()) {  
@@ -106,24 +109,29 @@ public class EvaluationSystem {
                         Processing processing = new Processing(signal);
                         processing.execute();
                         
-                        List<String> getListSongs = processing.getListSongsResultant();
+                        List<String> getListSongs = processing.getListTitleSongsResultant();
                         int position = getMRR(getListSongs, musicaEsperada);
+                        qtdRanque1 += (position == 1) ? 1 : 0;
+                        qtdRanque5 += (position <= 5) ? 1 : 0;
+                        qtdRanque10 += (position <= 10) ? 1 : 0;
+                        qtdRanque20 += (position <= 20) ? 1 : 0;
                         
-                        
+                        System.out.println(String.format("Arquivo: %s, Posicao no ranque: %d", fileNivel2.getName().trim(), position));
                         out.println(String.format("Arquivo: %s, Posicao no ranque: %d", fileNivel2.getName().trim(), position));
-                        if (position == 0) {
-                            position = position;
-                        } else {
-                            qtd += 1;
-                            sum += ((double)1 / position);
-                        }
+                        
+                        qtd += 1;
+                        sum += ((double)1 / position);
                     }
                 }
             }
         }
         
         MRR = sum / qtd;
-        out.println(String.format("MRR: %.5f", MRR));
+        out.println(String.format("\nMRR: %.5f", MRR));
+        out.println(String.format("\nNumero de musicas encontradas na posicao 1: %d", qtdRanque1));
+        out.println(String.format("\nNumero de musicas encontradas na posicao 5: %d", qtdRanque5));
+        out.println(String.format("\nNumero de musicas encontradas na posicao 10: %d", qtdRanque10));
+        out.println(String.format("\nNumero de musicas encontradas na posicao 20: %d", qtdRanque20));
         out.close();
     }
 

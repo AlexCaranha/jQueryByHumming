@@ -11,7 +11,7 @@
 	</bean>
 	
         <bean id="about" class="com.alexcaranha.jquerybyhumming.screen.about.About_Model">
-		<property name="systemTitle" value="jQueryByHummingSystem"/>
+		<property name="systemTitle" value="jQueryByHumming"/>
 		<property name="systemDescription" value="Sistema de pesquisa de músicas através de Solfejos."/>	
 		<property name="authorTitle" value="Alex Libório Caranha"/>
 		<property name="authorDescription" value="Mestrando em Engenharia Elétrica - Processamento de Sinais pela COPPE/UFRJ. Engenheiro da Computação formado pela Universidade Federal do Amazonas (UFAM). Tem experiência em Desenvolvimento de Softwares com foco em Reconhecimento de Impressão Digital, ERP, Etiquetas Industriais, Programação Paralela e Sistemas Java para TV Digital."/>	
@@ -176,14 +176,12 @@
 		<constructor-arg name="options">
 			<map>
                                 <entry key="levenshtein">
-                                        <bean id="mm_lev" class="com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MM_Levenshtein" scope="prototype">                                                
-                                            <constructor-arg name="N" value="20"/>
+                                        <bean id="mm_lev" class="com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MM_Levenshtein" scope="prototype">                                                                                            
                                         </bean>
                                 </entry>
                                 <entry key="dtw">
                                         <bean id="mm_dtw" class="com.alexcaranha.jquerybyhumming.model.system.melodyMatching.MM_DTW" scope="prototype">                                                
                                                 <constructor-arg name="pitchEncoding" value="Absolute Pitch"/>
-                                                <constructor-arg name="N" value="20"/>
                                         </bean>
                                 </entry>
 			</map>

@@ -23,11 +23,12 @@ import javax.swing.JOptionPane;
  */
 public class Search_Main_Presenter implements IPresenter {
 
-    private Search_Presenter  searchPresenter;
-    private Search_Main_Model model;
-    private WavSignalPlayer   player;
+    private Search_Presenter    searchPresenter;
+    private Search_Main_Model   model;
+    private WavSignalPlayer     player;
 
-    private Search_Main_View  view;
+    private Search_Main_View    view;
+    private Processing          processing;
 
     public Search_Main_Presenter(Search_Presenter searchPresenter) throws IOException, Exception {
         this.searchPresenter = searchPresenter;
@@ -38,6 +39,7 @@ public class Search_Main_Presenter implements IPresenter {
         wavSignal.addObserver(this.view.getJPanelGraphSignal());
         wavSignal.addObserver(this.view);
         
+        this.processing = null;
         this.player = null;
     }
     
@@ -78,11 +80,15 @@ public class Search_Main_Presenter implements IPresenter {
     public void ok() {
         try{
             this.view.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            Thread processing = createThreadProcessing();
-            processing.start();
+            Thread processingThread = createThreadProcessing();
+            processingThread.start();
         } finally {
             this.view.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         }
+    }
+    
+    public Processing getProcessing() {
+        return this.processing;
     }
     
     private Thread createThreadProcessing() {
@@ -90,7 +96,7 @@ public class Search_Main_Presenter implements IPresenter {
         Thread thread = new Thread(new Runnable(){
             @Override
             public void run() {
-                Processing processing = null;
+                processing = null;
                 try {
                     processing = new Processing((WavSignal) model.getVariable("wavSignal"));
                     processing.execute();

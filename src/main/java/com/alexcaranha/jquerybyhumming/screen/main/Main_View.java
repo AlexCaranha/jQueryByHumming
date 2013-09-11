@@ -158,7 +158,7 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
                 .addComponent(jButtonAbout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         jlDBStatus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -176,7 +176,7 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlDBStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
+                    .addComponent(jlDBStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanelButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -195,7 +195,7 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
                 .addContainerGap())
         );
 
-        getAccessibleContext().setAccessibleName("jQBHS - Java Query By Humming");
+        getAccessibleContext().setAccessibleName("jQBH - Java Query By Humming");
         getAccessibleContext().setAccessibleDescription("");
 
         pack();
