@@ -101,18 +101,22 @@ public class ElasticSearchDB {
     public SearchResponse readAll() {
         
         if (status == STATUS.ONLINE) {
-            return client.prepareSearch(App.class.getPackage().getName())
-              .setSearchType(SearchType.SCAN)
-              .setScroll(new TimeValue(60000))
-              .execute()
-              .actionGet();
+            SearchResponse response;
+            try{
+                response = client.prepareSearch(App.class.getPackage().getName())
+                            .setSearchType(SearchType.SCAN)
+                            .setScroll(new TimeValue(60000))
+                            .execute()
+                            .actionGet();
+            } catch(Exception ex) {
+                response = null;
+            }
+            return response;
         }
         return null;
     }
      
-    public void readAll(String type, 
-                        ActionListener<SearchResponse> searchResponse) {
-        
+    public void readAll(String type, ActionListener<SearchResponse> searchResponse) {
         if (status == STATUS.ONLINE)
         client.prepareSearch(App.class.getPackage().getName())
               .setTypes(type)
@@ -121,8 +125,8 @@ public class ElasticSearchDB {
               .execute(searchResponse);
     }
         
-    public SearchResponse prepareSearchScroll(SearchResponse scrollResp) {
-        
+    public SearchResponse prepareSearchScroll(SearchResponse scrollResp) {        
+        if (scrollResp == null) return null;
         if (status == STATUS.ONLINE) {
             return client.prepareSearchScroll(scrollResp.getScrollId())
                      .setScroll(new TimeValue(60000))

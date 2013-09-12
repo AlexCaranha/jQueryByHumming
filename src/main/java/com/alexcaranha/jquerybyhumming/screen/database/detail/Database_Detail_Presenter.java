@@ -144,6 +144,8 @@ public class Database_Detail_Presenter extends Observable implements IPresenterC
         while (true) {
             scrollResp = App.getDB().prepareSearchScroll(sResponse);
             boolean hitsRead = false;
+            
+            if (scrollResp != null)
             for (SearchHit hit : scrollResp.getHits()) {
                 hitsRead = true;
                 Database_Detail_Model detail = new Database_Detail_Model(hit.getId(), hit.getSource());
