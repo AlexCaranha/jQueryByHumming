@@ -172,7 +172,7 @@
 	</bean>
         
         <bean id="melodyMatching" class="com.alexcaranha.jquerybyhumming.screen.configurations.ConfigurationMelodyMatching" scope="prototype">
-		<constructor-arg name="selected" value="dtw"/>
+		<constructor-arg name="selected" value="levenshtein"/>
 		<constructor-arg name="options">
 			<map>
                                 <entry key="levenshtein">

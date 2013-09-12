@@ -112,9 +112,9 @@ public class EvaluationSystem {
                         List<String> getListSongs = processing.getListTitleSongsResultant();
                         int position = getMRR(getListSongs, musicaEsperada);
                         qtdRanque1 += (position == 1) ? 1 : 0;
-                        qtdRanque5 += (position <= 5) ? 1 : 0;
-                        qtdRanque10 += (position <= 10) ? 1 : 0;
-                        qtdRanque20 += (position <= 20) ? 1 : 0;
+                        qtdRanque5 += (position > 1 && position <= 5) ? 1 : 0;
+                        qtdRanque10 += (position > 5 && position <= 10) ? 1 : 0;
+                        qtdRanque20 += (position > 10 && position <= 20) ? 1 : 0;
                         
                         System.out.println(String.format("Arquivo: %s, Posicao no ranque: %d", fileNivel2.getName().trim(), position));
                         out.println(String.format("Arquivo: %s, Posicao no ranque: %d", fileNivel2.getName().trim(), position));
@@ -129,9 +129,9 @@ public class EvaluationSystem {
         MRR = sum / qtd;
         out.println(String.format("\nMRR: %.5f", MRR));
         out.println(String.format("\nNumero de musicas encontradas na posicao 1: %d", qtdRanque1));
-        out.println(String.format("\nNumero de musicas encontradas na posicao 5: %d", qtdRanque5));
-        out.println(String.format("\nNumero de musicas encontradas na posicao 10: %d", qtdRanque10));
-        out.println(String.format("\nNumero de musicas encontradas na posicao 20: %d", qtdRanque20));
+        out.println(String.format("\nNumero de musicas encontradas entre as posicoes 2 e 5: %d", qtdRanque5));
+        out.println(String.format("\nNumero de musicas encontradas entre as posicoes 6 e 10: %d", qtdRanque10));
+        out.println(String.format("\nNumero de musicas encontradas entre as posicoes 11 e 20: %d", qtdRanque20));
         out.close();
     }
 

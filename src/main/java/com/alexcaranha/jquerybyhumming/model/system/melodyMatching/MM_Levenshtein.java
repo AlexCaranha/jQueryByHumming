@@ -25,7 +25,7 @@ public class MM_Levenshtein extends MM {
         return "LD";
     }
     
-    public MM_Levenshtein(int N) {
+    public MM_Levenshtein() {
         /*
         ConfigurationTableItem variable;        
         variable = new ConfigurationTableItem<Encoding>("pitchEncoding", pitchEncodingArray, (Encoding)Util.getItemByToString(pitchEncodingArray, pitchEncodingSelected), "Indicates the pitch encoding method.");

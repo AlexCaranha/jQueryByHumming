@@ -27,7 +27,7 @@ public class MM_DTW extends MM {
         return "DTW";
     }
     
-    public MM_DTW(String pitchEncoding, int N) {
+    public MM_DTW(String pitchEncoding) {
         ConfigurationTableItem variable;        
         variable = new ConfigurationTableItem<Encoding>("pitchEncoding", pitchEncodingArray, (Encoding)Util.getItemByToString(pitchEncodingArray, pitchEncoding), "Indicates the pitch encoding method.");
         this.variables.put("pitchEncoding", variable);
