@@ -4,6 +4,7 @@ import com.alexcaranha.jquerybyhumming.App;
 import com.alexcaranha.jquerybyhumming.components.XYGraphSignal;
 import com.alexcaranha.jquerybyhumming.model.Convert;
 import com.alexcaranha.jquerybyhumming.model.KeyValue;
+import com.alexcaranha.jquerybyhumming.model.Microphone;
 import com.alexcaranha.jquerybyhumming.view.FilterFileChooser;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -17,6 +18,7 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JOptionPane;
 
@@ -44,10 +46,12 @@ public class Search_Main_View extends javax.swing.JPanel implements Observer {
         this.jButtonOk.setEnabled(false);
 
         this.jButtonOpenFile.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/wavfile.png").getInputStream()), 50));
-        //this.jButtonRecord.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/microphone.png").getInputStream()), 50));
+        this.jButtonRecStop.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/microphone.png").getInputStream()), 50));
         this.jButtonPlayStop.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/play.png").getInputStream()), 50));
         this.jButtonOk.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/ok.png").getInputStream()), 50));
-
+        
+        this.jButtonRecStop.setEnabled(Microphone.isSupported());
+        
         this.jPanelButtons.setLayout(new GridLayout(1, 3, 10, 10));
         this.fileChooser = new JFileChooser();
         this.fileChooser.addChoosableFileFilter(new FilterFileChooser("WAV", "WAV File"));
@@ -75,6 +79,7 @@ public class Search_Main_View extends javax.swing.JPanel implements Observer {
         jButtonPlayStop = new javax.swing.JButton();
         jButtonOpenFile = new javax.swing.JButton();
         jButtonOk = new javax.swing.JButton();
+        jButtonRecStop = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(370, 200));
         setName(""); // NOI18N
@@ -113,6 +118,15 @@ public class Search_Main_View extends javax.swing.JPanel implements Observer {
             }
         });
 
+        jButtonRecStop.setText("Record");
+        jButtonRecStop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonRecStop.setName("jButtonPlayStop"); // NOI18N
+        jButtonRecStop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRecStopActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelButtonsLayout = new javax.swing.GroupLayout(jPanelButtons);
         jPanelButtons.setLayout(jPanelButtonsLayout);
         jPanelButtonsLayout.setHorizontalGroup(
@@ -121,19 +135,22 @@ public class Search_Main_View extends javax.swing.JPanel implements Observer {
                 .addContainerGap()
                 .addComponent(jButtonOpenFile, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonRecStop, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonPlayStop, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonOk, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanelButtonsLayout.setVerticalGroup(
             jPanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelButtonsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonOk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonPlayStop, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                    .addComponent(jButtonOpenFile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonRecStop, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                    .addComponent(jButtonOpenFile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonPlayStop, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonOk, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -193,7 +210,7 @@ public class Search_Main_View extends javax.swing.JPanel implements Observer {
             if (this.jButtonPlayStop.getText().equalsIgnoreCase("Play")) {
                 this.presenter.play();
             } else {
-                this.presenter.stop();
+                this.presenter.stopPlay();
             }
         } catch (IOException ex) {
             Logger.getLogger(Search_Main_View.class.getName()).log(Level.SEVERE, null, ex);
@@ -204,10 +221,27 @@ public class Search_Main_View extends javax.swing.JPanel implements Observer {
         this.presenter.ok();
     }//GEN-LAST:event_jButtonOkActionPerformed
 
+    private void jButtonRecStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRecStopActionPerformed
+        try {
+            if (this.jButtonRecStop.getText().equalsIgnoreCase("Record")) {
+                this.presenter.record();
+            } else {
+                this.presenter.stopRecord();
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Search_Main_View.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(Search_Main_View.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Search_Main_View.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonRecStopActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonOk;
     private javax.swing.JButton jButtonOpenFile;
     private javax.swing.JButton jButtonPlayStop;
+    private javax.swing.JButton jButtonRecStop;
     private javax.swing.JPanel jPanelButtons;
     private javax.swing.JPanel jPanelSignal;
     // End of variables declaration//GEN-END:variables
@@ -238,6 +272,32 @@ public class Search_Main_View extends javax.swing.JPanel implements Observer {
             this.jButtonPlayStop.setText("Play");
             this.jButtonPlayStop.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/play.png").getInputStream()), 50));
             
+            this.jButtonOpenFile.setEnabled(true);
+            this.jButtonOk.setEnabled(true);
+        }
+
+        this.repaint();
+        this.revalidate();
+    }
+    
+    public void enableRecordButton(boolean enabled) {
+        jButtonRecStop.setEnabled(enabled);
+    }
+    
+    public void updateRecordStopButton(boolean recording) throws IOException {
+
+        if (recording) {
+            this.jButtonRecStop.setText("Stop");
+            this.jButtonRecStop.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/stop.png").getInputStream()), 50));
+            
+            this.jButtonPlayStop.setEnabled(false);
+            this.jButtonOpenFile.setEnabled(false);
+            this.jButtonOk.setEnabled(false);
+        } else {
+            this.jButtonRecStop.setText("Record");
+            this.jButtonRecStop.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/microphone.png").getInputStream()), 50));
+            
+            this.jButtonPlayStop.setEnabled(true);
             this.jButtonOpenFile.setEnabled(true);
             this.jButtonOk.setEnabled(true);
         }

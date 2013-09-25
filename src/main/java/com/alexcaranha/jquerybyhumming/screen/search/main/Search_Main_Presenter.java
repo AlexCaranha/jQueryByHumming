@@ -1,7 +1,9 @@
 package com.alexcaranha.jquerybyhumming.screen.search.main;
 
+import com.alexcaranha.jquerybyhumming.App;
 import com.alexcaranha.jquerybyhumming.model.Constants;
 import com.alexcaranha.jquerybyhumming.model.KeyValue;
+import com.alexcaranha.jquerybyhumming.model.Microphone;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.WavSignal;
 import com.alexcaranha.jquerybyhumming.model.WavSignalPlayer;
@@ -9,10 +11,12 @@ import com.alexcaranha.jquerybyhumming.model.system.Processing;
 import com.alexcaranha.jquerybyhumming.mvp.IPresenter;
 import com.alexcaranha.jquerybyhumming.screen.search.Search_Presenter;
 import java.awt.Cursor;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
@@ -41,6 +45,12 @@ public class Search_Main_Presenter implements IPresenter {
         
         this.processing = null;
         this.player = null;
+        
+        App.loadObject("Search_Main_Presenter", this);
+    }
+    
+    public void enabledRecordHumming(boolean enabled) {
+        view.enableRecordButton(enabled);
     }
     
     public Search_Main_Model getModel() {
@@ -65,9 +75,23 @@ public class Search_Main_Presenter implements IPresenter {
         this.view.updatePlayStopButton(true);
     }
 
-    public void stop() throws IOException {
+    public void stopPlay() throws IOException {
         this.view.updatePlayStopButton(false);
         this.player.end();
+    }
+    
+    public void record() throws LineUnavailableException, IOException {
+        App.getMicrophone().startRecord();        
+        this.view.updateRecordStopButton(true);
+    }
+    
+    public void stopRecord() throws IOException, Exception {
+        App.getMicrophone().stopRecord();
+        App.resetMicrophone();
+        this.view.updateRecordStopButton(false);
+        
+        if (Util.existFile(Constants.PATH_TMP_WAVE_FILE_SEARCH))
+            selectWavFile(new FileInputStream(Constants.PATH_TMP_WAVE_FILE_SEARCH));
     }
     
     public void updatePlayer() throws IOException, UnsupportedAudioFileException {

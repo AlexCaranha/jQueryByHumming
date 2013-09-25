@@ -74,10 +74,12 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButtonOpenFile" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButtonRecStop" min="-2" pref="100" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButtonPlayStop" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButtonOk" min="-2" pref="100" max="-2" attributes="0"/>
-                  <EmptySpace pref="26" max="32767" attributes="0"/>
+                  <EmptySpace pref="37" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -86,9 +88,10 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jButtonOk" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jButtonPlayStop" alignment="0" pref="54" max="32767" attributes="0"/>
+                      <Component id="jButtonRecStop" alignment="0" pref="54" max="32767" attributes="0"/>
                       <Component id="jButtonOpenFile" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jButtonPlayStop" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jButtonOk" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -100,7 +103,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Play"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
+              <Color id="Cursor em Forma de M&#xe3;o"/>
             </Property>
             <Property name="name" type="java.lang.String" value="jButtonPlayStop" noResource="true"/>
           </Properties>
@@ -112,7 +115,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Open File"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
+              <Color id="Cursor em Forma de M&#xe3;o"/>
             </Property>
             <Property name="name" type="java.lang.String" value="jButtonOpenFile" noResource="true"/>
           </Properties>
@@ -124,12 +127,24 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Ok"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
+              <Color id="Cursor em Forma de M&#xe3;o"/>
             </Property>
             <Property name="name" type="java.lang.String" value="jButtonOk" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOkActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonRecStop">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Record"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor em Forma de M&#xe3;o"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="jButtonPlayStop" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRecStopActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

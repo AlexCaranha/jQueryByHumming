@@ -62,4 +62,8 @@ public final class Main_Presenter extends Observable {
         model.setCurrentOption(Main_Model.SCREENS.ABOUT);
         view.update();
     }
+
+    public void setEnabledMicrophone(boolean result) {
+        
+    }
 }

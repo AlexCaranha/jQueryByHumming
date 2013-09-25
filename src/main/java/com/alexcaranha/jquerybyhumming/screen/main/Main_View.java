@@ -2,6 +2,7 @@ package com.alexcaranha.jquerybyhumming.screen.main;
 
 import com.alexcaranha.jquerybyhumming.App;
 import com.alexcaranha.jquerybyhumming.database.ElasticSearchDB;
+import com.alexcaranha.jquerybyhumming.model.Microphone;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.wave.WavFileException;
 import java.awt.BorderLayout;
@@ -42,7 +43,6 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
     }
 
     private void initComponentsManually() throws IOException, InvalidMidiDataException, MidiUnavailableException, InterruptedException, ExecutionException {
-        
         this.status = STATUS.OPERATING;
         
         this.jButtonSearchSong.setIcon(Util.getImageIcon(ImageIO.read(App.getContext().getResource("classpath:figures/lupa.png").getInputStream()), Math.min(jButtonSearchSong.getWidth(), jButtonSearchSong.getHeight())));
@@ -79,6 +79,7 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
         jButtonAbout = new javax.swing.JButton();
         jButtonExit = new javax.swing.JButton();
         jlDBStatus = new javax.swing.JLabel();
+        jlMicrophoneStatus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("jQBHS - Java Query By Humming System");
@@ -158,7 +159,7 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
                 .addComponent(jButtonAbout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
 
         jlDBStatus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -169,6 +170,12 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
         jlDBStatus.setMinimumSize(null);
         jlDBStatus.setOpaque(true);
 
+        jlMicrophoneStatus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlMicrophoneStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlMicrophoneStatus.setText("MICROPHONE: STATUS");
+        jlMicrophoneStatus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jlMicrophoneStatus.setOpaque(true);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -176,11 +183,12 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlDBStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanelButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanelScreens, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jPanelScreens, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jlMicrophoneStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)
+                    .addComponent(jlDBStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -189,7 +197,9 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelScreens, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE))
+                    .addComponent(jPanelScreens, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlMicrophoneStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlDBStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -246,6 +256,7 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
     private javax.swing.JPanel jPanelButtons;
     private javax.swing.JPanel jPanelScreens;
     private javax.swing.JLabel jlDBStatus;
+    private javax.swing.JLabel jlMicrophoneStatus;
     // End of variables declaration//GEN-END:variables
 
     public void actionPerformed(ActionEvent e) {
@@ -290,10 +301,28 @@ public final class Main_View extends javax.swing.JFrame implements ActionListene
                 this.jlDBStatus.setText("DATABASE: OFFLINE");
                 this.jlDBStatus.setForeground(Color.WHITE);
                 this.jlDBStatus.setBackground(Color.RED);
-            } else {
+                
+                //this.jlDBStatus.setVisible(true);
+            } else {                
                 this.jlDBStatus.setText("DATABASE: ONLINE");
                 this.jlDBStatus.setForeground(Color.WHITE);
                 this.jlDBStatus.setBackground(Color.BLUE);
+                
+                //this.jlDBStatus.setVisible(false);
+            }
+      
+            if (Microphone.isSupported()) {                
+                this.jlMicrophoneStatus.setText("MICROPHONE: CONNECTED");
+                this.jlMicrophoneStatus.setForeground(Color.WHITE);
+                this.jlMicrophoneStatus.setBackground(Color.BLUE);
+                
+                //this.jlMicrophoneStatus.setVisible(false);
+            } else {
+                this.jlMicrophoneStatus.setText("MICROPHONE: DISCONNECTED");
+                this.jlMicrophoneStatus.setForeground(Color.WHITE);
+                this.jlMicrophoneStatus.setBackground(Color.RED);
+                
+                //this.jlMicrophoneStatus.setVisible(true);
             }
 
             this.repaint();

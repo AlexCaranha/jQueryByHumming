@@ -1,6 +1,8 @@
 package com.alexcaranha.jquerybyhumming;
 
 import com.alexcaranha.jquerybyhumming.database.ElasticSearchDB;
+import com.alexcaranha.jquerybyhumming.model.Constants;
+import com.alexcaranha.jquerybyhumming.model.Microphone;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.wave.WavFileException;
 import com.alexcaranha.jquerybyhumming.screen.configuration.Configuration;
@@ -32,6 +34,7 @@ public class App {
     private static final Map<String, Configuration> configurations = new HashMap<String, Configuration>();
     private static final Map<String, Object> objects = new HashMap<String, Object>();
     
+    private static       Microphone microphone = new Microphone(Constants.PATH_TMP_WAVE_FILE_SEARCH);
     private static final ElasticSearchDB db = new ElasticSearchDB();
     private static final ApplicationContext context = new ClassPathXmlApplicationContext("configuration/spring-config.xml");
 
@@ -68,11 +71,7 @@ public class App {
         }
         //----------------------------------------------------------------------
     }
-    /*
-    public static Configuration reloadConfiguration(String key) {
-        return configurations.put(key, (Configuration) App.getContext().getBean(key));
-    }
-    */
+    
     public static void loadObject(String key, Object object) {
         objects.put(key, object);
     }
@@ -99,6 +98,14 @@ public class App {
     public static ElasticSearchDB getDB() {
         return db;
     }
+    
+    public static Microphone getMicrophone() {
+        return microphone;
+    }
+    
+    public static void resetMicrophone() {
+        microphone = new Microphone(Constants.PATH_TMP_WAVE_FILE_SEARCH);
+    }
 
     public static ApplicationContext getContext() {
         return context;
@@ -122,6 +129,6 @@ public class App {
         viewMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         viewMain.setVisible(true);
         
-        App.loadObject("main", presenterMain);        
+        App.loadObject("main", presenterMain);
     }
 }
