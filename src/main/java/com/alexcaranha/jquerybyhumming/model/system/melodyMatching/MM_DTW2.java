@@ -1,6 +1,5 @@
 package com.alexcaranha.jquerybyhumming.model.system.melodyMatching;
 
-import com.alexcaranha.jquerybyhumming.Convert;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.Encoding;
 import com.alexcaranha.jquerybyhumming.model.system.melodyMatching.coding.pitch.AbsolutePitch;

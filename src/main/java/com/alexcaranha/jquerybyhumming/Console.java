@@ -52,7 +52,8 @@ public class Console {
                 if (App.getDB().getStatus() != STATUS.ONLINE) continue;
                 //--------------------------------------------------------------
                 EvaluationSystem es = new EvaluationSystem();
-                es.execute("D:\\Alex\\Mestrado\\Database\\");
+                //es.execute("D:\\Alex\\Mestrado\\Database\\");
+                es.execute("/home/alexcaranha/Documentos/Mestrado/DataBase/DBSolfejos");
                 //--------------------------------------------------------------
                 App.endApplication();
             }

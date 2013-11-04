@@ -44,6 +44,10 @@ public class Processing {
         return timeProcessing;
     }
     
+    public List<Point<Double, Database_Detail_Model>> getResult() {
+        return this.result;
+    }
+    
     public List<String> getListTitleSongsResultant() {
         List<String> list = new ArrayList<String>();
         

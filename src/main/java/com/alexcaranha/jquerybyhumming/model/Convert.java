@@ -4,7 +4,9 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import org.apache.commons.io.IOUtils;
+import org.elasticsearch.common.io.stream.StreamOutput;
 import org.xerial.snappy.Snappy;
 
 /**
@@ -109,6 +111,11 @@ public class Convert {
 
     }
     */
+    
+    public static void serialize(Object object, OutputStream output) {
+        XStream xstream = new XStream(new DomDriver());
+        xstream.toXML(object, output);
+    }
 
     public static String serialize(Object object) {
         XStream xstream = new XStream(new DomDriver());
