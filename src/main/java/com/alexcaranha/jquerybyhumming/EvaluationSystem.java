@@ -2,48 +2,48 @@ package com.alexcaranha.jquerybyhumming;
 
 import com.alexcaranha.jquerybyhumming.model.Convert;
 import com.alexcaranha.jquerybyhumming.model.KeyValue;
-import com.alexcaranha.jquerybyhumming.model.Point;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.WavSignal;
 import com.alexcaranha.jquerybyhumming.model.system.Processing;
-import com.alexcaranha.jquerybyhumming.screen.database.detail.Database_Detail_Model;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import org.elasticsearch.common.io.stream.StreamOutput;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  *
  * @author alexcaranha
  */
 public class EvaluationSystem {
-    
     public class Gravacao {
         private String tipo;
         private String nome;
         private double posicao;
-        
+
         public Gravacao(String tipo, String nome, double posicao) {
             this.tipo = tipo;
             this.nome = nome;
             this.posicao = posicao;
         }
-        
+
         public String getTipo() {
             return this.tipo;
         }
-        
+
         public String getNome() {
             return this.nome;
         }
-        
+
         public double getPosicao() {
             return this.posicao;
         }
@@ -73,13 +73,90 @@ public class EvaluationSystem {
         public List<Gravacao> getGravacoes() {
             return this.gravacoes;
         }
+        
+        public List<Gravacao> getGravacao(String title) {
+            List<Gravacao> gravacaoTitle = new ArrayList<Gravacao>();
+            
+            for(Gravacao gravacao : this.gravacoes) {
+                if (gravacao.nome.equalsIgnoreCase(title)) {
+                    gravacaoTitle.add(gravacao);
+                }
+            }
+            
+            return gravacaoTitle;
+        }
     }
     
     public EvaluationSystem() {
         
     }
     
-    public String getTitle(String label) {
+    public static List<Usuario> GetFromXML(String path) throws FileNotFoundException {
+        InputStream inputStream = new FileInputStream(path);
+        List<Usuario> usuarios = (List<Usuario>)Convert.deserialize(inputStream);
+        return usuarios;
+    }
+    
+    public static List<String> getTitles() {
+        List<String> result = new ArrayList<String>();
+        
+        result.add("Águas de março");
+        result.add("Carinhoso");
+        result.add("Asa branca");
+        result.add("Chega de saudade");
+        result.add("Detalhes");
+        result.add("Alegria, alegria");
+        result.add("Aquarela do Brasil");
+        result.add("Trem das onze");
+        result.add("Quero que vá tudo pro inferno");
+        result.add("Preta pretinha");
+        result.add("Inútil");
+        result.add("Eu sei que vou te amar");
+        result.add("País tropical");
+        result.add("Garota de ipanema");
+        result.add("Pra não dizer que não falei das flores");
+        result.add("Travessia");
+        result.add("Eu quero é botar meu bloco na rua");
+        result.add("Manhã de carnaval");
+        result.add("Ponteio");
+        result.add("Me chama");
+        result.add("Conversa de botequim");
+        result.add("Luar do sertão");
+        result.add("Alagados");
+        result.add("As curvas da estrada de Santos");
+        result.add("A banda");
+        result.add("Comida");
+        result.add("Ronda");
+        result.add("Gita");
+        result.add("Sentado à beira do caminho");
+        result.add("Foi um rio que passou em minha vida");
+        result.add("Que país é este?");
+        result.add("Ideologia");
+        result.add("Rosa");
+        result.add("O barquinho");
+        result.add("Meu mundo e nada mais");
+        result.add("A flor e o espinho");
+        result.add("Felicidade");
+        result.add("Casa no campo");
+        result.add("Disritmia");
+        result.add("Você não soube me amar");
+        result.add("A noite de meu bem");
+        result.add("Anna Júlia");
+        result.add("Parabéns a você");
+        result.add("Ciranda cirandinha");
+        result.add("Escravos de jó");
+        result.add("Hino nacional");
+        result.add("Hino da bandeira");
+        result.add("Ilariê");
+        result.add("Fim de Ano");
+        result.add("Mamãe eu quero");
+        result.add("Coelhinho de olhos vermelhos");
+        result.add("Chegou a hora da foqueira");
+        
+        return result;
+    }
+    
+    public static String getTitle(String label) {
         if (label.contains("musica_002_")) return "Águas de março";
         if (label.contains("musica_003_")) return "Carinhoso";
         if (label.contains("musica_004_")) return "Asa branca";
@@ -136,6 +213,174 @@ public class EvaluationSystem {
         return null;
     }
     
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        String dirDB = "/home/alexcaranha/Documentos/Mestrado/DataBase/DBSolfejos";
+        
+        String prefixo = "/home/alexcaranha/Documentos/Mestrado/jQueryByHumming/";
+        String path1 = prefixo + "evaluationUsuarios-LevenshteinDistance.xml";
+        String path2 = prefixo + "evaluationUsuarios-DTW_RelativePitch.xml";
+        String path3 = prefixo + "evaluationUsuarios-DTW_AbsolutePitch.xml";
+        
+        List<Usuario> usuarios1 = GetFromXML(path1);
+        List<Usuario> usuarios2 = GetFromXML(path2);
+        List<Usuario> usuarios3 = GetFromXML(path3);
+        
+        List<String> titles = getTitles();        
+        List<String> tipos = Util.createList("Tipo1","Tipo2","Tipo3");
+                
+        FileWriter outFile = new FileWriter(Util.getDirExecution("DadosBD.txt"));
+        PrintWriter out = new PrintWriter(outFile);
+        
+        Map<Integer, List<Usuario>> usuarios = new HashMap<Integer, List<Usuario>>();
+        Map<String, Integer> musicas = new HashMap<String, Integer>();
+        
+        usuarios.put(1, usuarios1);  // LevenshteinDistance
+        usuarios.put(2, usuarios2);  // DTW_RelativePitch
+        usuarios.put(3, usuarios3);  // DTW_AbsolutePitch
+        //---------------------------------------------------------------------------------------------
+        System.out.println("Gravações por música: ");
+        out.println("Gravações por música: Codigo;Titulo;Tipo1;Tipo2;Tipo3");
+
+        File raiz = new File(dirDB);
+        for(String title : titles) {
+            int qtdTipo1 = 0;
+            int qtdTipo2 = 0;
+            int qtdTipo3 = 0;
+
+            String codigoMusica = "";
+
+            for(File fileNivel1: raiz.listFiles()) {  
+                if(fileNivel1.isDirectory() && fileNivel1.getName().contains("Usuario_")) {
+                    //String usuarioNome = fileNivel1.getName().trim();
+
+                    for(File fileNivel2: fileNivel1.listFiles()) {
+                        String tipo = fileNivel2.getName();
+                        if ("Tipo1|Tipo2|Tipo3".contains(tipo)) {
+                            for(File fileNivel3: fileNivel2.listFiles()) {  
+                                if (fileNivel3.getName().contains(".wav")) {
+                                    String musicaEsperada = getTitle(fileNivel3.getName().trim());
+                                    if (musicaEsperada.equalsIgnoreCase(title)) {
+                                        codigoMusica = fileNivel3.getName().trim();
+
+                                        if (tipo.equalsIgnoreCase("Tipo1")) qtdTipo1 += 1;
+                                        if (tipo.equalsIgnoreCase("Tipo2")) qtdTipo2 += 1;
+                                        if (tipo.equalsIgnoreCase("Tipo3")) qtdTipo3 += 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            codigoMusica = codigoMusica.replaceAll("musica_", "").replaceAll("_g1a", "").replaceAll("_g1b", "").replaceAll("_g2", "").replaceAll("_s", "");
+            System.out.println(String.format("%s;%s;%d;%d;%d",codigoMusica, title, qtdTipo1, qtdTipo2, qtdTipo3));            
+            out.println(String.format("%s;%s;%d;%d;%d",codigoMusica, title, qtdTipo1, qtdTipo2, qtdTipo3));            
+        }
+        //---------------------------------------------------------------------------------------------
+        System.out.println("Gravações por música: ");
+        out.println("Gravações saturadas por música: Codigo;Titulo;Tipo1;Tipo2;Tipo3");
+
+        File diretorio = new File(dirDB);
+        for(String title : titles) {
+            int qtdTipo1 = 0;
+            int qtdTipo2 = 0;
+            int qtdTipo3 = 0;
+
+            String codigoMusica = "";
+
+            for(File fileNivel1: diretorio.listFiles()) {  
+                if(fileNivel1.isDirectory() && fileNivel1.getName().contains("Usuario_")) {
+                    //String usuarioNome = fileNivel1.getName().trim();
+
+                    for(File fileNivel2: fileNivel1.listFiles()) {
+                        String tipo = fileNivel2.getName();
+                        if ("Tipo1|Tipo2|Tipo3".contains(tipo)) {
+                            for(File fileNivel3: fileNivel2.listFiles()) {
+                                if (fileNivel3.getName().contains(".wav") && fileNivel3.getName().contains("s")) {
+                                    String musicaEsperada = getTitle(fileNivel3.getName().trim());
+                                    if (musicaEsperada.equalsIgnoreCase(title)) {
+                                        codigoMusica = fileNivel3.getName().trim();
+
+                                        if (tipo.equalsIgnoreCase("Tipo1")) qtdTipo1 += 1;
+                                        if (tipo.equalsIgnoreCase("Tipo2")) qtdTipo2 += 1;
+                                        if (tipo.equalsIgnoreCase("Tipo3")) qtdTipo3 += 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            codigoMusica = codigoMusica.replaceAll("musica_", "").replaceAll("_g1a", "").replaceAll("_g1b", "").replaceAll("_g2", "").replaceAll("_s", "");
+            System.out.println(String.format("%s;%s;%d;%d;%d",codigoMusica, title, qtdTipo1, qtdTipo2, qtdTipo3));            
+            out.println(String.format("%s;%s;%d;%d;%d",codigoMusica, title, qtdTipo1, qtdTipo2, qtdTipo3));            
+        }
+        //---------------------------------------------------------------------------------------------
+        // Tipo -> Algoritmo -> MRR (usuarios).
+        System.out.println("MRR por tipo de gravação e algoritmo: Tipo; MRR Algoritmo1; MRR Algoritmo2; MRR Algoritmo3");
+        out.println("MRR por tipo de gravação e algoritmo: Tipo; MRR Algoritmo1; MRR Algoritmo2; MRR Algoritmo3");
+                
+        for(String tipo : tipos) {
+            int qtdAlgoritmo1 = 0;
+            int qtdAlgoritmo2 = 0;
+            int qtdAlgoritmo3 = 0;
+            
+            double sumAlgoritmo1 = 0.0;
+            double sumAlgoritmo2 = 0.0;
+            double sumAlgoritmo3 = 0.0;
+                        
+            for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
+                Integer       algoritmo = item.getKey();
+                List<Usuario> lista     = item.getValue();
+
+                // PAREI AQUI.
+                
+                for(Usuario usuario : lista) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        KeyValue<Integer, Double> parMRR = MRR_Algoritmo.get(gravacao.getTipo());
+                        
+                        int     qtdLast = parMRR.getKey();
+                        double  somaLast = parMRR.getValue();
+                        
+                        int     qtdNew = 1 + qtdLast;
+                        double  somaNew = (1 / gravacao.getPosicao()) + somaLast;
+                        
+                        parMRR.setKey(qtdNew);
+                        parMRR.setValue(somaNew);
+                    }
+                }
+
+                
+                
+                System.out.println(String.format("%s;%s;%d;%d;%d",codigoMusica, title, qtdTipo1, qtdTipo2, qtdTipo3));            
+            }
+        }
+        //---------------------------------------------------------------------------------------------
+        System.out.println("MRR por tipo de gravação e algoritmo: MRR Algoritmo1;MRR Algoritmo2;MRR Algoritmo3;Titulo");
+        out.println("MRR por tipo de gravação e algoritmo: MRR Algoritmo1;MRR Algoritmo2;MRR Algoritmo3;Titulo");
+
+        for(String title : titles) {            
+            KeyValue<Integer, Double> MRR_Algoritmo1 = new KeyValue<Integer, Double>(0, 0.0);
+            KeyValue<Integer, Double> MRR_Algoritmo2 = new KeyValue<Integer, Double>(0, 0.0);
+            KeyValue<Integer, Double> MRR_Algoritmo3 = new KeyValue<Integer, Double>(0, 0.0);
+                        
+            for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
+                Integer         algoritmo = item.getKey();
+                List<Usuario>   lista = item.getValue();
+                
+                for(Usuario usuario : lista) {
+                    List<Gravacao> gravacaoTitle = usuario.getGravacao(title);
+                    
+                }
+            }
+        }
+        //---------------------------------------------------------------------------------------------        
+        out.close();
+        //---------------------------------------------------------------------------------------------        
+    }
+    
     public void execute(String directory) throws FileNotFoundException, Exception {
         List<Usuario> usuarios = new ArrayList<Usuario>();
         String  musicaEsperada;
@@ -155,18 +400,14 @@ public class EvaluationSystem {
 
                 for(File fileNivel2: fileNivel1.listFiles()) {
                     String tipo = fileNivel2.getName();
-                    if ("Tipo1|Tipo 2|Tipo3".contains(tipo)) {
+                    if ("Tipo1|Tipo2|Tipo3".contains(tipo)) {
                         for(File fileNivel3: fileNivel2.listFiles()) {  
                             if (fileNivel3.getName().contains(".wav")) {
                                 musicaEsperada = getTitle(fileNivel3.getName().trim());
                                 
-                                /*
-                                System.out.println(String.format("Arquivo: %s - Inicio", fileNivel3.getName().trim()));
-                                if (fileNivel3.getName().contains("musica_027_g2")) {
-                                    musicaEsperada = musicaEsperada;
-                                }
-                                */
-
+                                System.out.print(String.format("Arquivo: %s, Música: %s", fileNivel3.getName().trim(), musicaEsperada));
+                                out.print(String.format("Arquivo: %s, Música: %s", fileNivel3.getName().trim(), musicaEsperada));
+                                //------------------------------------------------------------------------------
                                 InputStream inputStream = new FileInputStream(fileNivel3);
                                 WavSignal signal = new WavSignal();
                                 signal.loadFromWavFile(Util.createMap(new KeyValue<String, Object>("inputStream", inputStream)));
@@ -179,11 +420,13 @@ public class EvaluationSystem {
                                 int position = getMRR(getResult, musicaEsperada);
 
                                 usuario.addGravacao(tipo, musicaEsperada, position);
-
-                                System.out.println(String.format("Arquivo: %s, Posicao no ranque: %d", fileNivel3.getName().trim(), position));
-                                out.println(String.format("Arquivo: %s, Posicao no ranque: %d", fileNivel3.getName().trim(), position));
+                                //------------------------------------------------------------------------------
+                                System.out.println(String.format(", Posicao no ranque: %d", position));
+                                out.println(String.format(", Posicao no ranque: %d", position));
                             }
                         }
+                    }else {
+                        out.println("Tipo Desconhecido.");
                     }
                 }
                 

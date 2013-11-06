@@ -4,6 +4,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import org.apache.commons.io.IOUtils;
 import org.elasticsearch.common.io.stream.StreamOutput;
@@ -126,6 +127,12 @@ public class Convert {
     public static Object deserialize(String object) {
         XStream xstream = new XStream(new DomDriver());
         Object result = xstream.fromXML(object);
+        return result;
+    }
+    
+    public static Object deserialize(InputStream inputStream) {
+        XStream xstream = new XStream(new DomDriver());
+        Object result = xstream.fromXML(inputStream);
         return result;
     }
 

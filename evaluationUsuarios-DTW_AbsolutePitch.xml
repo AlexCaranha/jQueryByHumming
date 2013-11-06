@@ -3,10 +3,52 @@
     <usuario>Usuario_036</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Luar do sertão</nome>
+        <posicao>8.0</posicao>
+        <outer-class/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Preta pretinha</nome>
+        <posicao>21.0</posicao>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ilariê</nome>
+        <posicao>1.0</posicao>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
         <posicao>33.0</posicao>
-        <outer-class/>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Mamãe eu quero</nome>
+        <posicao>4.0</posicao>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Preta pretinha</nome>
+        <posicao>27.0</posicao>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
@@ -46,8 +88,32 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>39.0</posicao>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>45.0</posicao>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Quero que vá tudo pro inferno</nome>
         <posicao>47.0</posicao>
+        <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Ilariê</nome>
+        <posicao>1.0</posicao>
         <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -92,6 +158,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_023</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Travessia</nome>
+        <posicao>43.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Luar do sertão</nome>
+        <posicao>7.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Mamãe eu quero</nome>
+        <posicao>3.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>As curvas da estrada de Santos</nome>
+        <posicao>40.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Felicidade</nome>
+        <posicao>17.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
@@ -189,6 +285,36 @@
     <usuario>Usuario_034</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>40.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>24.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>29.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A flor e o espinho</nome>
+        <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>O barquinho</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Carinhoso</nome>
         <posicao>32.0</posicao>
@@ -226,6 +352,24 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>23.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>A flor e o espinho</nome>
+        <posicao>21.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Águas de março</nome>
+        <posicao>7.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Águas de março</nome>
         <posicao>7.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
@@ -246,6 +390,12 @@
         <tipo>Tipo3</tipo>
         <nome>Quero que vá tudo pro inferno</nome>
         <posicao>47.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Carinhoso</nome>
+        <posicao>32.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -285,6 +435,36 @@
     <usuario>Usuario_026</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alegria, alegria</nome>
+        <posicao>15.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Detalhes</nome>
+        <posicao>17.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>9.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>39.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>1.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
         <posicao>32.0</posicao>
@@ -300,6 +480,12 @@
         <tipo>Tipo3</tipo>
         <nome>Anna Júlia</nome>
         <posicao>18.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Travessia</nome>
+        <posicao>38.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -324,6 +510,18 @@
         <tipo>Tipo3</tipo>
         <nome>Escravos de jó</nome>
         <posicao>37.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Detalhes</nome>
+        <posicao>4.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>5.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -380,6 +578,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_025</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Asa branca</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>28.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>7.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>12.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>32.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
@@ -477,9 +705,51 @@
     <usuario>Usuario_041</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>15.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A flor e o espinho</nome>
+        <posicao>32.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Pra não dizer que não falei das flores</nome>
+        <posicao>44.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu quero é botar meu bloco na rua</nome>
+        <posicao>20.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ideologia</nome>
+        <posicao>11.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Ideologia</nome>
         <posicao>14.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Eu quero é botar meu bloco na rua</nome>
+        <posicao>19.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -508,8 +778,26 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Ideologia</nome>
+        <posicao>14.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Chega de saudade</nome>
         <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Detalhes</nome>
+        <posicao>10.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Gita</nome>
+        <posicao>5.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -522,6 +810,18 @@
         <tipo>Tipo3</tipo>
         <nome>Pra não dizer que não falei das flores</nome>
         <posicao>44.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Pra não dizer que não falei das flores</nome>
+        <posicao>44.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>A flor e o espinho</nome>
+        <posicao>33.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -572,6 +872,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_021</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ideologia</nome>
+        <posicao>25.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>21.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>24.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>50.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>30.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
@@ -669,6 +999,36 @@
     <usuario>Usuario_003</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Aquarela do Brasil</nome>
+        <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>País tropical</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Águas de março</nome>
+        <posicao>5.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>22.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>3.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
         <posicao>22.0</posicao>
@@ -764,6 +1124,66 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_010</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>46.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Fim de Ano</nome>
+        <posicao>30.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Gita</nome>
+        <posicao>4.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Luar do sertão</nome>
+        <posicao>2.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Pra não dizer que não falei das flores</nome>
+        <posicao>42.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alagados</nome>
+        <posicao>11.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>30.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>23.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
@@ -951,6 +1371,36 @@
     <usuario>Usuario_043</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Aquarela do Brasil</nome>
+        <posicao>37.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Águas de março</nome>
+        <posicao>14.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alegria, alegria</nome>
+        <posicao>17.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ideologia</nome>
+        <posicao>11.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Gita</nome>
+        <posicao>6.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Felicidade</nome>
         <posicao>9.0</posicao>
@@ -1047,6 +1497,36 @@
     <usuario>Usuario_032</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Águas de março</nome>
+        <posicao>14.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>5.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>32.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>20.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>18.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
         <posicao>31.0</posicao>
@@ -1086,6 +1566,12 @@
         <tipo>Tipo3</tipo>
         <nome>Escravos de jó</nome>
         <posicao>36.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>15.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -1141,16 +1627,119 @@
   </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_042</usuario>
-    <gravacoes/>
+    <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Águas de março</nome>
+        <posicao>2.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A banda</nome>
+        <posicao>51.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>18.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>50.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>7.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>13.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Águas de março</nome>
+        <posicao>17.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>51.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+    </gravacoes>
     <outer-class reference="../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
   </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_039</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>45.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Fim de Ano</nome>
+        <posicao>29.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Que país é este?</nome>
         <posicao>21.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>10.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>5.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -1179,14 +1768,44 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Fim de Ano</nome>
+        <posicao>32.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Escravos de jó</nome>
         <posicao>36.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>21.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Anna Júlia</nome>
         <posicao>5.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>8.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -1199,6 +1818,12 @@
         <tipo>Tipo3</tipo>
         <nome>Fim de Ano</nome>
         <posicao>32.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>47.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -1244,6 +1869,42 @@
     <usuario>Usuario_011</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>5.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>22.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Preta pretinha</nome>
+        <posicao>25.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>21.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Parabéns a você</nome>
         <posicao>48.0</posicao>
@@ -1268,6 +1929,24 @@
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Alagados</nome>
+        <posicao>7.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>27.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo1</tipo>
         <nome>Garota de ipanema</nome>
         <posicao>27.0</posicao>
@@ -1285,6 +1964,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_027</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Detalhes</nome>
+        <posicao>2.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>15.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>44.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>30.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>País tropical</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
@@ -1311,6 +2020,18 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>País tropical</nome>
+        <posicao>29.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>18.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Ciranda cirandinha</nome>
         <posicao>10.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
@@ -1331,6 +2052,12 @@
         <tipo>Tipo3</tipo>
         <nome>Asa branca</nome>
         <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>46.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -1381,6 +2108,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_038</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Asa branca</nome>
+        <posicao>20.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>16.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Luar do sertão</nome>
+        <posicao>12.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>29.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
@@ -1477,6 +2234,66 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_002</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>País tropical</nome>
+        <posicao>30.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Águas de março</nome>
+        <posicao>10.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>20.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Preta pretinha</nome>
+        <posicao>23.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>25.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Mamãe eu quero</nome>
+        <posicao>12.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Chega de saudade</nome>
+        <posicao>49.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Gita</nome>
+        <posicao>4.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>30.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino da bandeira</nome>
+        <posicao>31.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
@@ -1663,6 +2480,156 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_004</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>40.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Carinhoso</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>35.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Fim de Ano</nome>
+        <posicao>27.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Travessia</nome>
+        <posicao>37.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Chegou a hora da foqueira</nome>
+        <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>16.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Inútil</nome>
+        <posicao>1.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Mamãe eu quero</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Chega de saudade</nome>
+        <posicao>49.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Conversa de botequim</nome>
+        <posicao>46.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>O barquinho</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ilariê</nome>
+        <posicao>1.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Meu mundo e nada mais</nome>
+        <posicao>45.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu quero é botar meu bloco na rua</nome>
+        <posicao>24.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ronda</nome>
+        <posicao>36.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Felicidade</nome>
+        <posicao>12.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>39.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Gita</nome>
+        <posicao>16.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>21.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Sentado à beira do caminho</nome>
+        <posicao>29.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Coelhinho de olhos vermelhos</nome>
+        <posicao>16.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Coelhinho de olhos vermelhos</nome>
@@ -2120,6 +3087,66 @@
     <usuario>Usuario_006</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Carinhoso</nome>
+        <posicao>42.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alegria, alegria</nome>
+        <posicao>17.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ideologia</nome>
+        <posicao>9.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Chega de saudade</nome>
+        <posicao>50.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Conversa de botequim</nome>
+        <posicao>47.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>O barquinho</nome>
+        <posicao>49.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Felicidade</nome>
+        <posicao>16.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>39.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Gita</nome>
+        <posicao>5.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Coelhinho de olhos vermelhos</nome>
+        <posicao>17.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Coelhinho de olhos vermelhos</nome>
         <posicao>27.0</posicao>
@@ -2306,6 +3333,54 @@
     <usuario>Usuario_001</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A noite de meu bem</nome>
+        <posicao>47.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>37.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alegria, alegria</nome>
+        <posicao>18.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Pra não dizer que não falei das flores</nome>
+        <posicao>42.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Conversa de botequim</nome>
+        <posicao>46.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ronda</nome>
+        <posicao>38.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>24.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
         <posicao>32.0</posicao>
@@ -2480,9 +3555,111 @@
     <usuario>Usuario_009</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Mamãe eu quero</nome>
+        <posicao>10.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Sentado à beira do caminho</nome>
+        <posicao>25.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alegria, alegria</nome>
+        <posicao>15.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Gita</nome>
+        <posicao>10.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>37.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Detalhes</nome>
+        <posicao>16.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>38.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>44.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>23.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Felicidade</nome>
+        <posicao>12.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>41.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ponteio</nome>
+        <posicao>36.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Pra não dizer que não falei das flores</nome>
+        <posicao>41.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Foi um rio que passou em minha vida</nome>
+        <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>21.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Felicidade</nome>
         <posicao>14.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Coelhinho de olhos vermelhos</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>21.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -2499,8 +3676,32 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>25.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Comida</nome>
+        <posicao>44.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Mamãe eu quero</nome>
         <posicao>2.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>16.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Preta pretinha</nome>
+        <posicao>27.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -2511,8 +3712,20 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Felicidade</nome>
+        <posicao>14.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Comida</nome>
         <posicao>44.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Alegria, alegria</nome>
+        <posicao>18.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -2559,6 +3772,18 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Fim de Ano</nome>
+        <posicao>30.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>38.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Sentado à beira do caminho</nome>
         <posicao>30.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
@@ -2571,8 +3796,26 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>País tropical</nome>
+        <posicao>32.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>O barquinho</nome>
         <posicao>49.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Sentado à beira do caminho</nome>
+        <posicao>30.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>20.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -2585,6 +3828,12 @@
         <tipo>Tipo3</tipo>
         <nome>Anna Júlia</nome>
         <posicao>16.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -2607,8 +3856,20 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>País tropical</nome>
         <posicao>32.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Pra não dizer que não falei das flores</nome>
+        <posicao>43.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -2631,8 +3892,26 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Asa branca</nome>
+        <posicao>20.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Garota de ipanema</nome>
         <posicao>27.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>47.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -2645,6 +3924,12 @@
         <tipo>Tipo3</tipo>
         <nome>Quero que vá tudo pro inferno</nome>
         <posicao>47.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Ilariê</nome>
+        <posicao>2.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -2756,6 +4041,36 @@
     <usuario>Usuario_015</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Aquarela do Brasil</nome>
+        <posicao>37.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Fim de Ano</nome>
+        <posicao>24.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ilariê</nome>
+        <posicao>1.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>5.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
         <posicao>33.0</posicao>
@@ -2851,6 +4166,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_014</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Luar do sertão</nome>
+        <posicao>4.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Águas de março</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>21.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Asa branca</nome>
+        <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alagados</nome>
+        <posicao>5.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Mamãe eu quero</nome>
@@ -2948,6 +4293,36 @@
     <usuario>Usuario_029</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>43.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Carinhoso</nome>
+        <posicao>42.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Detalhes</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Chega de saudade</nome>
+        <posicao>50.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Meu mundo e nada mais</nome>
         <posicao>46.0</posicao>
@@ -3044,6 +4419,42 @@
     <usuario>Usuario_013</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Mamãe eu quero</nome>
+        <posicao>12.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>29.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>45.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>20.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Mamãe eu quero</nome>
+        <posicao>12.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Parabéns a você</nome>
         <posicao>48.0</posicao>
@@ -3053,6 +4464,12 @@
         <tipo>Tipo3</tipo>
         <nome>Mamãe eu quero</nome>
         <posicao>12.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>48.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -3067,6 +4484,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_030</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>9.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Inútil</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ilariê</nome>
+        <posicao>1.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alagados</nome>
+        <posicao>3.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
@@ -3164,6 +4611,36 @@
     <usuario>Usuario_017</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Preta pretinha</nome>
+        <posicao>32.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>39.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>38.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>6.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Eu sei que vou te amar</nome>
         <posicao>17.0</posicao>
@@ -3260,6 +4737,66 @@
     <usuario>Usuario_005</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Luar do sertão</nome>
+        <posicao>5.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Gita</nome>
+        <posicao>7.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Carinhoso</nome>
+        <posicao>42.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Disritmia</nome>
+        <posicao>40.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>28.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Chega de saudade</nome>
+        <posicao>49.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>22.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Carinhoso</nome>
         <posicao>41.0</posicao>
@@ -3299,6 +4836,18 @@
         <tipo>Tipo3</tipo>
         <nome>Parabéns a você</nome>
         <posicao>49.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Disritmia</nome>
+        <posicao>42.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Luar do sertão</nome>
+        <posicao>3.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -3357,8 +4906,26 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Sentado à beira do caminho</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Que país é este?</nome>
         <posicao>24.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Gita</nome>
+        <posicao>5.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -3375,8 +4942,26 @@
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>49.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
         <nome>Garota de ipanema</nome>
         <posicao>23.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Carinhoso</nome>
+        <posicao>41.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Ilariê</nome>
+        <posicao>1.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -3445,6 +5030,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_037</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Mamãe eu quero</nome>
+        <posicao>11.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>45.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ideologia</nome>
+        <posicao>9.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
@@ -3542,6 +5157,36 @@
     <usuario>Usuario_018</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Aquarela do Brasil</nome>
+        <posicao>39.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Águas de março</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>28.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Gita</nome>
+        <posicao>3.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino da bandeira</nome>
+        <posicao>36.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
         <posicao>36.0</posicao>
@@ -3637,6 +5282,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_024</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Comida</nome>
+        <posicao>43.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alegria, alegria</nome>
+        <posicao>16.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>10.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ilariê</nome>
+        <posicao>3.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Felicidade</nome>
+        <posicao>17.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
@@ -3734,6 +5409,36 @@
     <usuario>Usuario_019</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>21.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ideologia</nome>
+        <posicao>9.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>34.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>8.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>36.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
         <posicao>34.0</posicao>
@@ -3830,6 +5535,66 @@
     <usuario>Usuario_020</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Asa branca</nome>
+        <posicao>18.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Comida</nome>
+        <posicao>42.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>País tropical</nome>
+        <posicao>31.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Inútil</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>6.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>38.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>25.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>15.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>10.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
         <posicao>35.0</posicao>
@@ -3869,6 +5634,18 @@
         <tipo>Tipo3</tipo>
         <nome>Inútil</nome>
         <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>46.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>39.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -4015,6 +5792,96 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_033</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Aquarela do Brasil</nome>
+        <posicao>35.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Águas de março</nome>
+        <posicao>3.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>40.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Fim de Ano</nome>
+        <posicao>27.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alegria, alegria</nome>
+        <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Travessia</nome>
+        <posicao>40.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Conversa de botequim</nome>
+        <posicao>47.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ilariê</nome>
+        <posicao>2.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Meu mundo e nada mais</nome>
+        <posicao>43.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>50.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu quero é botar meu bloco na rua</nome>
+        <posicao>19.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Felicidade</nome>
+        <posicao>14.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>34.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>9.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
@@ -4292,6 +6159,36 @@
     <usuario>Usuario_028</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Carinhoso</nome>
+        <posicao>32.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>35.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>27.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>47.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Meu mundo e nada mais</nome>
+        <posicao>44.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Eu sei que vou te amar</nome>
         <posicao>32.0</posicao>
@@ -4307,6 +6204,12 @@
         <tipo>Tipo3</tipo>
         <nome>Preta pretinha</nome>
         <posicao>22.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>38.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -4387,6 +6290,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_022</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Alegria, alegria</nome>
+        <posicao>16.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>24.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>31.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
@@ -4484,6 +6417,36 @@
     <usuario>Usuario_016</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Fim de Ano</nome>
+        <posicao>21.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Asa branca</nome>
+        <posicao>14.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>23.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>22.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>49.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
         <posicao>20.0</posicao>
@@ -4579,6 +6542,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_007</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Asa branca</nome>
+        <posicao>13.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>50.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Disritmia</nome>
+        <posicao>36.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>18.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Anna Júlia</nome>
@@ -4676,6 +6669,36 @@
     <usuario>Usuario_012</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Mamãe eu quero</nome>
+        <posicao>2.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>34.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>42.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>7.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
         <posicao>33.0</posicao>
@@ -4771,6 +6794,66 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_008</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Comida</nome>
+        <posicao>42.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>País tropical</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>36.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Fim de Ano</nome>
+        <posicao>13.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Chegou a hora da foqueira</nome>
+        <posicao>13.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>37.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Eu sei que vou te amar</nome>
+        <posicao>34.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ilariê</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Escravos de jó</nome>
+        <posicao>25.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Me chama</nome>
+        <posicao>49.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
@@ -4958,6 +7041,36 @@
     <usuario>Usuario_031</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>A banda</nome>
+        <posicao>52.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Asa branca</nome>
+        <posicao>9.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>28.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Você não soube me amar</nome>
+        <posicao>33.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Trem das onze</nome>
+        <posicao>22.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Trem das onze</nome>
         <posicao>19.0</posicao>
@@ -4985,6 +7098,12 @@
         <tipo>Tipo3</tipo>
         <nome>País tropical</nome>
         <posicao>27.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Que país é este?</nome>
+        <posicao>28.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
@@ -5053,6 +7172,36 @@
   <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario>
     <usuario>Usuario_035</usuario>
     <gravacoes>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Asa branca</nome>
+        <posicao>14.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Garota de ipanema</nome>
+        <posicao>26.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Hino nacional</nome>
+        <posicao>25.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Parabéns a você</nome>
+        <posicao>48.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>23.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
@@ -5150,6 +7299,36 @@
     <usuario>Usuario_040</usuario>
     <gravacoes>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Asa branca</nome>
+        <posicao>9.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Quero que vá tudo pro inferno</nome>
+        <posicao>37.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>11.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ciranda cirandinha</nome>
+        <posicao>5.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo2</tipo>
+        <nome>Ilariê</nome>
+        <posicao>2.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
         <tipo>Tipo3</tipo>
         <nome>Hino nacional</nome>
         <posicao>20.0</posicao>
@@ -5165,6 +7344,12 @@
         <tipo>Tipo3</tipo>
         <nome>Mamãe eu quero</nome>
         <posicao>13.0</posicao>
+        <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
+      </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+      <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
+        <tipo>Tipo3</tipo>
+        <nome>Anna Júlia</nome>
+        <posicao>16.0</posicao>
         <outer-class reference="../../../../com.alexcaranha.jquerybyhumming.EvaluationSystem_-Usuario/gravacoes/com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao/outer-class"/>
       </com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
       <com.alexcaranha.jquerybyhumming.EvaluationSystem_-Gravacao>
