@@ -40,6 +40,13 @@ public class WavSignal extends Signal {
         _state      = Signal.BasicStates.LOCKED;
 
         _signalXY   = resampleWavSignalFromInputStream((InputStream)(args.get("inputStream")), 8000);
+        
+        if (args.containsKey("normalized")) {
+            boolean value = Convert.toBoolean(args.get("normalized"));
+            if (value) {
+                Util.normalizeByMaximum(_signalXY.getY());
+            }
+        }
 
         if (args.containsKey("notifyObservers") && Convert.toBoolean(args.get("notifyObservers"))) {
             this.setChanged();
