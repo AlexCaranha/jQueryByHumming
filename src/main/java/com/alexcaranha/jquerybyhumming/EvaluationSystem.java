@@ -481,6 +481,55 @@ public class EvaluationSystem {
             }
         }
         //----------------------------------------------------------------------
+        System.out.println("\nMRR Música por algoritmo: Algoritmo1, Algoritmo2, Algoritmo3; Codigo; Titulo");
+        out.println("\nMRR Música por algoritmo: Algoritmo1, Algoritmo2, Algoritmo3; Codigo; Titulo");
+        
+        for(String title : titles) {
+            String codigoMusica = getCode(title);
+                        
+            int qtdAlgoritmo1 = 0;
+            int qtdAlgoritmo2 = 0;
+            int qtdAlgoritmo3 = 0;
+
+            double sumAlgoritmo1 = 0.0;
+            double sumAlgoritmo2 = 0.0;
+            double sumAlgoritmo3 = 0.0;
+
+            for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
+                Integer       algoritmo = item.getKey();
+                List<Usuario> lista     = item.getValue();
+                
+                for(Usuario usuario : lista) {
+                    List<Gravacao> gravacoes = usuario.getGravacao(title);
+                    
+                    if (gravacoes != null)
+                    for(Gravacao gravacao : gravacoes) {                                                
+                        switch (algoritmo) {
+                            case 1:
+                                qtdAlgoritmo1 += 1;
+                                sumAlgoritmo1 += 1 / gravacao.getPosicao();
+                                break;
+                            case 2:
+                                qtdAlgoritmo2 += 1;
+                                sumAlgoritmo2 += 1 / gravacao.getPosicao();
+                                break;
+                            case 3:
+                                qtdAlgoritmo3 += 1;
+                                sumAlgoritmo3 += 1 / gravacao.getPosicao();
+                                break;
+                        }
+                    }
+                }
+            }
+
+            double MRR_A1 = qtdAlgoritmo1 == 0 ? 0.0 : sumAlgoritmo1 / qtdAlgoritmo1;
+            double MRR_A2 = qtdAlgoritmo2 == 0 ? 0.0 : sumAlgoritmo2 / qtdAlgoritmo2;
+            double MRR_A3 = qtdAlgoritmo3 == 0 ? 0.0 : sumAlgoritmo3 / qtdAlgoritmo3;
+
+            System.out.println(String.format("%.6f; %.6f; %.6f; %s; %s", MRR_A1, MRR_A2, MRR_A3, codigoMusica, title));
+            out.println(String.format("%.6f; %.6f; %.6f; %s; %s", MRR_A1, MRR_A2, MRR_A3, codigoMusica, title));            
+        }
+        //----------------------------------------------------------------------
         out.close();
         //----------------------------------------------------------------------
     }
