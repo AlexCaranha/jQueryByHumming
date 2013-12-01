@@ -15,10 +15,14 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.NavigableMap;
+import java.util.TreeMap;
 
 /**
  *
@@ -97,7 +101,7 @@ public class EvaluationSystem {
         return usuarios;
     }
     
-    public static List<String> getTitles() {
+    public static String[] getTitles() {
         List<String> result = new ArrayList<String>();
         
         result.add("Águas de março");
@@ -153,7 +157,7 @@ public class EvaluationSystem {
         result.add("Coelhinho de olhos vermelhos");
         result.add("Chegou a hora da foqueira");
         
-        return result;
+        return result.toArray(new String[result.size()]);
     }
     
     public static String getTitle(String label) {
@@ -270,6 +274,340 @@ public class EvaluationSystem {
         return null;
     }
     
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        //----------------------------------------------------------------------
+        String   dirDB = "/home/alexcaranha/Documentos/Mestrado/DataBase/DBSolfejos";
+        //String[] tipos = Util.createArray("Tipo1","Tipo2","Tipo3");
+        String[] algoritmos = Util.createArray("LevenshteinDistance", "DTW_AbsolutePitch", "DTW_RelativePitch");
+        String[] titles = getTitles();
+        
+        String prefixo = "/home/alexcaranha/Documentos/Mestrado/jQueryByHumming/";
+        String path1 = prefixo + "evaluationUsuarios-" + algoritmos[0] + ".xml";
+        String path2 = prefixo + "evaluationUsuarios-" + algoritmos[1] + ".xml";
+        String path3 = prefixo + "evaluationUsuarios-" + algoritmos[2] + ".xml";        
+                
+        Map<Integer, List<Usuario>> usuarios = new HashMap<Integer, List<Usuario>>();
+        usuarios.put(1, GetFromXML(path1));  // LevenshteinDistance
+        usuarios.put(2, GetFromXML(path2));  // DTW_RelativePitch
+        usuarios.put(3, GetFromXML(path3));  // DTW_AbsolutePitch
+        
+        Map<Integer, List<Usuario>> usuarios1e3 = new HashMap<Integer, List<Usuario>>();
+        usuarios1e3.put(1, GetFromXML(path1));  // LevenshteinDistance
+        usuarios1e3.put(3, GetFromXML(path3));  // DTW_AbsolutePitch
+        
+        int iMusica;
+        //----------------------------------------------------------------------
+        PrintWriter out1 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M1.txt")));
+        PrintWriter out2 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M2.txt")));
+        PrintWriter out3 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M3.txt")));
+        PrintWriter out4 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M4.txt")));
+        PrintWriter out5 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M5.txt")));
+        PrintWriter out6 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M6.txt")));
+        //----------------------------------------------------------------------
+        // Medição 1:
+        System.out.print("Medição 1: ");
+        out1.print("Medição 1:");
+        for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
+            String musica = titles[iMusica];
+            Map<String, int[]> dicionario = new HashMap<String, int[]>();
+            
+            for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
+                int iAlgoritmo = item.getKey();
+                
+                for(Usuario usuario : item.getValue()) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        if (musica.equalsIgnoreCase(gravacao.getNome())) {
+                            int iTipoGravacao = gravacao.getTipo().equalsIgnoreCase("Tipo1")
+                                                    ? 1 : gravacao.getTipo().equalsIgnoreCase("Tipo2")
+                                                    ? 2 : gravacao.getTipo().equalsIgnoreCase("Tipo3")
+                                                    ? 3 : 0;
+                            
+                            String key = String.format("%d%d", iTipoGravacao, iAlgoritmo);
+                            if (!dicionario.containsKey(key)) {
+                                dicionario.put(key, new int[titles.length]);
+                            }
+                            
+                            int posicao = (int)gravacao.getPosicao();
+                            dicionario.get(key)[posicao-1] += 1;
+                        } // end if.
+                    } // end for.
+                } // end for.
+            }
+            
+            int registros = 0;
+            for (int iTipo = 1; iTipo <= 3; iTipo += 1) {
+                for (int iAlgoritmo = 1; iAlgoritmo <= 3; iAlgoritmo += 1) {
+                    for (Entry<String, int[]> item : dicionario.entrySet()) {
+                        String  key = item.getKey();
+                        int     iTipoGravacao = Convert.toInteger(key.charAt(0));
+                        int     iAlgoritmoGravacao = Convert.toInteger(key.charAt(1));
+                        
+                        if (iTipoGravacao == iTipo && iAlgoritmoGravacao == iAlgoritmo) {
+                            registros += 1;
+                            if (1 == registros) out1.println(String.format("\n\t%s", musica));
+                            
+                            out1.print(String.format("\t\tT:%d;A:%d;[", iTipoGravacao, iAlgoritmo));
+                            int[] curva = item.getValue();
+                            for (int index = 0; index < curva.length-1; index += 1) {
+                                out1.print(String.format("%d;", curva[index]));
+                            }
+                            out1.println(String.format("%d]", curva[curva.length-1]));
+                        }
+                    } // end for item
+                } // end for iAlgoritmo
+            } // end for iTipo
+            
+        } // end for musica
+        System.out.println(String.format("%d", iMusica));
+        //----------------------------------------------------------------------
+        // Medição 2:
+        System.out.print("Medição 2: ");
+        out2.print("Medição 2:");
+        for (String musica : titles) {
+            Map<String, int[]> dicionario = new HashMap<String, int[]>();
+            
+            for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {                
+                for(Usuario usuario : item.getValue()) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        if (musica.equalsIgnoreCase(gravacao.getNome())) {
+                            int iTipoGravacao = gravacao.getTipo().equalsIgnoreCase("Tipo1")
+                                                    ? 1 : gravacao.getTipo().equalsIgnoreCase("Tipo2")
+                                                    ? 2 : gravacao.getTipo().equalsIgnoreCase("Tipo3")
+                                                    ? 3 : 0;
+                            
+                            String key = String.format("%d", iTipoGravacao);
+                            if (!dicionario.containsKey(key)) {
+                                dicionario.put(key, new int[titles.length]);
+                            }
+                            
+                            int posicao = (int)gravacao.getPosicao();
+                            dicionario.get(key)[posicao-1] += 1;
+                        } // end if.
+                    } // end for.
+                } // end for.
+            }
+            
+            int registros = 0;
+            for (int iTipo = 1; iTipo <= 3; iTipo += 1) {
+                for (Entry<String, int[]> item : dicionario.entrySet()) {
+                    String  key = item.getKey();
+                    int     iTipoGravacao = Convert.toInteger(key.charAt(0));
+
+                    if (iTipoGravacao == iTipo) {
+                        registros += 1;
+                        if (1 == registros) out2.println(String.format("\n\t%s", musica));
+
+                        out2.print(String.format("\t\tT:%d;[", iTipoGravacao));
+                        int[] curva = item.getValue();
+                        for (int index = 0; index < curva.length-1; index += 1) {
+                            out2.print(String.format("%d;", curva[index]));
+                        }
+                        out2.println(String.format("%d]", curva[curva.length-1]));
+                    }
+                } // end for item
+            } // end for iTipo
+            
+        } // end for musica
+        System.out.println(String.format("%d", iMusica));
+        //----------------------------------------------------------------------
+        // Medição 3:
+        System.out.print("Medição 3: ");
+        out3.print("Medição 3: ");
+        for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
+            String musica = titles[iMusica];
+            Map<String, int[]> dicionario = new HashMap<String, int[]>();
+            
+            for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
+                int iAlgoritmo = item.getKey();
+                
+                for(Usuario usuario : item.getValue()) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        if (musica.equalsIgnoreCase(gravacao.getNome())) {
+                            String key = String.format("%d", iAlgoritmo);
+                            if (!dicionario.containsKey(key)) {
+                                dicionario.put(key, new int[titles.length]);
+                            }
+                            
+                            int posicao = (int)gravacao.getPosicao();
+                            dicionario.get(key)[posicao-1] += 1;
+                        } // end if.
+                    } // end for.
+                } // end for.
+            }
+            
+            int registros = 0;
+            for (int iAlgoritmo = 1; iAlgoritmo <= 3; iAlgoritmo += 1) {
+                for (Entry<String, int[]> item : dicionario.entrySet()) {
+                    String  key = item.getKey();
+                    int     iAlgoritmoGravacao = Convert.toInteger(key.charAt(0));
+
+                    if (iAlgoritmoGravacao == iAlgoritmo) {
+                        registros += 1;
+                        if (1 == registros) out3.println(String.format("\n\t%s", musica));
+
+                        out3.print(String.format("\t\tA:%d;[", iAlgoritmo));
+                        int[] curva = item.getValue();
+                        for (int index = 0; index < curva.length-1; index += 1) {
+                            out3.print(String.format("%d;", curva[index]));
+                        }
+                        out3.println(String.format("%d]", curva[curva.length-1]));
+                    }
+                } // end for item
+            } // end for iAlgoritmo
+            
+        } // end for musica
+        System.out.println(String.format("%d", iMusica));
+        //----------------------------------------------------------------------
+        // Medição 4:
+        System.out.print("Medição 4: ");
+        out4.print("Medição 4:");
+        for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
+            String musica = titles[iMusica];
+            int[] curva = new int[titles.length];
+            
+            for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
+                for(Usuario usuario : item.getValue()) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        if (musica.equalsIgnoreCase(gravacao.getNome())) {
+                            int posicao = (int)gravacao.getPosicao();
+                            curva[posicao-1] += 1;
+                        } // end if.
+                    } // end for.
+                } // end for.
+            }
+            
+            out4.println(String.format("\n\t%s", musica));
+            out4.print("\t\t[");
+            for (int index = 0; index < curva.length-1; index += 1) {
+                out4.print(String.format("%d;", curva[index]));
+            }
+            out4.println(String.format("%d]", curva[curva.length-1]));
+            
+        } // end for musica
+        System.out.println(String.format("%d", iMusica));
+        //----------------------------------------------------------------------
+        // Medição 5:
+        TreeMap<String, Integer> dicionario5 = new TreeMap<String, Integer>();
+        System.out.print("Medição 5: ");
+        out5.print("Medição 5. (Junção do resultado para todos os algoritmos e todas as gravações.)");
+        for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
+            String musica = titles[iMusica];
+            
+            for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
+                for(Usuario usuario : item.getValue()) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        if (musica.equalsIgnoreCase(gravacao.getNome())) {
+                            if (!dicionario5.containsKey(musica)) {
+                                dicionario5.put(musica, 0);
+                            }
+                            dicionario5.put(musica, 1 + dicionario5.get(musica));
+                        } // end if.
+                    } // end for.
+                } // end for.
+            }
+        } // end for musica
+        
+        // Get entries and sort them.
+        List<Entry<String, Integer>> entriesDic5 = new ArrayList<Entry<String, Integer>>(dicionario5.entrySet());
+        Collections.sort(entriesDic5, new Comparator<Entry<String, Integer>>() {
+            public int compare(Entry<String, Integer> e1, Entry<String, Integer> e2) {
+                return e2.getValue().compareTo(e1.getValue());
+            }
+        });
+        
+        for (Entry<String, Integer> entry : entriesDic5) {
+            String musica = entry.getKey();
+            int[] curva = new int[titles.length];
+
+            for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
+                for(Usuario usuario : item.getValue()) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        if (musica.equalsIgnoreCase(gravacao.getNome())) {
+                            int posicao = (int)gravacao.getPosicao();
+                            curva[posicao-1] += 1;
+                        } // end if.
+                    } // end for.
+                } // end for.
+            }
+
+            out5.println(String.format("\n\t%s. Total de gravações: %d", musica, entry.getValue()));
+            out5.print("\t\t[");
+            for (int index = 0; index < curva.length-1; index += 1) {
+                out5.print(String.format("%d;", curva[index]));
+            }
+            out5.println(String.format("%d]", curva[curva.length-1]));
+
+            System.out.println(String.format("%d", iMusica));
+        }
+                
+        System.out.println(String.format("%d", iMusica));
+        //----------------------------------------------------------------------
+        // Medição 6:
+        TreeMap<String, Integer> dicionario6 = new TreeMap<String, Integer>();
+        System.out.print("Medição 6: ");
+        out6.print("Medição 6. (Junção do resultado para os algoritmos: 1 e 3, e todas as gravações.)");
+        for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
+            String musica = titles[iMusica];
+            
+            for(Entry<Integer, List<Usuario>> item : usuarios1e3.entrySet()) {
+                for(Usuario usuario : item.getValue()) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        if (musica.equalsIgnoreCase(gravacao.getNome())) {
+                            if (!dicionario6.containsKey(musica)) {
+                                dicionario6.put(musica, 0);
+                            }
+                            dicionario6.put(musica, 1 + dicionario6.get(musica));
+                        } // end if.
+                    } // end for.
+                } // end for.
+            }
+        } // end for musica
+        
+        // Get entries and sort them.
+        List<Entry<String, Integer>> entriesDic6 = new ArrayList<Entry<String, Integer>>(dicionario6.entrySet());
+        Collections.sort(entriesDic6, new Comparator<Entry<String, Integer>>() {
+            public int compare(Entry<String, Integer> e1, Entry<String, Integer> e2) {
+                return e2.getValue().compareTo(e1.getValue());
+            }
+        });
+        
+        for (Entry<String, Integer> entry : entriesDic6) {
+            String musica = entry.getKey();
+            int[] curva = new int[titles.length];
+
+            for(Entry<Integer, List<Usuario>> item : usuarios1e3.entrySet()) {
+                for(Usuario usuario : item.getValue()) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        if (musica.equalsIgnoreCase(gravacao.getNome())) {
+                            int posicao = (int)gravacao.getPosicao();
+                            curva[posicao-1] += 1;
+                        } // end if.
+                    } // end for.
+                } // end for.
+            }
+
+            out6.println(String.format("\n\t%s. Total de gravações: %d", musica, entry.getValue()));
+            out6.print("\t\t[");
+            for (int index = 0; index < curva.length-1; index += 1) {
+                out6.print(String.format("%d;", curva[index]));
+            }
+            out6.println(String.format("%d]", curva[curva.length-1]));
+
+            System.out.println(String.format("%d", iMusica));
+        }
+                
+        System.out.println(String.format("%d", iMusica));
+        //----------------------------------------------------------------------
+        out1.close();
+        out2.close();
+        out3.close();
+        out4.close();
+        out5.close();
+        out6.close();
+        //----------------------------------------------------------------------
+    }
+    
+    /*
     public static void main(String[] args) throws FileNotFoundException, IOException {
         String dirDB = "/home/alexcaranha/Documentos/Mestrado/DataBase/DBSolfejos";
         
@@ -533,6 +871,7 @@ public class EvaluationSystem {
         out.close();
         //----------------------------------------------------------------------
     }
+    */
     
     public void execute(String directory) throws FileNotFoundException, Exception {
         List<Usuario> usuarios = new ArrayList<Usuario>();
