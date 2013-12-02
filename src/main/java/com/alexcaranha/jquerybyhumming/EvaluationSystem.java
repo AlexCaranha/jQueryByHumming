@@ -21,7 +21,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.NavigableMap;
 import java.util.TreeMap;
 
 /**
@@ -284,7 +283,9 @@ public class EvaluationSystem {
         String prefixo = "/home/alexcaranha/Documentos/Mestrado/jQueryByHumming/";
         String path1 = prefixo + "evaluationUsuarios-" + algoritmos[0] + ".xml";
         String path2 = prefixo + "evaluationUsuarios-" + algoritmos[1] + ".xml";
-        String path3 = prefixo + "evaluationUsuarios-" + algoritmos[2] + ".xml";        
+        String path3 = prefixo + "evaluationUsuarios-" + algoritmos[2] + ".xml";
+        
+        String[] tipos = Util.createArray("Tipo1", "Tipo2", "Tipo3");
                 
         Map<Integer, List<Usuario>> usuarios = new HashMap<Integer, List<Usuario>>();
         usuarios.put(1, GetFromXML(path1));  // LevenshteinDistance
@@ -297,18 +298,23 @@ public class EvaluationSystem {
         
         int iMusica;
         //----------------------------------------------------------------------
-        PrintWriter out1 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M1.txt")));
-        PrintWriter out2 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M2.txt")));
-        PrintWriter out3 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M3.txt")));
-        PrintWriter out4 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M4.txt")));
-        PrintWriter out5 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M5.txt")));
-        PrintWriter out6 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_2_M6.txt")));
+        PrintWriter out1 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M1.txt")));
+        PrintWriter out2 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M2.txt")));
+        PrintWriter out3 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M3.txt")));
+        PrintWriter out4 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M4.txt")));
+        PrintWriter out5 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M5.txt")));
+        PrintWriter out6 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M6.txt")));
+        PrintWriter out7 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M7.txt")));
         //----------------------------------------------------------------------
         // Medição 1:
-        System.out.print("Medição 1: ");
-        out1.print("Medição 1:");
+        System.out.print("Medição 1: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out1.println("Medição 1: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out1.println("\tT: Simboliza o tipo de gravação (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento).");
+        out1.println("\tA: Simboliza o algoritmo (1 - Distância de Levenshtein com código de Parson, 2 - DTW com pitch absoluto e 3 - DTW com pitch relativo).");
         for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
             String musica = titles[iMusica];
+            String codMusica = getCode(musica);
+            
             Map<String, int[]> dicionario = new HashMap<String, int[]>();
             
             for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
@@ -344,9 +350,9 @@ public class EvaluationSystem {
                         
                         if (iTipoGravacao == iTipo && iAlgoritmoGravacao == iAlgoritmo) {
                             registros += 1;
-                            if (1 == registros) out1.println(String.format("\n\t%s", musica));
+                            if (1 == registros) out1.println(String.format("\n[código: %s] - %s.", codMusica, musica));
                             
-                            out1.print(String.format("\t\tT:%d;A:%d;[", iTipoGravacao, iAlgoritmo));
+                            out1.print(String.format("\tT:%d;A:%d;[", iTipoGravacao, iAlgoritmo));
                             int[] curva = item.getValue();
                             for (int index = 0; index < curva.length-1; index += 1) {
                                 out1.print(String.format("%d;", curva[index]));
@@ -361,9 +367,12 @@ public class EvaluationSystem {
         System.out.println(String.format("%d", iMusica));
         //----------------------------------------------------------------------
         // Medição 2:
-        System.out.print("Medição 2: ");
-        out2.print("Medição 2:");
+        System.out.print("Medição 2: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out2.println("Medição 2: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out2.println("\tT: Simboliza o tipo de gravação (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento).");
         for (String musica : titles) {
+            String codMusica = getCode(musica);
+            
             Map<String, int[]> dicionario = new HashMap<String, int[]>();
             
             for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {                
@@ -395,9 +404,9 @@ public class EvaluationSystem {
 
                     if (iTipoGravacao == iTipo) {
                         registros += 1;
-                        if (1 == registros) out2.println(String.format("\n\t%s", musica));
+                        if (1 == registros) out2.println(String.format("\n[código: %s] - %s.", codMusica, musica));
 
-                        out2.print(String.format("\t\tT:%d;[", iTipoGravacao));
+                        out2.print(String.format("\tT:%d;[", iTipoGravacao));
                         int[] curva = item.getValue();
                         for (int index = 0; index < curva.length-1; index += 1) {
                             out2.print(String.format("%d;", curva[index]));
@@ -411,10 +420,13 @@ public class EvaluationSystem {
         System.out.println(String.format("%d", iMusica));
         //----------------------------------------------------------------------
         // Medição 3:
-        System.out.print("Medição 3: ");
-        out3.print("Medição 3: ");
+        System.out.print("Medição 3: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out3.println("Medição 3: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out3.println("\tA: Simboliza o algoritmo (1 - Distância de Levenshtein com código de Parson, 2 - DTW com pitch absoluto e 3 - DTW com pitch relativo).");
         for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
             String musica = titles[iMusica];
+            String codMusica = getCode(musica);
+            
             Map<String, int[]> dicionario = new HashMap<String, int[]>();
             
             for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
@@ -443,9 +455,9 @@ public class EvaluationSystem {
 
                     if (iAlgoritmoGravacao == iAlgoritmo) {
                         registros += 1;
-                        if (1 == registros) out3.println(String.format("\n\t%s", musica));
+                        if (1 == registros) out3.println(String.format("\n[código: %s] - %s.", codMusica, musica));
 
-                        out3.print(String.format("\t\tA:%d;[", iAlgoritmo));
+                        out3.print(String.format("\tA:%d;[", iAlgoritmo));
                         int[] curva = item.getValue();
                         for (int index = 0; index < curva.length-1; index += 1) {
                             out3.print(String.format("%d;", curva[index]));
@@ -459,10 +471,12 @@ public class EvaluationSystem {
         System.out.println(String.format("%d", iMusica));
         //----------------------------------------------------------------------
         // Medição 4:
-        System.out.print("Medição 4: ");
-        out4.print("Medição 4:");
+        System.out.print("Medição 4: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out4.println("Medição 4: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
         for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
             String musica = titles[iMusica];
+            String codMusica = getCode(musica);
+            
             int[] curva = new int[titles.length];
             
             for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
@@ -476,8 +490,8 @@ public class EvaluationSystem {
                 } // end for.
             }
             
-            out4.println(String.format("\n\t%s", musica));
-            out4.print("\t\t[");
+            out4.println(String.format("\n[código: %s] - %s.", codMusica, musica));
+            out4.print("\t[");
             for (int index = 0; index < curva.length-1; index += 1) {
                 out4.print(String.format("%d;", curva[index]));
             }
@@ -488,8 +502,9 @@ public class EvaluationSystem {
         //----------------------------------------------------------------------
         // Medição 5:
         TreeMap<String, Integer> dicionario5 = new TreeMap<String, Integer>();
-        System.out.print("Medição 5: ");
-        out5.print("Medição 5. (Junção do resultado para todos os algoritmos e todas as gravações.)");
+        System.out.println("Medição 5: ");
+        out5.println("Medição 5: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out5.println("\tObs.: Músicas ordenadas decrescentemente pelo número de gravações.");
         for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
             String musica = titles[iMusica];
             
@@ -517,6 +532,8 @@ public class EvaluationSystem {
         
         for (Entry<String, Integer> entry : entriesDic5) {
             String musica = entry.getKey();
+            String codMusica = getCode(musica);
+            
             int[] curva = new int[titles.length];
 
             for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
@@ -530,8 +547,8 @@ public class EvaluationSystem {
                 } // end for.
             }
 
-            out5.println(String.format("\n\t%s. Total de gravações: %d", musica, entry.getValue()));
-            out5.print("\t\t[");
+            out5.println(String.format("\n[código: %s] - %s. Total de gravações: %d.", codMusica, musica, entry.getValue()));
+            out5.print("\t[");
             for (int index = 0; index < curva.length-1; index += 1) {
                 out5.print(String.format("%d;", curva[index]));
             }
@@ -544,8 +561,10 @@ public class EvaluationSystem {
         //----------------------------------------------------------------------
         // Medição 6:
         TreeMap<String, Integer> dicionario6 = new TreeMap<String, Integer>();
-        System.out.print("Medição 6: ");
-        out6.print("Medição 6. (Junção do resultado para os algoritmos: 1 e 3, e todas as gravações.)");
+        System.out.println("Medição 6: ");
+        out6.println("Medição 6: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out6.println("\tObs.: Músicas ordenadas decrescentemente pelo número de gravações.");
+        out6.println("\tObs.: Algoritmos considerados: A1 e A3.");
         for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
             String musica = titles[iMusica];
             
@@ -573,6 +592,8 @@ public class EvaluationSystem {
         
         for (Entry<String, Integer> entry : entriesDic6) {
             String musica = entry.getKey();
+            String codMusica = getCode(musica);
+            
             int[] curva = new int[titles.length];
 
             for(Entry<Integer, List<Usuario>> item : usuarios1e3.entrySet()) {
@@ -586,8 +607,8 @@ public class EvaluationSystem {
                 } // end for.
             }
 
-            out6.println(String.format("\n\t%s. Total de gravações: %d", musica, entry.getValue()));
-            out6.print("\t\t[");
+            out6.println(String.format("\n[código: %s] - %s. Total de gravações: %d.", codMusica, musica, entry.getValue()));
+            out6.print("\t[");
             for (int index = 0; index < curva.length-1; index += 1) {
                 out6.print(String.format("%d;", curva[index]));
             }
@@ -598,12 +619,44 @@ public class EvaluationSystem {
                 
         System.out.println(String.format("%d", iMusica));
         //----------------------------------------------------------------------
+        // Medição 7:
+        TreeMap<String, Integer> dicionario7 = new TreeMap<String, Integer>();
+        System.out.println("Medição 7: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº] de acordo com tipo de gravação e algoritmo.");
+        out7.println("Medição 7: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº] de acordo com tipo de gravação e algoritmo.\n");
+        for (int iTipo = 1; iTipo <= 3; iTipo += 1) {
+            String tipo = tipos[iTipo-1];
+            
+            for (int iAlgoritmo = 1; iAlgoritmo <= 3; iAlgoritmo += 1) {                
+                int[] curva = new int[titles.length];
+                
+                List<Usuario> lista = usuarios.get(iAlgoritmo);
+                
+                for(Usuario usuario : lista) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        if (tipo.equalsIgnoreCase(gravacao.getTipo())) {
+                            int posicao = (int)gravacao.getPosicao();
+                            curva[posicao-1] += 1;
+                        } // end if.
+                    } // end for.
+                } // end for.
+                
+                out7.print(String.format("T:%d;A:%d;[", iTipo, iAlgoritmo));
+                
+                for (int index = 0; index < curva.length-1; index += 1) {
+                    out7.print(String.format("%d;", curva[index]));
+                }
+                out7.println(String.format("%d]", curva[curva.length-1]));
+                
+            } // end for iAlgoritmo.
+        } // end for iTipo.
+        //----------------------------------------------------------------------
         out1.close();
         out2.close();
         out3.close();
         out4.close();
         out5.close();
         out6.close();
+        out7.close();
         //----------------------------------------------------------------------
     }
     
