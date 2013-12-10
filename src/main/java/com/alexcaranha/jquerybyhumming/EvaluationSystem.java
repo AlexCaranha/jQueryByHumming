@@ -1,10 +1,12 @@
 package com.alexcaranha.jquerybyhumming;
 
 import com.alexcaranha.jquerybyhumming.model.Convert;
+import com.alexcaranha.jquerybyhumming.model.Figure;
 import com.alexcaranha.jquerybyhumming.model.KeyValue;
 import com.alexcaranha.jquerybyhumming.model.Util;
 import com.alexcaranha.jquerybyhumming.model.WavSignal;
 import com.alexcaranha.jquerybyhumming.model.system.Processing;
+import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,6 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
@@ -345,6 +348,10 @@ public class EvaluationSystem {
         usuarios.put(1, GetFromXML(path1));  // LevenshteinDistance
         usuarios.put(2, GetFromXML(path2));  // DTW_RelativePitch
         usuarios.put(3, GetFromXML(path3));  // DTW_AbsolutePitch
+        
+        Map<Integer, List<Usuario>> usuariosAlgoritmo_1e3 = new HashMap<Integer, List<Usuario>>();
+        usuariosAlgoritmo_1e3.put(1, GetFromXML(path1));  // LevenshteinDistance
+        usuariosAlgoritmo_1e3.put(3, GetFromXML(path3));  // DTW_AbsolutePitch
         //----------------------------------------------------------------------
         // Tabela A.1 da Dissertação.
         List<Entry<String, Map<Integer, Integer>>> gravacoesPorMusica_e_Tipo = calculaQtdGravacoes(dirDB, false);        
@@ -356,19 +363,314 @@ public class EvaluationSystem {
         caption = "\\caption[Lista de músicas da base de dados com a quantidade de gravações saturadas por tipo (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento)]{Lista de músicas da base de dados com a quantidade de gravações saturadas por tipo (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento) ordenada decrescentemente pelo total de gravações.}"; 
         criaTabela_1(gravacoesSaturadasPorMusica_e_Tipo, "tabela_A2.tex", "tab_A2", caption);
         //----------------------------------------------------------------------
-        // Figura A.3 da Dissertação.
+        // Tabela A.3 da Dissertação.
         Map<String, Map<String, List<Gravacao>>> dadosPorMusica = getDadosPorMusica(usuarios);
         caption = "\\caption[Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking}.]{Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking}.}"; 
-        criaTabela_2(dadosPorMusica, "tabela_A3.tex", "tab_A3", caption);
+        List<KeyValue<String, double[]>> musicasMaisEncontradas = criaTabela_2(dadosPorMusica, "tabela_A3.tex", "tab_A3", caption);
         //----------------------------------------------------------------------
-        // Figura A.4 da Dissertação.
-        //caption = "\\caption[Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking} por tipo.]{Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking} por tipo.}"; 
-        //criaTabela_2(dadosPorMusica, "tabela_A3.tex", "tab_A3", caption);
+        // Tabela A.4 da Dissertação.
+        Map<String, Map<String, List<Gravacao>>> dadosPorMusica_Algoritmo_1e3 = getDadosPorMusica(usuariosAlgoritmo_1e3);
+        caption = "\\caption[Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking} excluindo os resultados do Algoritmo 2.]{Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking} excluindo os resultados do Algoritmo 2.}"; 
+        List<KeyValue<String, double[]>> musicasMaisEncontradas_Algoritmo_1e3 = criaTabela_2(dadosPorMusica_Algoritmo_1e3, "tabela_A4.tex", "tab_A4", caption);
+        //----------------------------------------------------------------------
+        // Figura A.5 da Dissertação.
+        criaFigura_5(dadosPorMusica, musicasMaisEncontradas_Algoritmo_1e3);
+        //----------------------------------------------------------------------
+        // Figura A.6 da Dissertação.
+        criaFigura_6(dadosPorMusica, musicasMaisEncontradas_Algoritmo_1e3);
+        //----------------------------------------------------------------------
+        // Tabeka A.7 da Dissertação.
+        caption = "\\caption[Lista de músicas ordenadas pelo percentual de acerto excluindo os resultados do Algoritmo 2 para tipo e algoritmo.]{Lista de músicas ordenadas pelo percentual de acerto excluindo os resultados do Algoritmo 2 para tipo e algoritmo.}"; 
+        criaTabela_7(dadosPorMusica, musicasMaisEncontradas_Algoritmo_1e3, "tabela_A5.tex", "tab_A5", caption);
         //----------------------------------------------------------------------
     }
     
     // Música >> valores por rank.
-    public static void criaTabela_2(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
+    public static void criaTabela_7(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
+                                    List<KeyValue<String, double[]>> musicasMaisEncontradas, 
+                                    String fileName,
+                                    String label,
+                                    String caption) throws IOException {
+        
+        boolean debug = true;
+        int posicoes = getTitles().length;
+        int limite = 15; //posicoes;
+        String texto;
+        
+        //----------------------------------------------------------------------
+        PrintWriter out = new PrintWriter(new FileWriter(Util.getDirExecution(fileName)));
+        //----------------------------------------------------------------------        
+        out.print("\\begin{longtable}{|c|c|c|");
+        for (int index = 0; index < limite; index += 1) {
+            out.print("c|");
+        }
+        out.println("}");
+        out.println(caption);
+        out.println(String.format("\\label{%s} \\\\", label));
+        out.println();
+        out.println("\\hline");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Código}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Algoritmo}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Tipo}} & ");
+        for (int index = 0; index < limite; index += 1) {
+            out.println(String.format("\\multicolumn{1}{|c|}{\\textbf{%d\\textordmasculine}} %s", 1 + index, (index + 1 == limite) ? "\\\\" : "& "));
+        }
+        out.println("\\hline\\hline");
+        out.println("\\endfirsthead");
+        out.println(String.format("\\multicolumn{%d}{c}", limite));
+        out.println("{{\\bfseries \\tablename\\ \\thetable{} -- Continuação da página anterior.}} \\\\");
+        out.println();
+        out.println("\\hline");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Código}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Algoritmo}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Tipo}} & ");
+        for (int index = 0; index < limite; index += 1) {
+            out.println(String.format("\\multicolumn{1}{|c|}{\\textbf{%d\\textordmasculine}} %s", 1 + index, (index + 1 == limite) ? "\\\\" : "& "));
+        }
+        out.println("\\hline\\hline");
+        out.println("\\endhead");
+        out.println(String.format("\\hline \\multicolumn{%d}{|r|}{{Continua na próxima página}} \\\\ \\hline", limite));
+        out.println("\\endfoot");
+        out.println("\\hline\\hline");
+        out.println("\\endlastfoot");
+        out.println();
+
+        System.out.println("Listagem: ");
+        
+        for(int index = 0; index < limite; index += 1) {
+            KeyValue<String, double[]> musica = musicasMaisEncontradas.get(index);
+            String codMusica = musica.getKey();
+            String titulo = getTituloByCodigo(codMusica);
+            
+            Map<String, List<Gravacao>> dadosMusica = dadosPorMusica.get(codMusica);            
+            System.out.println(String.format("Musica: [%s] - %s", codMusica, titulo));
+            
+            String mascaraMusica = "\\multirow{%d}{*}{%s}";
+            String mascaraAlgoritmo = " & \\multirow{%d}{*}{%d}";
+            
+            int count = 0;
+            
+            for (int iAlgoritmo = 1; iAlgoritmo <= 3; iAlgoritmo += 1) {
+                int qtdTotalTipo = 0;
+                
+                int qtdRegistrosAlgoritmo = 0;
+                int countRegistrosAlgoritmo = 0;
+                
+                for (int iTipoGravacao = 1; iTipoGravacao <= 3; iTipoGravacao += 1) {
+                    String strTipo_e_Algoritmo = String.format("%d%d", iTipoGravacao, iAlgoritmo);
+                    
+                    if (!dadosMusica.containsKey(strTipo_e_Algoritmo)) continue;
+                    qtdRegistrosAlgoritmo += 1;
+                }
+                                        
+                for (int iTipoGravacao = 1; iTipoGravacao <= 3; iTipoGravacao += 1) {
+                    String strTipo_e_Algoritmo = String.format("%d%d", iTipoGravacao, iAlgoritmo);
+                    
+                    if (!dadosMusica.containsKey(strTipo_e_Algoritmo)) continue;
+                    
+                    int[] rankAcumulado = new int[posicoes];
+                    
+                    List<Gravacao> gravacoes = dadosMusica.get(strTipo_e_Algoritmo);
+                    for (Gravacao gravacao : gravacoes) {
+                        int iPosicao = (int)gravacao.getPosicao();
+                        rankAcumulado[iPosicao - 1] += 1;
+                        qtdTotalTipo += 1;
+                    }
+                    
+                    System.out.print(String.format("\tAlgoritmo:%d;Tipo:%d", iAlgoritmo, iTipoGravacao));
+                    
+                    out.print(mascaraMusica.length() > 0 
+                                    ? String.format(mascaraMusica, dadosMusica.size(), codMusica)
+                                    : " {} \t\t\t\t"
+                                );
+                    out.print(mascaraAlgoritmo.length() > 0
+                                    ? String.format(mascaraAlgoritmo, qtdRegistrosAlgoritmo, iAlgoritmo)
+                                    : " & {} \t\t\t\t"
+                             );
+                    out.print(String.format(" & %d", iTipoGravacao));
+                    
+                    for (int iPosicao = 0; iPosicao < limite; iPosicao += 1) {
+                        int value = rankAcumulado[iPosicao];
+                        
+                        System.out.print(String.format(";%d", value));
+                        out.print(String.format(" & %d", value));
+                    }
+                    
+                    count += 1;
+                    countRegistrosAlgoritmo += 1;
+                    
+                    System.out.println();
+                    if (count == dadosMusica.size()) {
+                        out.println(" \\\\ \\hline");
+                    } else if ( countRegistrosAlgoritmo == qtdRegistrosAlgoritmo){
+                        out.println(String.format(" \\\\ \\cline{2-%d}", limite + 3));
+                    }else {
+                        out.println(" \\\\");
+                    }
+                    
+                    mascaraMusica = "";
+                    mascaraAlgoritmo = "";
+                }
+            }
+        }
+        
+        out.print("\\end{longtable}");
+        //----------------------------------------------------------------------
+        out.close();
+        //----------------------------------------------------------------------
+    }
+    
+    // Música >> valores por rank.
+    public static void criaFigura_6(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
+                                    List<KeyValue<String, double[]>> musicasMaisEncontradas) throws IOException {
+        
+        boolean debug = false;
+        int posicoes = getTitles().length;
+        int limite = posicoes;
+        List<KeyValue<String, double[]>> result_rank = new ArrayList<KeyValue<String, double[]>>();
+                
+        if (debug)
+        System.out.println("Listagem: ");
+        for(int index = 0; index < limite; index += 1) {
+            KeyValue<String, double[]> musica = musicasMaisEncontradas.get(index);
+            String codMusica = musica.getKey();
+            String titulo = getTituloByCodigo(codMusica);
+            
+            DefaultCategoryDataset dataSet = new DefaultCategoryDataset();
+            
+            if (debug)
+            System.out.println(String.format("Musica: [%s] - %s", codMusica, titulo));
+            
+            Map<String, List<Gravacao>> dadosMusica = dadosPorMusica.get(codMusica);
+            for (int iAlgoritmo = 1; iAlgoritmo <= 3; iAlgoritmo += 1) {
+            
+                int[]       rankAcumulado = new int[posicoes];
+                //double[]    rankAcumulado_Percentual = new double[posicoes];
+                int         qtdTotalTipo = 0;
+                        
+                for (int iTipoGravacao = 1; iTipoGravacao <= 3; iTipoGravacao += 1) {
+                    String strTipo_e_Algoritmo = String.format("%d%d", iTipoGravacao, iAlgoritmo);
+                    
+                    if (!dadosMusica.containsKey(strTipo_e_Algoritmo)) continue;
+                    
+                    List<Gravacao> gravacoes = dadosMusica.get(strTipo_e_Algoritmo);
+                    for (Gravacao gravacao : gravacoes) {
+                        int iPosicao = (int)gravacao.getPosicao();
+                        rankAcumulado[iPosicao - 1] += 1;
+                        qtdTotalTipo += 1;
+                    }
+                }
+                
+                for (int iPosicao = 0; iPosicao < posicoes; iPosicao += 1) {
+                    double value = (qtdTotalTipo == 0) ? 0.0 : (double) 100 * rankAcumulado[iPosicao] / qtdTotalTipo;
+                    //rankAcumulado_Percentual[iPosicao] = value;
+                    
+                    if (iPosicao == 0 && debug) System.out.print(String.format("\tAlgoritmo:%d", iAlgoritmo));
+                    
+                    if (debug)
+                    System.out.print(String.format(";%.2f", value));
+                    
+                    String tipoGravacao = String.format("Algoritmo:%d", iAlgoritmo);
+                    String categoria = String.format("%dº", iPosicao + 1);
+                    
+                    dataSet.addValue(value, tipoGravacao, categoria);
+                }
+                if (debug)
+                System.out.println();
+            }
+            if (debug)
+            System.out.println();
+            
+            if (debug)
+            Figure.saveBarChart(String.format("[%s] - %s", codMusica, titulo), "Ranking", "Percentual de acerto.", 
+                                true,
+                                dataSet,
+                                Util.createArray(Color.BLUE, Color.RED, Color.GREEN),
+                                null,
+                                null, null,
+                                new Figure(2500, 300),
+                                Util.getDirExecution(String.format("FiguraPorAlgoritmo_%d_%s.pdf", 1+ index, codMusica)),
+                                Util.getDirExecution(String.format("FiguraPorAlgoritmo_%d_%s.png", 1+ index, codMusica))
+            );
+        }
+    }
+    
+    // Música >> valores por rank.
+    public static void criaFigura_5(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
+                                    List<KeyValue<String, double[]>> musicasMaisEncontradas) throws IOException {
+        
+        boolean debug = false;
+        int posicoes = getTitles().length;
+        int limite = posicoes;
+        List<KeyValue<String, double[]>> result_rank = new ArrayList<KeyValue<String, double[]>>();
+                
+        if (debug)
+        System.out.println("Listagem: ");
+        for(int index = 0; index < limite; index += 1) {
+            KeyValue<String, double[]> musica = musicasMaisEncontradas.get(index);
+            String codMusica = musica.getKey();
+            String titulo = getTituloByCodigo(codMusica);
+            
+            DefaultCategoryDataset dataSet = new DefaultCategoryDataset();
+            
+            if (debug)
+            System.out.println(String.format("Musica: [%s] - %s", codMusica, titulo));
+            
+            Map<String, List<Gravacao>> dadosMusica = dadosPorMusica.get(codMusica);
+            for (int iTipoGravacao = 1; iTipoGravacao <= 3; iTipoGravacao += 1) {
+                int[]       rankAcumulado = new int[posicoes];
+                //double[]    rankAcumulado_Percentual = new double[posicoes];
+                int         qtdTotalTipo = 0;
+                        
+                for (int iAlgoritmo = 1; iAlgoritmo <= 3; iAlgoritmo += 1) {
+                    String strTipo_e_Algoritmo = String.format("%d%d", iTipoGravacao, iAlgoritmo);
+                    
+                    if (!dadosMusica.containsKey(strTipo_e_Algoritmo)) continue;
+                    
+                    List<Gravacao> gravacoes = dadosMusica.get(strTipo_e_Algoritmo);
+                    for (Gravacao gravacao : gravacoes) {
+                        int iPosicao = (int)gravacao.getPosicao();
+                        rankAcumulado[iPosicao - 1] += 1;
+                        qtdTotalTipo += 1;
+                    }
+                }
+                
+                for (int iPosicao = 0; iPosicao < posicoes; iPosicao += 1) {
+                    double value = (qtdTotalTipo == 0) ? 0.0 : (double) 100 * rankAcumulado[iPosicao] / qtdTotalTipo;
+                    //rankAcumulado_Percentual[iPosicao] = value;
+                    
+                    if (iPosicao == 0 && debug) System.out.print(String.format("\tTipo:%d", iTipoGravacao));
+                    
+                    if (debug)
+                    System.out.print(String.format(";%.2f", value));
+                    
+                    String tipoGravacao = String.format("Tipo gravação: %d", iTipoGravacao);
+                    String categoria = String.format("%dº", iPosicao + 1);
+                    
+                    dataSet.addValue(value, tipoGravacao, categoria);
+                }
+                if (debug)
+                System.out.println();
+            }
+            if (debug)
+            System.out.println();
+            
+            if (debug)
+            Figure.saveBarChart(String.format("[%s] - %s", codMusica, titulo), "Ranking", "Percentual de acerto.", 
+                                true,
+                                dataSet,
+                                Util.createArray(Color.BLUE, Color.RED, Color.GREEN),
+                                null,
+                                null, null,
+                                new Figure(2500, 300),
+                                Util.getDirExecution(String.format("FiguraPorTipo_%d_%s.pdf", 1+ index, codMusica)),
+                                Util.getDirExecution(String.format("FiguraPorTipo_%d_%s.png", 1+ index, codMusica))
+            );
+        }
+    }
+    
+    // Música >> valores por rank.
+    public static List<KeyValue<String, double[]>> criaTabela_2(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
                                     String fileName, 
                                     String label,
                                     String caption) throws IOException {
@@ -496,6 +798,8 @@ public class EvaluationSystem {
         out.print("\\end{longtable}");
         //----------------------------------------------------------------------
         out.close();
+        //----------------------------------------------------------------------
+        return result_rank;
         //----------------------------------------------------------------------
     }
     

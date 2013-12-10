@@ -12,11 +12,16 @@ import java.util.List;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.Marker;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.chart.renderer.category.CategoryItemRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.xy.DefaultXYDataset;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
@@ -182,7 +187,97 @@ public class Figure {
         figure.createFigure(graph, fullNamePNG, fullNamePDF);
         //----------------------------------------------------------------------
     }
+    
+    private static JFreeChart createBarChart(String title,
+                                             String titleX,
+                                             String titleY,
+                                             boolean plotLegend,
+                                             DefaultCategoryDataset dataset) {
 
+        JFreeChart c = ChartFactory.createBarChart(
+                            title, titleX, titleY,
+                            dataset,
+                            PlotOrientation.VERTICAL,
+                            plotLegend,
+                            true,
+                            false
+                        );
+
+        c.setBackgroundPaint(Color.white);
+
+        CategoryPlot plot = c.getCategoryPlot();
+        plot.getDomainAxis().setLowerMargin(0.0);
+        plot.getDomainAxis().setUpperMargin(0.0);
+
+        BarRenderer renderer = (BarRenderer) plot.getRenderer();
+        //renderer.setLegendLine(new Rectangle2D.Double(-4.0, -3.0, 10.0, 6.0));
+        renderer.setSeriesPaint(0, Color.black);
+
+        plot.setBackgroundPaint(Color.white);
+        plot.setDomainGridlinePaint(Color.lightGray);
+        plot.setRangeGridlinePaint(Color.lightGray);
+        plot.setAxisOffset(new RectangleInsets(5.0, 5.0, 5.0, 5.0));
+        plot.setDomainCrosshairVisible(true);
+
+        return c;
+    }
+    
+    public static void saveBarChart(String title, String titleX, String titleY,
+                                    Boolean plotLegend,
+                                    DefaultCategoryDataset dataset,
+                                    Color[] colors,
+                                    List<Marker> markers,
+                                    KeyValue<Double, Double> limitX, KeyValue<Double, Double> limitY,
+                                    Figure figure,
+                                    String fullNamePDF, String fullNamePNG) {
+        //----------------------------------------------------------------------
+        JFreeChart graph = createBarChart(title, titleX, titleY, plotLegend, dataset);
+        //----------------------------------------------------------------------
+        CategoryPlot plot = (CategoryPlot) graph.getPlot();
+        /*
+        if (limitX != null || limitY != null) {
+            if (limitX != null) {
+                CategoryAxis domain = (CategoryAxis) plot.getDomainAxis();
+                domain.set
+                domain.setRange((double) limitX.getKey(), (double) limitX.getValue());
+            }
+
+            if (limitY != null) {
+                NumberAxis range = (NumberAxis) xyPlot.getRangeAxis();
+                range.setRange((double) limitY.getKey(), (double) limitY.getValue());
+            }
+        }
+        */
+        /*
+        if (markers != null) {
+            for (Marker marker : markers) {
+                xyPlot.addDomainMarker(marker);
+            }
+        }
+        */
+        //----------------------------------------------------------------------
+        if (colors == null){
+            configureColorsRenderer((BarRenderer) graph.getCategoryPlot().getRenderer(), dataset.getRowCount());
+        } else {
+            configureColorsRenderer((BarRenderer) graph.getCategoryPlot().getRenderer(), colors);
+        }
+        //----------------------------------------------------------------------
+        figure.createFigure(graph, fullNamePNG, fullNamePDF);
+        //----------------------------------------------------------------------
+    }
+
+    public static void configureColorsRenderer(BarRenderer renderer, int qtd) {
+        for (int i = 0; i < qtd; i++) {
+            renderer.setSeriesPaint(i, Color.BLACK);
+        }
+    }
+    
+    public static void configureColorsRenderer(BarRenderer renderer, Color[] colors) {
+        for (int i = 0; i < colors.length; i++) {
+            renderer.setSeriesPaint(i, colors[i]);
+        }
+    }
+    
     public static void configureColorsRenderer(XYLineAndShapeRenderer renderer, int qtd) {
         for (int i = 0; i < qtd; i++) {
             renderer.setSeriesPaint(i, Color.BLACK);
