@@ -21,7 +21,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.TreeMap;
 
 /**
  *
@@ -159,7 +158,7 @@ public class EvaluationSystem {
         return result.toArray(new String[result.size()]);
     }
     
-    public static String getTitle(String label) {
+    public static String getTituloByArquivo(String label) {
         if (label.contains("musica_002_")) return "Águas de março";
         if (label.contains("musica_003_")) return "Carinhoso";
         if (label.contains("musica_004_")) return "Asa branca";
@@ -216,7 +215,7 @@ public class EvaluationSystem {
         return null;
     }
         
-    public static String getCode(String titulo) {
+    public static String getCodidoByTitulo(String titulo) {
         if (titulo.equalsIgnoreCase("Águas de março")) return "002";
         if (titulo.equalsIgnoreCase("Carinhoso")) return "003";
         if (titulo.equalsIgnoreCase("Asa branca")) return "004";
@@ -273,6 +272,443 @@ public class EvaluationSystem {
         return null;
     }
     
+    public static String getTituloByCodigo(String codigo) {
+        if (codigo.equalsIgnoreCase("002")) return ("Águas de março");
+        if (codigo.equalsIgnoreCase("003")) return ("Carinhoso");
+        if (codigo.equalsIgnoreCase("004")) return ("Asa branca");
+        if (codigo.equalsIgnoreCase("006")) return ("Chega de saudade");
+        if (codigo.equalsIgnoreCase("008")) return ("Detalhes");
+        if (codigo.equalsIgnoreCase("010")) return ("Alegria, alegria");
+        if (codigo.equalsIgnoreCase("012")) return ("Aquarela do Brasil");
+        if (codigo.equalsIgnoreCase("015")) return ("Trem das onze");
+        if (codigo.equalsIgnoreCase("019")) return ("Quero que vá tudo pro inferno");
+        if (codigo.equalsIgnoreCase("020")) return ("Preta pretinha");
+        if (codigo.equalsIgnoreCase("023")) return ("Inútil");
+        if (codigo.equalsIgnoreCase("024")) return ("Eu sei que vou te amar");
+        if (codigo.equalsIgnoreCase("025")) return ("País tropical");
+        if (codigo.equalsIgnoreCase("027")) return ("Garota de ipanema");
+        if (codigo.equalsIgnoreCase("028")) return ("Pra não dizer que não falei das flores");
+        if (codigo.equalsIgnoreCase("031")) return ("Travessia");
+        if (codigo.equalsIgnoreCase("038")) return ("Eu quero é botar meu bloco na rua");
+        if (codigo.equalsIgnoreCase("041")) return ("Manhã de carnaval");
+        if (codigo.equalsIgnoreCase("046")) return ("Ponteio");
+        if (codigo.equalsIgnoreCase("047")) return ("Me chama");
+        if (codigo.equalsIgnoreCase("057")) return ("Conversa de botequim");
+        if (codigo.equalsIgnoreCase("062")) return ("Luar do sertão");
+        if (codigo.equalsIgnoreCase("063")) return ("Alagados");
+        if (codigo.equalsIgnoreCase("064")) return ("As curvas da estrada de Santos");
+        if (codigo.equalsIgnoreCase("067")) return ("A banda");
+        if (codigo.equalsIgnoreCase("068")) return ("Comida");
+        if (codigo.equalsIgnoreCase("070")) return ("Ronda");
+        if (codigo.equalsIgnoreCase("072")) return ("Gita");
+        if (codigo.equalsIgnoreCase("074")) return ("Sentado à beira do caminho");
+        if (codigo.equalsIgnoreCase("075")) return ("Foi um rio que passou em minha vida");
+        if (codigo.equalsIgnoreCase("081")) return ("Que país é este?");
+        if (codigo.equalsIgnoreCase("083")) return ("Ideologia");
+        if (codigo.equalsIgnoreCase("084")) return ("Rosa");
+        if (codigo.equalsIgnoreCase("085")) return ("O barquinho");
+        if (codigo.equalsIgnoreCase("087")) return ("Meu mundo e nada mais");
+        if (codigo.equalsIgnoreCase("089")) return ("A flor e o espinho");
+        if (codigo.equalsIgnoreCase("091")) return ("Felicidade");
+        if (codigo.equalsIgnoreCase("093")) return ("Casa no campo");
+        if (codigo.equalsIgnoreCase("096")) return ("Disritmia");
+        if (codigo.equalsIgnoreCase("097")) return ("Você não soube me amar");
+        if (codigo.equalsIgnoreCase("098")) return ("A noite de meu bem");
+        if (codigo.equalsIgnoreCase("100")) return ("Anna Júlia");
+        if (codigo.equalsIgnoreCase("101")) return ("Parabéns a você");
+        if (codigo.equalsIgnoreCase("102")) return ("Ciranda cirandinha");
+        if (codigo.equalsIgnoreCase("103")) return ("Escravos de jó");
+        if (codigo.equalsIgnoreCase("104")) return ("Hino nacional");
+        if (codigo.equalsIgnoreCase("105")) return ("Hino da bandeira");
+        if (codigo.equalsIgnoreCase("107")) return ("Ilariê");
+        if (codigo.equalsIgnoreCase("108")) return ("Fim de Ano");
+        if (codigo.equalsIgnoreCase("109")) return ("Mamãe eu quero");
+        if (codigo.equalsIgnoreCase("111")) return ("Coelhinho de olhos vermelhos");
+        if (codigo.equalsIgnoreCase("112")) return ("Chegou a hora da foqueira");
+        
+        return null;
+    }
+    
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        //----------------------------------------------------------------------
+        String caption = "";
+        String   dirDB = "/home/alexcaranha/Documentos/Mestrado/DataBase/DBSolfejos";
+        //String[] tipos = Util.createArray("Tipo1","Tipo2","Tipo3");
+        String[] algoritmos = Util.createArray("LevenshteinDistance", "DTW_AbsolutePitch", "DTW_RelativePitch");
+        
+        String prefixo = "/home/alexcaranha/Documentos/Mestrado/jQueryByHumming/";
+        String path1 = prefixo + "evaluationUsuarios-" + algoritmos[0] + ".xml";
+        String path2 = prefixo + "evaluationUsuarios-" + algoritmos[1] + ".xml";
+        String path3 = prefixo + "evaluationUsuarios-" + algoritmos[2] + ".xml";
+                
+        Map<Integer, List<Usuario>> usuarios = new HashMap<Integer, List<Usuario>>();
+        usuarios.put(1, GetFromXML(path1));  // LevenshteinDistance
+        usuarios.put(2, GetFromXML(path2));  // DTW_RelativePitch
+        usuarios.put(3, GetFromXML(path3));  // DTW_AbsolutePitch
+        //----------------------------------------------------------------------
+        // Tabela A.1 da Dissertação.
+        List<Entry<String, Map<Integer, Integer>>> gravacoesPorMusica_e_Tipo = calculaQtdGravacoes(dirDB, false);        
+        caption = "\\caption[Lista de músicas da base de dados com a quantidade de gravações por tipo (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento)]{Lista de músicas da base de dados com a quantidade de gravações por tipo (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento) ordenada decrescentemente pelo total de gravações.}"; 
+        criaTabela_1(gravacoesPorMusica_e_Tipo, "tabela_A1.tex", "tab_A1", caption);
+        //----------------------------------------------------------------------
+        // Tabela A.2 da Dissertação.
+        List<Entry<String, Map<Integer, Integer>>> gravacoesSaturadasPorMusica_e_Tipo = calculaQtdGravacoes(dirDB, true);
+        caption = "\\caption[Lista de músicas da base de dados com a quantidade de gravações saturadas por tipo (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento)]{Lista de músicas da base de dados com a quantidade de gravações saturadas por tipo (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento) ordenada decrescentemente pelo total de gravações.}"; 
+        criaTabela_1(gravacoesSaturadasPorMusica_e_Tipo, "tabela_A2.tex", "tab_A2", caption);
+        //----------------------------------------------------------------------
+        // Figura A.3 da Dissertação.
+        Map<String, Map<String, List<Gravacao>>> dadosPorMusica = getDadosPorMusica(usuarios);
+        caption = "\\caption[Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking}.]{Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking}.}"; 
+        criaTabela_2(dadosPorMusica, "tabela_A3.tex", "tab_A3", caption);
+        //----------------------------------------------------------------------
+        // Figura A.4 da Dissertação.
+        //caption = "\\caption[Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking} por tipo.]{Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking} por tipo.}"; 
+        //criaTabela_2(dadosPorMusica, "tabela_A3.tex", "tab_A3", caption);
+        //----------------------------------------------------------------------
+    }
+    
+    // Música >> valores por rank.
+    public static void criaTabela_2(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
+                                    String fileName, 
+                                    String label,
+                                    String caption) throws IOException {
+        
+        int posicoes = getTitles().length;
+        List<KeyValue<String, double[]>> result_rank = new ArrayList<KeyValue<String, double[]>>();
+        
+        for(String codMusica : dadosPorMusica.keySet()) {
+            Map<String, List<Gravacao>> mapMusica = dadosPorMusica.get(codMusica);
+            int                         qtdGravacoes = 0;
+            
+            int[]                       rankAcumulado = new int[getTitles().length];
+            double[]                    rankAcumuladoPercent = new double[getTitles().length];
+            
+            for(String tipo_e_algoritmo : mapMusica.keySet()) {
+                List<Gravacao> listGravacoes = mapMusica.get(tipo_e_algoritmo);
+                
+                for(Gravacao gravacao : listGravacoes) {
+                    int iPosicao = (int)gravacao.getPosicao();
+                    
+                    rankAcumulado[iPosicao - 1] += 1;
+                    qtdGravacoes += 1;
+                }
+            }
+            
+            for (int iPosicao = 0; iPosicao < rankAcumulado.length; iPosicao += 1) {
+                double value = (qtdGravacoes == 0) ? 0.0 : (double)100 * rankAcumulado[iPosicao] / qtdGravacoes;
+                rankAcumuladoPercent[iPosicao] = value;
+            }
+            
+            result_rank.add(new KeyValue<String, double[]>(codMusica, rankAcumuladoPercent));
+        }
+        
+        for (int i = 0; i < result_rank.size() - 1; i += 1) {
+            for (int j = i + 1; j < result_rank.size(); j += 1) {
+                KeyValue keyValue_i = result_rank.get(i);
+                KeyValue keyValue_j = result_rank.get(j);
+                KeyValue keyValue_aux;
+                
+                double[]    rank_i = (double[])keyValue_i.getValue();
+                double[]    rank_j = (double[])keyValue_j.getValue();
+                
+                int index = 0;
+                while(index < posicoes) {
+                    double value_i = rank_i[index];
+                    double value_j = rank_j[index];
+
+                    if (value_j > value_i) {
+                        keyValue_aux = keyValue_i.clone();
+
+                        keyValue_i.setKey(keyValue_j.getKey());
+                        keyValue_i.setValue(((double[])keyValue_j.getValue()).clone());
+
+                        keyValue_j.setKey(keyValue_aux.getKey());
+                        keyValue_j.setValue(((double[])keyValue_aux.getValue()).clone());
+
+                        break;
+                    } else if (value_j == value_i) {
+                        index += 1;
+                    } else break;
+                }
+            }
+        }
+        
+        //----------------------------------------------------------------------
+        PrintWriter out = new PrintWriter(new FileWriter(Util.getDirExecution(fileName)));
+        //----------------------------------------------------------------------        
+        out.println("\\begin{longtable}{|c|l|c|c|c|c|c|c|c|c|c|c|}");
+        out.println(caption);
+        out.println(String.format("\\label{%s} \\\\", label));
+        out.println();
+        out.println("\\hline");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Código}} & ");
+        out.println("\\multicolumn{1}{|l|}{\\textbf{Título}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{1\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{2\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{3\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{4\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{5\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{6\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{7\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{8\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{9\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{10\\textordmasculine}} \\\\ ");
+        out.println("\\hline\\hline");
+        out.println("\\endfirsthead");
+        out.println("\\multicolumn{12}{c}%");
+        out.println("{{\\bfseries \\tablename\\ \\thetable{} -- Continuação da página anterior.}} \\\\");
+        out.println();
+        out.println("\\hline");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Código}} & ");
+        out.println("\\multicolumn{1}{|l|}{\\textbf{Título}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{1\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{2\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{3\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{4\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{5\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{6\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{7\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{8\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{9\\textordmasculine}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{10\\textordmasculine}} \\\\ ");
+        out.println("\\hline\\hline");
+        out.println("\\endhead");
+        out.println("\\hline \\multicolumn{12}{|r|}{{Continua na próxima página}} \\\\ \\hline");
+        out.println("\\endfoot");
+        out.println("\\hline\\hline");
+        out.println("\\endlastfoot");
+        out.println();
+        
+        for(KeyValue<String, double[]> item : result_rank) {
+            String      codMusica = item.getKey();
+            String      titulo = getTituloByCodigo(codMusica);
+            double[]    rank = item.getValue();
+            int limite  = 10; //item.getValue().length;
+            
+            out.print(String.format("%s & %s", codMusica, titulo));
+            for (int index = 0; index < limite; index += 1) {
+                out.print(String.format(" & %.2f", rank[index]));
+            }
+            
+            out.println(" \\\\ \\hline");
+        }
+        
+        out.print("\\end{longtable}");
+        //----------------------------------------------------------------------
+        out.close();
+        //----------------------------------------------------------------------
+    }
+    
+    public static void criaTabela_1(List<Entry<String, Map<Integer, Integer>>> gravacoesPorMusica_e_Tipo, 
+                                    String fileName, 
+                                    String label,
+                                    String caption) throws IOException {
+        //----------------------------------------------------------------------
+        PrintWriter out = new PrintWriter(new FileWriter(Util.getDirExecution(fileName)));
+        //----------------------------------------------------------------------        
+        out.println("\\begin{longtable}{|c|l|c|c|c|c|}");
+        out.println(caption);
+        out.println(String.format("\\label{%s} \\\\", label));
+        out.println();
+        out.println("\\hline");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Código}} & ");
+        out.println("\\multicolumn{1}{|l|}{\\textbf{Título}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Tipo 1}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Tipo 2}} & ");
+        out.println("\\multicolumn{1}{c|} {\\textbf{Tipo 3}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Total}} \\\\ ");
+        out.println("\\hline\\hline");
+        out.println("\\endfirsthead");
+        out.println("\\multicolumn{6}{c}%");
+        out.println("{{\\bfseries \\tablename\\ \\thetable{} -- Continuação da página anterior.}} \\\\");
+        out.println();
+        out.println("\\hline");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Código}} & ");
+        out.println("\\multicolumn{1}{|l|}{\\textbf{Título}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Tipo 1}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Tipo 2}} & ");
+        out.println("\\multicolumn{1}{c|} {\\textbf{Tipo 3}} & ");
+        out.println("\\multicolumn{1}{|c|}{\\textbf{Total}} \\\\ ");
+        out.println("\\hline\\hline");
+        out.println("\\endhead");
+        out.println("\\hline \\multicolumn{6}{|r|}{{Continua na próxima página}} \\\\ \\hline");
+        out.println("\\endfoot");
+        out.println("\\hline\\hline");
+        out.println("\\endlastfoot");
+        out.println();
+        
+        for(Entry<String, Map<Integer, Integer>> nivel1 : gravacoesPorMusica_e_Tipo) {
+            String  codMusica = nivel1.getKey();
+            String  titulo = getTituloByCodigo(codMusica);
+            
+            int[]   qtdTipo = new int[3];
+            int     qtdTotal = 0;
+            
+            for(int iTipo = 1; iTipo <= 3; iTipo += 1)
+            {
+                for(Entry<Integer, Integer> nivel2 : nivel1.getValue().entrySet()) {
+                    int tipo = nivel2.getKey();
+                    int qtd = nivel2.getValue();
+                    
+                    qtdTipo[iTipo-1] += (tipo == iTipo) ? qtd : 0;
+                }
+                qtdTotal += qtdTipo[iTipo-1];
+            }
+            
+            out.println(String.format("%s & %s & %d & %d & %d & %d \\\\ \\hline", codMusica, titulo, qtdTipo[0], qtdTipo[1], qtdTipo[2], qtdTotal));
+        }
+        
+        out.print("\\end{longtable}");
+        //----------------------------------------------------------------------
+        out.close();
+        //----------------------------------------------------------------------
+    }
+    
+    // Título de música >> tipo de gravação >> quantidade
+    public static List<Entry<String, Map<Integer, Integer>>> calculaQtdGravacoes(String dirDB, boolean somenteSaturadas) {
+        File raiz = new File(dirDB);
+        String[] titles = getTitles();
+        
+        Map<String, Map<Integer, Integer>> dicionario = new HashMap<String, Map<Integer, Integer>>();
+        
+        for(String title : titles) {
+            String codMusica = getCodidoByTitulo(title);
+            int[]  qtdPorTipo = new int[3];
+            
+            for(File fileNivel1: raiz.listFiles()) {  
+                if(fileNivel1.isDirectory() && fileNivel1.getName().contains("Usuario_")) {
+                    //String usuarioNome = fileNivel1.getName().trim();
+
+                    for(File fileNivel2: fileNivel1.listFiles()) {
+                        String tipo = fileNivel2.getName();
+                        if ("Tipo1|Tipo2|Tipo3".contains(tipo)) {
+                            for(File fileNivel3: fileNivel2.listFiles()) {  
+                                if (fileNivel3.getName().contains(".wav")) {
+                                    if (somenteSaturadas && !fileNivel3.getName().contains("_s.wav")) continue;
+                                    
+                                    String musicaEsperada = getTituloByArquivo(fileNivel3.getName().trim());
+                                    if (!musicaEsperada.equalsIgnoreCase(title)) continue;
+
+                                    int iTipoGravacao = tipo.equalsIgnoreCase("Tipo1") ? 1 : 
+                                                            tipo.equalsIgnoreCase("Tipo2") ? 2 : 
+                                                                tipo.equalsIgnoreCase("Tipo3") ? 3 : 0;
+
+                                    qtdPorTipo[iTipoGravacao - 1] += 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            Map<Integer, Integer> dicQtdPorTipo = new HashMap<Integer, Integer>();
+            dicQtdPorTipo.put(1, qtdPorTipo[0]);
+            dicQtdPorTipo.put(2, qtdPorTipo[1]);
+            dicQtdPorTipo.put(3, qtdPorTipo[2]);
+            dicQtdPorTipo.put(4, qtdPorTipo[0] + qtdPorTipo[1] + qtdPorTipo[2]); // Total.
+            
+            dicionario.put(codMusica, dicQtdPorTipo);
+        }
+        
+        List<Entry<String, Map<Integer, Integer>>> treeSorted = new ArrayList<Entry<String, Map<Integer, Integer>>>(dicionario.entrySet());
+        
+        Collections.sort(treeSorted, new Comparator<Entry<String, Map<Integer, Integer>>>() {
+            public int compare(Entry<String, Map<Integer, Integer>> e1, Entry<String, Map<Integer, Integer>> e2) {
+                return e2.getValue().get(4).compareTo(e1.getValue().get(4));
+            }
+        });
+        
+        return treeSorted;
+    }
+    
+    public static void criaTabela_2(Map<String, Map<String, List<Usuario>>> dadosPorMusica, String fileName, String label) throws IOException {
+        //----------------------------------------------------------------------
+        PrintWriter out = new PrintWriter(new FileWriter(Util.getDirExecution(fileName)));
+        //----------------------------------------------------------------------        
+        out.println("\\begin{longtable}{|c|l|c|c|c|c|}");
+        out.println("\\caption[Lista de músicas da base de dados com a quantidade de gravações por tipo (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento)]{Lista de músicas da base de dados com a quantidade de gravações por tipo (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento.}"); 
+        out.println(String.format("\\label{%s} \\\\", label));
+        out.println("\\hline");
+        out.println("\\multicolumn{1}{|c|}{ \\multicolumn{1}{|c|}{\\textbf{Código}} & \\multicolumn{1}{l|}{\\textbf{Título} & \\textbf{Tipo 1}} & \\multicolumn{1}{|c|}{\\textbf{Tipo 2}} & \\multicolumn{1}{|c|}{\\textbf{Tipo 3}} & \\multicolumn{1}{|c|}{\\textbf{Total}} } \\\\ ");
+        out.println("\\hline\\hline");
+        out.println("\\endfirsthead");
+        out.println("\\multicolumn{6}{c}%");
+        out.println("{{\\bfseries \\tablename\\ \\thetable{} -- Continuação da página anterior.}} \\\\");
+        out.println("\\hline");
+        out.println("\\multicolumn{1}{|c|}{ \\multicolumn{1}{|c|}{\\textbf{Código}} & \\multicolumn{1}{l|}{\\textbf{Título} & \\textbf{Tipo 1}} & \\multicolumn{1}{|c|}{\\textbf{Tipo 2}} & \\multicolumn{1}{|c|}{\\textbf{Tipo 3}} & \\multicolumn{1}{|c|}{\\textbf{Total}} } \\\\ ");
+        out.println("\\hline\\hline");
+        out.println("\\endhead");
+        out.println("\\hline \\multicolumn{6}{|r|}{{Continua na próxima página}} \\\\ \\hline");
+        out.println("\\endfoot");
+        out.println("\\hline\\hline");
+        out.println("\\endlastfoot");
+        
+        for(Entry<String, Map<String, List<Usuario>>> nivel1 : dadosPorMusica.entrySet()) {
+            String  codMusica = nivel1.getKey();
+            String  titulo = getTituloByCodigo(codMusica);
+            int[]   qtdTipo = new int[3];
+            int     qtdTotal = 0;
+            
+            for(int iTipo = 0; iTipo < 3; iTipo += 1)
+            {
+                for(Entry<String, List<Usuario>> nivel2 : nivel1.getValue().entrySet()) {
+                    String chave = nivel2.getKey();
+                    int tipo = Integer.parseInt(chave.substring(0, 1)) - 1;
+                    int nGravacoes = nivel2.getValue().size();
+                    
+                    qtdTipo[iTipo] += (tipo == iTipo) ? nGravacoes : 0;
+                }
+                qtdTotal += qtdTipo[iTipo];
+            }
+            
+            out.println(String.format("%s\t%s\t%d\t%d\t%d\t%d", codMusica, titulo, qtdTipo[0], qtdTipo[1], qtdTipo[2], qtdTotal));
+        }
+        
+        out.println("\\end{longtable}");
+        //----------------------------------------------------------------------
+        out.close();
+        //----------------------------------------------------------------------
+    }
+    
+    // codMusica >> tipo e algoritmo >> rank.
+    public static Map<String, Map<String, List<Gravacao>>> getDadosPorMusica(Map<Integer, List<Usuario>> usuarios) {
+        Map<String, Map<String, List<Gravacao>>> result = new HashMap<String, Map<String, List<Gravacao>>>();
+        String[] titles = getTitles();
+        
+        for (int iMusica = 0; iMusica < titles.length; iMusica += 1) {
+            String tituloRef = titles[iMusica];
+            String codMusicaRef = getCodidoByTitulo(tituloRef);
+                        
+            if (!result.containsKey(codMusicaRef)) result.put(codMusicaRef, new HashMap<String, List<Gravacao>>());
+            Map<String, List<Gravacao>> musica = result.get(codMusicaRef);
+            
+            for(Entry<Integer, List<Usuario>> item : usuarios.entrySet()) {
+                int iAlgoritmo = item.getKey();
+                
+                for(Usuario usuario : item.getValue()) {
+                    for(Gravacao gravacao : usuario.getGravacoes()) {
+                        
+                        String titulo = gravacao.getNome();
+                        if (!titulo.equalsIgnoreCase(tituloRef)) continue;
+                        
+                        int iTipoGravacao = gravacao.getTipo().equalsIgnoreCase("Tipo1")
+                                                    ? 1 : gravacao.getTipo().equalsIgnoreCase("Tipo2")
+                                                    ? 2 : gravacao.getTipo().equalsIgnoreCase("Tipo3")
+                                                    ? 3 : 0;
+                        
+                        String strTipo_e_Algoritmo = String.format("%d%d", iTipoGravacao, iAlgoritmo);
+                        if (!musica.containsKey(strTipo_e_Algoritmo)) musica.put(strTipo_e_Algoritmo, new ArrayList<Gravacao>());
+                        
+                        musica.get(strTipo_e_Algoritmo).add(gravacao);
+                    }
+                }
+            }
+        }
+        
+        return result;
+    }
+    
+    /*
     public static void main(String[] args) throws FileNotFoundException, IOException {
         //----------------------------------------------------------------------
         String   dirDB = "/home/alexcaranha/Documentos/Mestrado/DataBase/DBSolfejos";
@@ -296,21 +732,25 @@ public class EvaluationSystem {
         usuarios1e3.put(1, GetFromXML(path1));  // LevenshteinDistance
         usuarios1e3.put(3, GetFromXML(path3));  // DTW_AbsolutePitch
         
-        int iMusica;
+        int iMusica, iMedicao;
         //----------------------------------------------------------------------
-        PrintWriter out1 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M1.txt")));
-        PrintWriter out2 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M2.txt")));
-        PrintWriter out3 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M3.txt")));
-        PrintWriter out4 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M4.txt")));
-        PrintWriter out5 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M5.txt")));
-        PrintWriter out6 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M6.txt")));
-        PrintWriter out7 = new PrintWriter(new FileWriter(Util.getDirExecution("DadosEstatisticosDB_M7.txt")));
-        //----------------------------------------------------------------------
+        PrintWriter[] out = new PrintWriter[7];
+        PrintWriter[] outTex = new PrintWriter[7];
+        
+        for(iMedicao = 0; iMedicao < 7; iMedicao += 1) {
+            out[iMedicao] = new PrintWriter(new FileWriter(Util.getDirExecution(String.format("DadosEstatisticosDB_M%d.txt", 1 + iMedicao))));
+            outTex[iMedicao] = new PrintWriter(new FileWriter(Util.getDirExecution(String.format("DadosEstatisticosDB_M%d.tex", 1 + iMedicao))));
+        }
+        //----------------------------------------------------------------------        
         // Medição 1:
+        iMedicao = 0;
+        
         System.out.print("Medição 1: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
-        out1.println("Medição 1: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
-        out1.println("\tT: Simboliza o tipo de gravação (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento).");
-        out1.println("\tA: Simboliza o algoritmo (1 - Distância de Levenshtein com código de Parson, 2 - DTW com pitch absoluto e 3 - DTW com pitch relativo).");
+        out[iMedicao].println("Medição 1: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out[iMedicao].println("\tT: Simboliza o tipo de gravação (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento).");
+        out[iMedicao].println("\tA: Simboliza o algoritmo (1 - Distância de Levenshtein com código de Parson, 2 - DTW com pitch absoluto e 3 - DTW com pitch relativo).");
+        
+        outTex[iMedicao].print("");
         for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
             String musica = titles[iMusica];
             String codMusica = getCode(musica);
@@ -350,14 +790,14 @@ public class EvaluationSystem {
                         
                         if (iTipoGravacao == iTipo && iAlgoritmoGravacao == iAlgoritmo) {
                             registros += 1;
-                            if (1 == registros) out1.println(String.format("\n[código: %s] - %s.", codMusica, musica));
+                            if (1 == registros) out[iMedicao].println(String.format("\n[código: %s] - %s.", codMusica, musica));
                             
-                            out1.print(String.format("\tT:%d;A:%d;[", iTipoGravacao, iAlgoritmo));
+                            out[iMedicao].print(String.format("\tT:%d;A:%d;[", iTipoGravacao, iAlgoritmo));
                             int[] curva = item.getValue();
                             for (int index = 0; index < curva.length-1; index += 1) {
-                                out1.print(String.format("%d;", curva[index]));
+                                out[iMedicao].print(String.format("%d;", curva[index]));
                             }
-                            out1.println(String.format("%d]", curva[curva.length-1]));
+                            out[iMedicao].println(String.format("%d]", curva[curva.length-1]));
                         }
                     } // end for item
                 } // end for iAlgoritmo
@@ -367,9 +807,11 @@ public class EvaluationSystem {
         System.out.println(String.format("%d", iMusica));
         //----------------------------------------------------------------------
         // Medição 2:
+        iMedicao = 1;
+        
         System.out.print("Medição 2: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
-        out2.println("Medição 2: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
-        out2.println("\tT: Simboliza o tipo de gravação (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento).");
+        out[iMedicao].println("Medição 2: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out[iMedicao].println("\tT: Simboliza o tipo de gravação (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento).");
         for (String musica : titles) {
             String codMusica = getCode(musica);
             
@@ -404,14 +846,14 @@ public class EvaluationSystem {
 
                     if (iTipoGravacao == iTipo) {
                         registros += 1;
-                        if (1 == registros) out2.println(String.format("\n[código: %s] - %s.", codMusica, musica));
+                        if (1 == registros) out[iMedicao].println(String.format("\n[código: %s] - %s.", codMusica, musica));
 
-                        out2.print(String.format("\tT:%d;[", iTipoGravacao));
+                        out[iMedicao].print(String.format("\tT:%d;[", iTipoGravacao));
                         int[] curva = item.getValue();
                         for (int index = 0; index < curva.length-1; index += 1) {
-                            out2.print(String.format("%d;", curva[index]));
+                            out[iMedicao].print(String.format("%d;", curva[index]));
                         }
-                        out2.println(String.format("%d]", curva[curva.length-1]));
+                        out[iMedicao].println(String.format("%d]", curva[curva.length-1]));
                     }
                 } // end for item
             } // end for iTipo
@@ -420,9 +862,11 @@ public class EvaluationSystem {
         System.out.println(String.format("%d", iMusica));
         //----------------------------------------------------------------------
         // Medição 3:
+        iMedicao = 2;
+        
         System.out.print("Medição 3: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
-        out3.println("Medição 3: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
-        out3.println("\tA: Simboliza o algoritmo (1 - Distância de Levenshtein com código de Parson, 2 - DTW com pitch absoluto e 3 - DTW com pitch relativo).");
+        out[iMedicao].println("Medição 3: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out[iMedicao].println("\tA: Simboliza o algoritmo (1 - Distância de Levenshtein com código de Parson, 2 - DTW com pitch absoluto e 3 - DTW com pitch relativo).");
         for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
             String musica = titles[iMusica];
             String codMusica = getCode(musica);
@@ -455,14 +899,14 @@ public class EvaluationSystem {
 
                     if (iAlgoritmoGravacao == iAlgoritmo) {
                         registros += 1;
-                        if (1 == registros) out3.println(String.format("\n[código: %s] - %s.", codMusica, musica));
+                        if (1 == registros) out[iMedicao].println(String.format("\n[código: %s] - %s.", codMusica, musica));
 
-                        out3.print(String.format("\tA:%d;[", iAlgoritmo));
+                        out[iMedicao].print(String.format("\tA:%d;[", iAlgoritmo));
                         int[] curva = item.getValue();
                         for (int index = 0; index < curva.length-1; index += 1) {
-                            out3.print(String.format("%d;", curva[index]));
+                            out[iMedicao].print(String.format("%d;", curva[index]));
                         }
-                        out3.println(String.format("%d]", curva[curva.length-1]));
+                        out[iMedicao].println(String.format("%d]", curva[curva.length-1]));
                     }
                 } // end for item
             } // end for iAlgoritmo
@@ -471,8 +915,10 @@ public class EvaluationSystem {
         System.out.println(String.format("%d", iMusica));
         //----------------------------------------------------------------------
         // Medição 4:
+        iMedicao = 3;
+                
         System.out.print("Medição 4: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
-        out4.println("Medição 4: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out[iMedicao].println("Medição 4: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
         for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
             String musica = titles[iMusica];
             String codMusica = getCode(musica);
@@ -490,21 +936,23 @@ public class EvaluationSystem {
                 } // end for.
             }
             
-            out4.println(String.format("\n[código: %s] - %s.", codMusica, musica));
-            out4.print("\t[");
+            out[iMedicao].println(String.format("\n[código: %s] - %s.", codMusica, musica));
+            out[iMedicao].print("\t[");
             for (int index = 0; index < curva.length-1; index += 1) {
-                out4.print(String.format("%d;", curva[index]));
+                out[iMedicao].print(String.format("%d;", curva[index]));
             }
-            out4.println(String.format("%d]", curva[curva.length-1]));
+            out[iMedicao].println(String.format("%d]", curva[curva.length-1]));
             
         } // end for musica
         System.out.println(String.format("%d", iMusica));
         //----------------------------------------------------------------------
         // Medição 5:
+        iMedicao = 4;
+        
         TreeMap<String, Integer> dicionario5 = new TreeMap<String, Integer>();
         System.out.println("Medição 5: ");
-        out5.println("Medição 5: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
-        out5.println("\tObs.: Músicas ordenadas decrescentemente pelo número de gravações.");
+        out[iMedicao].println("Medição 5: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out[iMedicao].println("\tObs.: Músicas ordenadas decrescentemente pelo número de gravações.");
         for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
             String musica = titles[iMusica];
             
@@ -547,12 +995,12 @@ public class EvaluationSystem {
                 } // end for.
             }
 
-            out5.println(String.format("\n[código: %s] - %s. Total de gravações: %d.", codMusica, musica, entry.getValue()));
-            out5.print("\t[");
+            out[iMedicao].println(String.format("\n[código: %s] - %s. Total de gravações: %d.", codMusica, musica, entry.getValue()));
+            out[iMedicao].print("\t[");
             for (int index = 0; index < curva.length-1; index += 1) {
-                out5.print(String.format("%d;", curva[index]));
+                out[iMedicao].print(String.format("%d;", curva[index]));
             }
-            out5.println(String.format("%d]", curva[curva.length-1]));
+            out[iMedicao].println(String.format("%d]", curva[curva.length-1]));
 
             System.out.println(String.format("%d", iMusica));
         }
@@ -560,11 +1008,13 @@ public class EvaluationSystem {
         System.out.println(String.format("%d", iMusica));
         //----------------------------------------------------------------------
         // Medição 6:
+        iMedicao = 5;
+        
         TreeMap<String, Integer> dicionario6 = new TreeMap<String, Integer>();
         System.out.println("Medição 6: ");
-        out6.println("Medição 6: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
-        out6.println("\tObs.: Músicas ordenadas decrescentemente pelo número de gravações.");
-        out6.println("\tObs.: Algoritmos considerados: A1 e A3.");
+        out[iMedicao].println("Medição 6: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº].");
+        out[iMedicao].println("\tObs.: Músicas ordenadas decrescentemente pelo número de gravações.");
+        out[iMedicao].println("\tObs.: Algoritmos considerados: A1 e A3.");
         for (iMusica = 0; iMusica < titles.length; iMusica += 1) {
             String musica = titles[iMusica];
             
@@ -607,12 +1057,12 @@ public class EvaluationSystem {
                 } // end for.
             }
 
-            out6.println(String.format("\n[código: %s] - %s. Total de gravações: %d.", codMusica, musica, entry.getValue()));
-            out6.print("\t[");
+            out[iMedicao].println(String.format("\n[código: %s] - %s. Total de gravações: %d.", codMusica, musica, entry.getValue()));
+            out[iMedicao].print("\t[");
             for (int index = 0; index < curva.length-1; index += 1) {
-                out6.print(String.format("%d;", curva[index]));
+                out[iMedicao].print(String.format("%d;", curva[index]));
             }
-            out6.println(String.format("%d]", curva[curva.length-1]));
+            out[iMedicao].println(String.format("%d]", curva[curva.length-1]));
 
             System.out.println(String.format("%d", iMusica));
         }
@@ -620,9 +1070,11 @@ public class EvaluationSystem {
         System.out.println(String.format("%d", iMusica));
         //----------------------------------------------------------------------
         // Medição 7:
+        iMedicao = 6;
+        
         TreeMap<String, Integer> dicionario7 = new TreeMap<String, Integer>();
         System.out.println("Medição 7: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº] de acordo com tipo de gravação e algoritmo.");
-        out7.println("Medição 7: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº] de acordo com tipo de gravação e algoritmo.\n");
+        out[iMedicao].println("Medição 7: Contagem de encontro de músicas em posições do ranque: [1º, 2º, ..., Nº] de acordo com tipo de gravação e algoritmo.\n");
         for (int iTipo = 1; iTipo <= 3; iTipo += 1) {
             String tipo = tipos[iTipo-1];
             
@@ -640,25 +1092,21 @@ public class EvaluationSystem {
                     } // end for.
                 } // end for.
                 
-                out7.print(String.format("T:%d;A:%d;[", iTipo, iAlgoritmo));
-                
+                out[iMedicao].print(String.format("T:%d;A:%d;[", iTipo, iAlgoritmo));
                 for (int index = 0; index < curva.length-1; index += 1) {
-                    out7.print(String.format("%d;", curva[index]));
+                    out[iMedicao].print(String.format("%d;", curva[index]));
                 }
-                out7.println(String.format("%d]", curva[curva.length-1]));
+                out[iMedicao].println(String.format("%d]", curva[curva.length-1]));
                 
             } // end for iAlgoritmo.
         } // end for iTipo.
         //----------------------------------------------------------------------
-        out1.close();
-        out2.close();
-        out3.close();
-        out4.close();
-        out5.close();
-        out6.close();
-        out7.close();
+        for(iMedicao = 0; iMedicao < 7; iMedicao += 1) {
+            out[iMedicao].close();
+        }
         //----------------------------------------------------------------------
     }
+    */
     
     /*
     public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -948,7 +1396,7 @@ public class EvaluationSystem {
                     if ("Tipo1|Tipo2|Tipo3".contains(tipo)) {
                         for(File fileNivel3: fileNivel2.listFiles()) {  
                             if (fileNivel3.getName().contains(".wav")) {
-                                musicaEsperada = getTitle(fileNivel3.getName().trim());
+                                musicaEsperada = getTituloByArquivo(fileNivel3.getName().trim());
                                 
                                 System.out.print(String.format("Arquivo: %s, Música: %s", fileNivel3.getName().trim(), musicaEsperada));
                                 out.print(String.format("Arquivo: %s, Música: %s", fileNivel3.getName().trim(), musicaEsperada));

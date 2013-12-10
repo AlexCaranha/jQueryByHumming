@@ -28,4 +28,9 @@ public final class KeyValue<K, V> {
     public void setValue(V value) {
         this.value = value;
     }
+    
+    @Override
+    public KeyValue clone() {
+        return new KeyValue(key, value);
+    }
 }
