@@ -5,7 +5,9 @@ import com.lowagie.text.DocumentException;
 import com.lowagie.text.Rectangle;
 import com.lowagie.text.pdf.*;
 import java.awt.Color;
+import java.awt.GradientPaint;
 import java.awt.Graphics2D;
+import java.awt.Paint;
 import java.awt.geom.Rectangle2D;
 import java.io.*;
 import java.util.List;
@@ -20,12 +22,14 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.renderer.category.CategoryItemRenderer;
+import org.jfree.chart.renderer.category.LayeredBarRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.xy.DefaultXYDataset;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.ui.RectangleInsets;
+import org.jfree.util.SortOrder;
 
 /**
  *
@@ -205,19 +209,19 @@ public class Figure {
 
         c.setBackgroundPaint(Color.white);
 
-        CategoryPlot plot = c.getCategoryPlot();
-        plot.getDomainAxis().setLowerMargin(0.0);
-        plot.getDomainAxis().setUpperMargin(0.0);
-
-        BarRenderer renderer = (BarRenderer) plot.getRenderer();
+        CategoryPlot categoryplot = c.getCategoryPlot();
+        categoryplot.getDomainAxis().setLowerMargin(0.0);
+        categoryplot.getDomainAxis().setUpperMargin(0.0);
+        
+        BarRenderer renderer = (BarRenderer) categoryplot.getRenderer();
         //renderer.setLegendLine(new Rectangle2D.Double(-4.0, -3.0, 10.0, 6.0));
         renderer.setSeriesPaint(0, Color.black);
 
-        plot.setBackgroundPaint(Color.white);
-        plot.setDomainGridlinePaint(Color.lightGray);
-        plot.setRangeGridlinePaint(Color.lightGray);
-        plot.setAxisOffset(new RectangleInsets(5.0, 5.0, 5.0, 5.0));
-        plot.setDomainCrosshairVisible(true);
+        categoryplot.setBackgroundPaint(Color.white);
+        categoryplot.setDomainGridlinePaint(Color.lightGray);
+        categoryplot.setRangeGridlinePaint(Color.lightGray);
+        categoryplot.setAxisOffset(new RectangleInsets(5.0, 5.0, 5.0, 5.0));
+        categoryplot.setDomainCrosshairVisible(true);
 
         return c;
     }
@@ -233,7 +237,7 @@ public class Figure {
         //----------------------------------------------------------------------
         JFreeChart graph = createBarChart(title, titleX, titleY, plotLegend, dataset);
         //----------------------------------------------------------------------
-        CategoryPlot plot = (CategoryPlot) graph.getPlot();
+        CategoryPlot categoryplot = (CategoryPlot) graph.getPlot();
         /*
         if (limitX != null || limitY != null) {
             if (limitX != null) {
@@ -259,7 +263,17 @@ public class Figure {
         if (colors == null){
             configureColorsRenderer((BarRenderer) graph.getCategoryPlot().getRenderer(), dataset.getRowCount());
         } else {
-            configureColorsRenderer((BarRenderer) graph.getCategoryPlot().getRenderer(), colors);
+            //configureColorsRenderer((BarRenderer) graph.getCategoryPlot().getRenderer(), colors);
+            
+            LayeredBarRenderer layeredbarrenderer = new LayeredBarRenderer();
+            layeredbarrenderer.setDrawBarOutline(false);
+            categoryplot.setRenderer(layeredbarrenderer);            
+            categoryplot.setRowRenderingOrder(SortOrder.DESCENDING);
+            
+            for(int i = 0; i < colors.length; i += 1) {
+                Color cor = colors[i];
+                layeredbarrenderer.setSeriesPaint(i, new GradientPaint(0.0F, 0.0F, cor, 0.0F, 0.0F, cor));
+            }
         }
         //----------------------------------------------------------------------
         figure.createFigure(graph, fullNamePNG, fullNamePDF);

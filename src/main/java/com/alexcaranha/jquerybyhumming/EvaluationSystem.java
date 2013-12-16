@@ -379,152 +379,13 @@ public class EvaluationSystem {
         // Figura A.6 da Dissertação.
         criaFigura_6(dadosPorMusica, musicasMaisEncontradas_Algoritmo_1e3);
         //----------------------------------------------------------------------
-        // Tabeka A.7 da Dissertação.
-        caption = "\\caption[Lista de músicas ordenadas pelo percentual de acerto excluindo os resultados do Algoritmo 2 para tipo e algoritmo.]{Lista de músicas ordenadas pelo percentual de acerto excluindo os resultados do Algoritmo 2 para tipo e algoritmo.}"; 
-        criaTabela_7(dadosPorMusica, musicasMaisEncontradas_Algoritmo_1e3, "tabela_A5.tex", "tab_A5", caption);
-        //----------------------------------------------------------------------
     }
-    
-    // Música >> valores por rank.
-    public static void criaTabela_7(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
-                                    List<KeyValue<String, double[]>> musicasMaisEncontradas, 
-                                    String fileName,
-                                    String label,
-                                    String caption) throws IOException {
         
-        boolean debug = true;
-        int posicoes = getTitles().length;
-        int limite = 15; //posicoes;
-        String texto;
-        
-        //----------------------------------------------------------------------
-        PrintWriter out = new PrintWriter(new FileWriter(Util.getDirExecution(fileName)));
-        //----------------------------------------------------------------------        
-        out.print("\\begin{longtable}{|c|c|c|");
-        for (int index = 0; index < limite; index += 1) {
-            out.print("c|");
-        }
-        out.println("}");
-        out.println(caption);
-        out.println(String.format("\\label{%s} \\\\", label));
-        out.println();
-        out.println("\\hline");
-        out.println("\\multicolumn{1}{|c|}{\\textbf{Código}} & ");
-        out.println("\\multicolumn{1}{|c|}{\\textbf{Algoritmo}} & ");
-        out.println("\\multicolumn{1}{|c|}{\\textbf{Tipo}} & ");
-        for (int index = 0; index < limite; index += 1) {
-            out.println(String.format("\\multicolumn{1}{|c|}{\\textbf{%d\\textordmasculine}} %s", 1 + index, (index + 1 == limite) ? "\\\\" : "& "));
-        }
-        out.println("\\hline\\hline");
-        out.println("\\endfirsthead");
-        out.println(String.format("\\multicolumn{%d}{c}", limite));
-        out.println("{{\\bfseries \\tablename\\ \\thetable{} -- Continuação da página anterior.}} \\\\");
-        out.println();
-        out.println("\\hline");
-        out.println("\\multicolumn{1}{|c|}{\\textbf{Código}} & ");
-        out.println("\\multicolumn{1}{|c|}{\\textbf{Algoritmo}} & ");
-        out.println("\\multicolumn{1}{|c|}{\\textbf{Tipo}} & ");
-        for (int index = 0; index < limite; index += 1) {
-            out.println(String.format("\\multicolumn{1}{|c|}{\\textbf{%d\\textordmasculine}} %s", 1 + index, (index + 1 == limite) ? "\\\\" : "& "));
-        }
-        out.println("\\hline\\hline");
-        out.println("\\endhead");
-        out.println(String.format("\\hline \\multicolumn{%d}{|r|}{{Continua na próxima página}} \\\\ \\hline", limite));
-        out.println("\\endfoot");
-        out.println("\\hline\\hline");
-        out.println("\\endlastfoot");
-        out.println();
-
-        System.out.println("Listagem: ");
-        
-        for(int index = 0; index < limite; index += 1) {
-            KeyValue<String, double[]> musica = musicasMaisEncontradas.get(index);
-            String codMusica = musica.getKey();
-            String titulo = getTituloByCodigo(codMusica);
-            
-            Map<String, List<Gravacao>> dadosMusica = dadosPorMusica.get(codMusica);            
-            System.out.println(String.format("Musica: [%s] - %s", codMusica, titulo));
-            
-            String mascaraMusica = "\\multirow{%d}{*}{%s}";
-            String mascaraAlgoritmo = " & \\multirow{%d}{*}{%d}";
-            
-            int count = 0;
-            
-            for (int iAlgoritmo = 1; iAlgoritmo <= 3; iAlgoritmo += 1) {
-                int qtdTotalTipo = 0;
-                
-                int qtdRegistrosAlgoritmo = 0;
-                int countRegistrosAlgoritmo = 0;
-                
-                for (int iTipoGravacao = 1; iTipoGravacao <= 3; iTipoGravacao += 1) {
-                    String strTipo_e_Algoritmo = String.format("%d%d", iTipoGravacao, iAlgoritmo);
-                    
-                    if (!dadosMusica.containsKey(strTipo_e_Algoritmo)) continue;
-                    qtdRegistrosAlgoritmo += 1;
-                }
-                                        
-                for (int iTipoGravacao = 1; iTipoGravacao <= 3; iTipoGravacao += 1) {
-                    String strTipo_e_Algoritmo = String.format("%d%d", iTipoGravacao, iAlgoritmo);
-                    
-                    if (!dadosMusica.containsKey(strTipo_e_Algoritmo)) continue;
-                    
-                    int[] rankAcumulado = new int[posicoes];
-                    
-                    List<Gravacao> gravacoes = dadosMusica.get(strTipo_e_Algoritmo);
-                    for (Gravacao gravacao : gravacoes) {
-                        int iPosicao = (int)gravacao.getPosicao();
-                        rankAcumulado[iPosicao - 1] += 1;
-                        qtdTotalTipo += 1;
-                    }
-                    
-                    System.out.print(String.format("\tAlgoritmo:%d;Tipo:%d", iAlgoritmo, iTipoGravacao));
-                    
-                    out.print(mascaraMusica.length() > 0 
-                                    ? String.format(mascaraMusica, dadosMusica.size(), codMusica)
-                                    : " {} \t\t\t\t"
-                                );
-                    out.print(mascaraAlgoritmo.length() > 0
-                                    ? String.format(mascaraAlgoritmo, qtdRegistrosAlgoritmo, iAlgoritmo)
-                                    : " & {} \t\t\t\t"
-                             );
-                    out.print(String.format(" & %d", iTipoGravacao));
-                    
-                    for (int iPosicao = 0; iPosicao < limite; iPosicao += 1) {
-                        int value = rankAcumulado[iPosicao];
-                        
-                        System.out.print(String.format(";%d", value));
-                        out.print(String.format(" & %d", value));
-                    }
-                    
-                    count += 1;
-                    countRegistrosAlgoritmo += 1;
-                    
-                    System.out.println();
-                    if (count == dadosMusica.size()) {
-                        out.println(" \\\\ \\hline");
-                    } else if ( countRegistrosAlgoritmo == qtdRegistrosAlgoritmo){
-                        out.println(String.format(" \\\\ \\cline{2-%d}", limite + 3));
-                    }else {
-                        out.println(" \\\\");
-                    }
-                    
-                    mascaraMusica = "";
-                    mascaraAlgoritmo = "";
-                }
-            }
-        }
-        
-        out.print("\\end{longtable}");
-        //----------------------------------------------------------------------
-        out.close();
-        //----------------------------------------------------------------------
-    }
-    
     // Música >> valores por rank.
     public static void criaFigura_6(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
                                     List<KeyValue<String, double[]>> musicasMaisEncontradas) throws IOException {
         
-        boolean debug = false;
+        boolean debug = true;
         int posicoes = getTitles().length;
         int limite = posicoes;
         List<KeyValue<String, double[]>> result_rank = new ArrayList<KeyValue<String, double[]>>();
@@ -599,7 +460,7 @@ public class EvaluationSystem {
     public static void criaFigura_5(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
                                     List<KeyValue<String, double[]>> musicasMaisEncontradas) throws IOException {
         
-        boolean debug = false;
+        boolean debug = true;
         int posicoes = getTitles().length;
         int limite = posicoes;
         List<KeyValue<String, double[]>> result_rank = new ArrayList<KeyValue<String, double[]>>();
