@@ -380,8 +380,7 @@ public class EvaluationSystem {
         criaFigura_6(dadosPorMusica, musicasMaisEncontradas_Algoritmo_1e3);
         //----------------------------------------------------------------------
     }
-        
-    // Música >> valores por rank.
+    
     public static void criaFigura_6(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
                                     List<KeyValue<String, double[]>> musicasMaisEncontradas) throws IOException {
         
