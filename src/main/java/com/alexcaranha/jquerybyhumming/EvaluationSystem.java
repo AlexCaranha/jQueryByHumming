@@ -24,6 +24,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.xy.DefaultXYDataset;
+import org.jfree.data.xy.XYSeries;
 
 /**
  *
@@ -364,6 +366,7 @@ public class EvaluationSystem {
         criaTabela_1(gravacoesSaturadasPorMusica_e_Tipo, "tabela_A2.tex", "tab_A2", caption);
         //----------------------------------------------------------------------
         // Tabela A.3 da Dissertação.
+        // codMusica >> tipo e algoritmo >> rank.
         Map<String, Map<String, List<Gravacao>>> dadosPorMusica = getDadosPorMusica(usuarios);
         caption = "\\caption[Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking}.]{Lista de músicas ordenadas pelo percentual de acerto em cada uma das 10 primeiras posições do \\textit{ranking}.}"; 
         List<KeyValue<String, double[]>> musicasMaisEncontradas = criaTabela_2(dadosPorMusica, "tabela_A3.tex", "tab_A3", caption);
@@ -379,12 +382,77 @@ public class EvaluationSystem {
         // Figura A.6 da Dissertação.
         criaFigura_6(dadosPorMusica, musicasMaisEncontradas_Algoritmo_1e3);
         //----------------------------------------------------------------------
+        // Qual tipo de gravação de solfejo favorece 
+        criaFigura_7(dadosPorMusica);
+        //----------------------------------------------------------------------
+    }
+    
+    public static void criaFigura_7(Map<String, Map<String, List<Gravacao>>> dadosPorMusica) throws IOException {
+        // codMusica >> tipo e algoritmo >> rank.
+        // dadosPorMusica
+        boolean debug = true;
+        
+        int limite = 53;
+        int[][] algoritmo = new int[3][limite];
+            
+        for(Entry<String, Map<String, List<Gravacao>>> musica : dadosPorMusica.entrySet()) {
+            Map<String, List<Gravacao>> musicaTipo = musica.getValue();
+            
+            for(Entry<String, List<Gravacao>> itemGravacao : musicaTipo.entrySet()) {
+                String tipo_e_algoritmo = itemGravacao.getKey();
+                int iTipoGravacao = Convert.toInteger(tipo_e_algoritmo.charAt(0));
+                int iAlgoritmoGravacao = Convert.toInteger(tipo_e_algoritmo.charAt(1));
+                
+                for(Gravacao gravacao : itemGravacao.getValue()) {
+                    /*
+                    int iTipoGravacao = gravacao.getTipo().equalsIgnoreCase("Tipo1")
+                                                    ? 1 : gravacao.getTipo().equalsIgnoreCase("Tipo2")
+                                                    ? 2 : gravacao.getTipo().equalsIgnoreCase("Tipo3")
+                                                    ? 3 : 0;
+                    */
+                    int posicao = (int)gravacao.getPosicao();
+                    
+                    if (posicao > limite) continue;
+                    algoritmo[iAlgoritmoGravacao-1][posicao-1] += (posicao <= limite) ? 1 : 0;
+                }
+            }
+        }
+        
+        if (debug) {
+            XYSeries[] series = new XYSeries[3];
+            
+            for (int iAlgoritmo = 0; iAlgoritmo < 3; iAlgoritmo += 1) {
+                
+                double[][] posicoes = new double[limite][2];
+                XYSeries serie = new XYSeries(String.format("Algoritmo %s", iAlgoritmo + 1));
+                series[iAlgoritmo] = serie;
+                
+                double valorAcumulado = 0;
+                serie.add(0, valorAcumulado);
+                
+                for (int iPosicao = 0; iPosicao < limite; iPosicao += 1) {
+                    valorAcumulado += algoritmo[iAlgoritmo][iPosicao];
+                    serie.add(iPosicao + 1, valorAcumulado);
+                }
+            }
+            
+            Figure.save("", "posição do ranque", "qtd. acumulada",
+                        true,
+                        series,
+                        Util.createArray(Color.BLUE, Color.RED, Color.GREEN),
+                        null,
+                        null, null,
+                        new Figure(600, 350),
+                        Util.getDirExecution("figCurvaROC_Algoritmos.pdf"),
+                        Util.getDirExecution("figCurvaROC_Algoritmos.png")
+            );
+        }
     }
     
     public static void criaFigura_6(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
                                     List<KeyValue<String, double[]>> musicasMaisEncontradas) throws IOException {
         
-        boolean debug = true;
+        boolean debug = false;
         int posicoes = getTitles().length;
         int limite = posicoes;
         List<KeyValue<String, double[]>> result_rank = new ArrayList<KeyValue<String, double[]>>();
@@ -459,7 +527,7 @@ public class EvaluationSystem {
     public static void criaFigura_5(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
                                     List<KeyValue<String, double[]>> musicasMaisEncontradas) throws IOException {
         
-        boolean debug = true;
+        boolean debug = false;
         int posicoes = getTitles().length;
         int limite = posicoes;
         List<KeyValue<String, double[]>> result_rank = new ArrayList<KeyValue<String, double[]>>();
