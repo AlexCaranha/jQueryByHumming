@@ -291,7 +291,7 @@ public class EvaluationSystem {
         if (codigo.equalsIgnoreCase("023")) return ("Inútil");
         if (codigo.equalsIgnoreCase("024")) return ("Eu sei que vou te amar");
         if (codigo.equalsIgnoreCase("025")) return ("País tropical");
-        if (codigo.equalsIgnoreCase("027")) return ("Garota de ipanema");
+        if (codigo.equalsIgnoreCase("027")) return ("Garota de Ipanema");
         if (codigo.equalsIgnoreCase("028")) return ("Pra não dizer que não falei das flores");
         if (codigo.equalsIgnoreCase("031")) return ("Travessia");
         if (codigo.equalsIgnoreCase("038")) return ("Eu quero é botar meu bloco na rua");
@@ -337,11 +337,15 @@ public class EvaluationSystem {
     public static void main(String[] args) throws FileNotFoundException, IOException {
         //----------------------------------------------------------------------
         String caption = "";
-        String   dirDB = "/home/alexcaranha/Documentos/Mestrado/DataBase/DBSolfejos";
+        //String   dirDB = "/home/alexcaranha/Documentos/Mestrado/DataBase/DBSolfejos";
+        String   dirDB = "D:\\Alex\\Mestrado\\DataBase\\DBSolfejos";
+        
         //String[] tipos = Util.createArray("Tipo1","Tipo2","Tipo3");
         String[] algoritmos = Util.createArray("LevenshteinDistance", "DTW_AbsolutePitch", "DTW_RelativePitch");
         
-        String prefixo = "/home/alexcaranha/Documentos/Mestrado/jQueryByHumming/";
+        //String prefixo = "/home/alexcaranha/Documentos/Mestrado/jQueryByHumming/";
+        String prefixo = "D:\\Alex\\Mestrado\\SourceCode\\jQueryByHumming\\";
+        
         String path1 = prefixo + "evaluationUsuarios-" + algoritmos[0] + ".xml";
         String path2 = prefixo + "evaluationUsuarios-" + algoritmos[1] + ".xml";
         String path3 = prefixo + "evaluationUsuarios-" + algoritmos[2] + ".xml";
@@ -486,8 +490,12 @@ public class EvaluationSystem {
                                 null,
                                 null, null,
                                 new Figure(1300, 300),
+                                Util.getDirExecution(String.format("Musica_%d_tipo.pdf", 1+iMusica, codMusica)),
+                                Util.getDirExecution(String.format("Musica_%d_tipo.png", 1+iMusica, codMusica))
+                                /*
                                 Util.getDirExecution(String.format("Musica_%d_%s_tipo.pdf", 1+iMusica, codMusica)),
-                                Util.getDirExecution(String.format("Musica_%d_%s_tipo.png", 1+iMusica, codMusica)));
+                                Util.getDirExecution(String.format("Musica_%d_%s_tipo.png", 1+iMusica, codMusica))
+                                */);
                 
                 Figure.saveBarChart(String.format("[%s] - %s", codMusica, titulo), "posição do ranque", "qtd. normalizada",
                                 true,
@@ -496,8 +504,12 @@ public class EvaluationSystem {
                                 null,
                                 null, null,
                                 new Figure(1300, 300),
+                                Util.getDirExecution(String.format("Musica_%d_algoritmo.pdf", 1+iMusica, codMusica)),
+                                Util.getDirExecution(String.format("Musica_%d_algoritmo.png", 1+iMusica, codMusica))
+                                /*
                                 Util.getDirExecution(String.format("Musica_%d_%s_algoritmo.pdf", 1+iMusica, codMusica)),
-                                Util.getDirExecution(String.format("Musica_%d_%s_algoritmo.png", 1+iMusica, codMusica)));
+                                Util.getDirExecution(String.format("Musica_%d_%s_algoritmo.png", 1+iMusica, codMusica))
+                                */);
                 //------------------------------------------------------------------
             }
         }
