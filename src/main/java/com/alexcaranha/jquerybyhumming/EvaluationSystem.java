@@ -356,6 +356,7 @@ public class EvaluationSystem {
         usuariosAlgoritmo_1e3.put(3, GetFromXML(path3));  // DTW_AbsolutePitch
         //----------------------------------------------------------------------
         // Tabela A.1 da Dissertação.
+        // Título de música >> tipo de gravação >> quantidade
         List<Entry<String, Map<Integer, Integer>>> gravacoesPorMusica_e_Tipo = calculaQtdGravacoes(dirDB, false);        
         caption = "\\caption[Lista de músicas da base de dados com a quantidade de gravações por tipo (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento)]{Lista de músicas da base de dados com a quantidade de gravações por tipo (1 - com acompanhamento de piano, 2 - com acompanhamento de música e 3 - sem acompanhamento) ordenada decrescentemente pelo total de gravações.}"; 
         criaTabela_1(gravacoesPorMusica_e_Tipo, "tabela_A1.tex", "tab_A1", caption);
@@ -385,6 +386,158 @@ public class EvaluationSystem {
         // Qual tipo de gravação de solfejo favorece 
         criaFigura_7(dadosPorMusica);
         //----------------------------------------------------------------------
+        // Qual os valores de MRR para os tipos de gravação?
+        caption = "Tabela comparativa dos valores na medida MRR levando em consideração o tipo de gravação e o algoritmo utilizado.";
+        criaTabela_3(dadosPorMusica, "tabela_A5.tex", "tab:MRR_AlgoritmoPorTipoGravacao", caption);
+        //----------------------------------------------------------------------
+        // Quais os valores para os tipos de gravação?
+        criaFigura_8(dadosPorMusica, gravacoesPorMusica_e_Tipo, true, "figCurvaROC_Tipos_a");
+        criaFigura_8(dadosPorMusica, gravacoesPorMusica_e_Tipo, false, "figCurvaROC_Tipos_b");
+        //----------------------------------------------------------------------
+    }
+
+    public static void criaFigura_8(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
+                                    // Título de música >> tipo de gravação >> quantidade
+                                    List<Entry<String, Map<Integer, Integer>>> gravacoesPorMusica_e_Tipo,
+                                    boolean todosOsAlgoritmos,
+                                    String fileName) throws IOException {
+        // codMusica >> tipo e algoritmo >> rank.
+        // dadosPorMusica
+        boolean debug = true;
+        
+        int posicoes = getTitles().length;
+        int limiteMusicas = 10;
+        int limitePosicoes = posicoes;
+        
+        int[][] tipo = new int[3][limitePosicoes];
+        int[] qtdTipo = new int[3];
+        
+        for (int iMusica = 0; iMusica < limiteMusicas; iMusica += 1) {
+            Entry<String, Map<Integer, Integer>> musica = gravacoesPorMusica_e_Tipo.get(iMusica);
+            String codMusica = musica.getKey();
+
+            Map<String, List<Gravacao>> musicaTipo = dadosPorMusica.get(codMusica);
+
+            for(Entry<String, List<Gravacao>> itemGravacao : musicaTipo.entrySet()) {
+                String tipo_e_algoritmo = itemGravacao.getKey();
+                int iTipoGravacao = Convert.toInteger(tipo_e_algoritmo.charAt(0));
+                int iAlgoritmoGravacao = Convert.toInteger(tipo_e_algoritmo.charAt(1));
+
+                if (!todosOsAlgoritmos && iAlgoritmoGravacao == 2) continue;
+                for(Gravacao gravacao : itemGravacao.getValue()) {                    
+                    int posicao = (int)gravacao.getPosicao();
+
+                    qtdTipo[iTipoGravacao-1] += 1;
+                    
+                    if (posicao > limitePosicoes) continue;
+                    tipo[iTipoGravacao-1][posicao-1] += (posicao <= limitePosicoes) ? 1 : 0;
+                }
+            }
+        }
+        
+        if (debug) {
+            XYSeries[] series = new XYSeries[3];
+            
+            for (int iTipoGravacao = 0; iTipoGravacao < 3; iTipoGravacao += 1) {
+                
+                XYSeries serie = new XYSeries(String.format("Tipo %d", iTipoGravacao + 1));
+                series[iTipoGravacao] = serie;
+                
+                double valorAcumulado = 0;
+                serie.add(0, valorAcumulado);
+                
+                for (int iPosicao = 0; iPosicao < limitePosicoes; iPosicao += 1) {
+                    double valor = qtdTipo[iTipoGravacao] == 0 ? 0 : (double)tipo[iTipoGravacao][iPosicao] / qtdTipo[iTipoGravacao];
+                    valorAcumulado += valor;
+                    serie.add(iPosicao + 1, valorAcumulado);
+                }
+            }
+            
+            Figure.save("", "posição do ranque", "qtd. normalizada",
+                        true,
+                        series,
+                        Util.createArray(Color.BLUE, Color.RED, Color.GREEN),
+                        null,
+                        null, null,
+                        new Figure(650, 300),
+                        Util.getDirExecution(String.format("%s.pdf", fileName)),
+                        Util.getDirExecution(String.format("%s.png", fileName))
+            );
+        }
+    }
+
+    // Qual os valores de MRR para os tipos de gravação?
+    public static void criaTabela_3(Map<String, Map<String, List<Gravacao>>> dadosPorMusica, 
+                                    String fileName, 
+                                    String label,
+                                    String caption) throws IOException {
+
+        double[][][] dados = new double[4][3][3]; // [iTipoGravacao][iAlgoritmo][0-Soma harmônica, 1-Qtd, 2-MRR]
+
+        for(Entry<String, Map<String, List<Gravacao>>> musica : dadosPorMusica.entrySet()) {
+            Map<String, List<Gravacao>> musicaTipo = musica.getValue();
+            
+            for(Entry<String, List<Gravacao>> itemGravacao : musicaTipo.entrySet()) {
+
+                String  tipo_e_algoritmo    = itemGravacao.getKey();
+                int     iTipoGravacao       = Convert.toInteger(tipo_e_algoritmo.charAt(0));
+                int     iAlgoritmoGravacao  = Convert.toInteger(tipo_e_algoritmo.charAt(1));
+                
+                for(Gravacao gravacao : itemGravacao.getValue()) {
+                    int     posicao         = (int)gravacao.getPosicao();
+                    double  valorHarmonico  = (double) 1 / posicao;
+                    
+                    dados[iTipoGravacao][iAlgoritmoGravacao-1][0] += valorHarmonico;
+                    dados[iTipoGravacao][iAlgoritmoGravacao-1][1] += 1;
+
+                    dados[3][iAlgoritmoGravacao-1][0] += valorHarmonico;
+                    dados[3][iAlgoritmoGravacao-1][1] += 1;
+                }
+            }
+        }
+
+        for (int i = 0; i < 4; i +=1) {
+            for (int j = 0; j < 3; j +=1) {
+                double denominador = dados[i][j][1];
+                dados[i][j][2] = denominador == 0 ? 0 : dados[i][j][0] / denominador;
+            }
+        }
+
+        //----------------------------------------------------------------------
+        PrintWriter out = new PrintWriter(new FileWriter(Util.getDirExecution(fileName)));
+        //----------------------------------------------------------------------
+        out.println("\\begin{table}[H]");
+        out.println(String.format("\t\\caption{%s}", caption));
+        out.println(String.format("\t\\label{%s}", label));
+        out.println();
+        out.println("\t\\begin{center}");
+        out.println("\t\t\\begin{tabular}{|c|c|c|c|} \\hline");
+
+        out.println("\t\t\t\\textbf{Tipo} & ");
+        out.println("\t\t\t\\textbf{MRR Algoritmo 1} & ");
+        out.println("\t\t\t\\textbf{MRR Algoritmo 2} & ");
+        out.println("\t\t\t\\textbf{MRR Algoritmo 3} \\\\ \\hline \\hline");
+        out.println();
+
+        for (int iTipo = 0; iTipo < 4; iTipo +=1) {
+            out.print(String.format("\t\t\t %s", iTipo == 3 ? " " : (1 + iTipo)));
+
+            for (int iAlgoritmo = 0; iAlgoritmo < 3; iAlgoritmo +=1) {
+                double mrr = dados[iTipo][iAlgoritmo][2];
+
+                out.print(String.format(" & %.4f", mrr));
+            }
+
+            out.println(" \\\\ \\hline \\hline");
+        }
+        
+        out.println();
+        out.println("\t\t\\end{tabular}");
+        out.println("\t\\end{center}");
+        out.println("\\end{table}");
+        out.println();
+        //----------------------------------------------------------------------
+        out.close();
     }
     
     public static void criaFigura_7(Map<String, Map<String, List<Gravacao>>> dadosPorMusica) throws IOException {
@@ -442,7 +595,7 @@ public class EvaluationSystem {
                         Util.createArray(Color.BLUE, Color.RED, Color.GREEN),
                         null,
                         null, null,
-                        new Figure(600, 350),
+                        new Figure(650, 300),
                         Util.getDirExecution("figCurvaROC_Algoritmos.pdf"),
                         Util.getDirExecution("figCurvaROC_Algoritmos.png")
             );
