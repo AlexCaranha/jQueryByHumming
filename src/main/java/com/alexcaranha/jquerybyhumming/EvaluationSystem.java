@@ -394,6 +394,84 @@ public class EvaluationSystem {
         criaFigura_8(dadosPorMusica, gravacoesPorMusica_e_Tipo, true, "figCurvaROC_Tipos_a");
         criaFigura_8(dadosPorMusica, gravacoesPorMusica_e_Tipo, false, "figCurvaROC_Tipos_b");
         //----------------------------------------------------------------------
+        // Levando em consideração o tipo de gravação de solfejo e o algoritmo 
+        // de comparação de melodias adotado, qual a probabilidade de acerto 
+        // pelo sistema nas dez primeiras posições do ranque?
+        caption = "Probabilidade de acerto para tipo de gravação e algoritmo de comparação de melodias adotado considerando as dez primeiras posições do ranque.";
+        criaTabela_4(dadosPorMusica, "tabela_A6.tex", "tab:ProbabilidadeDeAcerto_Algoritmo_e_TipoGravacao", caption);
+        //----------------------------------------------------------------------
+    }
+    
+    public static void criaTabela_4(Map<String, Map<String, List<Gravacao>>> dadosPorMusica, 
+                                    String fileName, 
+                                    String label,
+                                    String caption) throws IOException {
+
+        double[][][] dados = new double[3][3][2]; // [iAlgoritmo][iTipoGravacao][0-total, 1-qtd por posicao]
+
+        for(Entry<String, Map<String, List<Gravacao>>> musica : dadosPorMusica.entrySet()) {
+            Map<String, List<Gravacao>> musicaTipo = musica.getValue();
+            
+            for(Entry<String, List<Gravacao>> itemGravacao : musicaTipo.entrySet()) {
+                String  tipo_e_algoritmo    = itemGravacao.getKey();
+                int     iTipoGravacao       = Convert.toInteger(tipo_e_algoritmo.charAt(0));
+                int     iAlgoritmoGravacao  = Convert.toInteger(tipo_e_algoritmo.charAt(1));
+                
+                for(Gravacao gravacao : itemGravacao.getValue()) {
+                    int     posicao         = (int)gravacao.getPosicao();
+                    double  valorHarmonico  = (double) 1 / posicao;
+                    
+                    dados[iTipoGravacao][iAlgoritmoGravacao-1][0] += valorHarmonico;
+                    dados[iTipoGravacao][iAlgoritmoGravacao-1][1] += 1;
+
+                    dados[3][iAlgoritmoGravacao-1][0] += valorHarmonico;
+                    dados[3][iAlgoritmoGravacao-1][1] += 1;
+                }
+            }
+        }
+
+        for (int i = 0; i < 4; i +=1) {
+            for (int j = 0; j < 3; j +=1) {
+                double denominador = dados[i][j][1];
+                dados[i][j][2] = denominador == 0 ? 0 : dados[i][j][0] / denominador;
+            }
+        }
+
+        //----------------------------------------------------------------------
+        PrintWriter out = new PrintWriter(new FileWriter(Util.getDirExecution(fileName)));
+        //----------------------------------------------------------------------
+        out.println("\\begin{table}[H]");
+        out.println(String.format("\t\\caption{%s}", caption));
+        out.println(String.format("\t\\label{%s}", label));
+        out.println();
+        out.println("\t\\begin{center}");
+        out.println("\t\t\\begin{tabular}{|c|c|c|c|} \\hline");
+
+        out.println("\t\t\t\\textbf{Tipo} & ");
+        out.println("\t\t\t\\textbf{MRR Algoritmo 1} & ");
+        out.println("\t\t\t\\textbf{MRR Algoritmo 2} & ");
+        out.println("\t\t\t\\textbf{MRR Algoritmo 3} \\\\ \\hline \\hline");
+        out.println();
+
+        for (int iTipo = 0; iTipo < 4; iTipo +=1) {
+            out.print(String.format("\t\t\t %s", iTipo == 3 ? " " : (1 + iTipo)));
+
+            for (int iAlgoritmo = 0; iAlgoritmo < 3; iAlgoritmo +=1) {
+                double mrr = dados[iTipo][iAlgoritmo][2];
+
+                out.print(String.format(" & %.4f", mrr));
+            }
+
+            out.println(" \\\\ \\hline \\hline");
+        }
+        
+        out.println();
+        out.println("\t\t\\end{tabular}");
+        out.println("\t\\end{center}");
+        out.println("\\end{table}");
+        out.println();
+        //----------------------------------------------------------------------
+        out.close();
     }
 
     public static void criaFigura_8(Map<String, Map<String, List<Gravacao>>> dadosPorMusica,
@@ -487,8 +565,8 @@ public class EvaluationSystem {
                     int     posicao         = (int)gravacao.getPosicao();
                     double  valorHarmonico  = (double) 1 / posicao;
                     
-                    dados[iTipoGravacao][iAlgoritmoGravacao-1][0] += valorHarmonico;
-                    dados[iTipoGravacao][iAlgoritmoGravacao-1][1] += 1;
+                    dados[iTipoGravacao-1][iAlgoritmoGravacao-1][0] += valorHarmonico;
+                    dados[iTipoGravacao-1][iAlgoritmoGravacao-1][1] += 1;
 
                     dados[3][iAlgoritmoGravacao-1][0] += valorHarmonico;
                     dados[3][iAlgoritmoGravacao-1][1] += 1;
