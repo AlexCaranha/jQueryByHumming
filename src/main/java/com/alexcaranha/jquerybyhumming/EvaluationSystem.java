@@ -333,7 +333,7 @@ public class EvaluationSystem {
         
         return null;
     }
-    
+    /*
     public static void main(String[] args) throws FileNotFoundException, IOException {
         //----------------------------------------------------------------------
         String caption = "";
@@ -407,7 +407,7 @@ public class EvaluationSystem {
         criaFigura_9(dadosPorMusica, gravacoesPorMusica_e_Tipo);
         //----------------------------------------------------------------------
     }
-    
+    */
     // Para as dez músicas com maior número de gravações, qual foi a 
     // probabilidade de acerto considerando separadamente os algoritmos de 
     // comparação de melodias e os tipos de gravações em todas as posições do ranque?
