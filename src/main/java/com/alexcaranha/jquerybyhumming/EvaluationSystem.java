@@ -2029,11 +2029,11 @@ public class EvaluationSystem {
         
         //OutputStream outputXML = new FileOutputStream("evaluationUsuarios-LevenshteinDistance.xml");
         //OutputStream outputXML = new FileOutputStream("evaluationUsuarios-DTW_AbsolutePitch.xml");
-        OutputStream outputXML = new FileOutputStream("evaluationUsuarios-DTW_RelativePitch.xml");
+        // OutputStream outputXML = new FileOutputStream("evaluationUsuarios-DTW_RelativePitch.xml");
         
         // mm:evaluation
-        Convert.serialize(usuarios, outputXML);
-        outputXML.close();
+        // Convert.serialize(usuarios, outputXML);
+        // outputXML.close();
     }
     
     /*
