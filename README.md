@@ -23,13 +23,17 @@ Este projeto permite a pesquisa de músicas através de entrada vocal — como s
 
 ## 🧱 Arquitetura do Sistema
 
-```text
-Entrada WAV (solfejo) 
-  └──► Pitch Tracking + Onset Detection
-        └──► Representação Melódica
-              └──► Comparação Melódica
-                    └──► Retorno de músicas mais similares
-```
+O sistema opera com os seguintes componentes principais:
+- **Banco de músicas MIDI**: Contém faixas em formato MIDI para referência.
+- **Processamento WAV**: Converte o áudio enviado pelo usuário em dois sinais: um com a altura das notas (Pitch Tracking) e outro com os pontos de início das notas (Onset Detection).
+- **Processamento MIDI**: Transforma músicas MIDI em uma notação simbólica de alto nível (Representação de Melodia).
+- **Representação de Melodia**: Criação de uma representação simbólica do áudio enviado e das músicas do banco de dados, permitindo comparações entre melodias. Alguns métodos usam formatos alternativos, como Código de Parson e pitch vectors, para avaliar similaridade.
+- **Comparação de Melodias**: Aplicação de um método de análise para identificar músicas mais semelhantes ao áudio do usuário.
+- **Lista de Músicas**: Exibição dos resultados, com títulos ordenados conforme a proximidade com a melodia fornecida.
+
+<div align="center">
+  <img src="docs/diagrama.png" alt="diagrama">
+</div>
 
 ---
 
